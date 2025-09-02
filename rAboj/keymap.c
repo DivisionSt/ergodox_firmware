@@ -94,7 +94,7 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),    TD(DANCE_4),    TD(DANCE_5),                                    KC_TRANSPARENT, TD(DANCE_8),    TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   TD(DANCE_12),   TD(DANCE_13),
+    KC_ESCAPE,      TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),    TD(DANCE_4),    TD(DANCE_5),                                    QK_REPEAT_KEY, TD(DANCE_8),    TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   TD(DANCE_12),   TD(DANCE_13),
     KC_TAB,         KC_Q,           DUAL_FUNC_0,    KC_E,           DUAL_FUNC_1,    TD(DANCE_6),    TD(DANCE_7),                                    TD(DANCE_14),   KC_Y,           DUAL_FUNC_13,   DUAL_FUNC_14,   KC_O,           KC_P,           KC_BSLS,
     KC_LEFT_GUI,    DUAL_FUNC_2,    DUAL_FUNC_3,    KC_D,           DUAL_FUNC_4,    KC_G,                                                                           DUAL_FUNC_15,   KC_J,           DUAL_FUNC_16,   DUAL_FUNC_17,   KC_SCLN,        KC_QUOTE,
     KC_LEFT_SHIFT,  DUAL_FUNC_5,    DUAL_FUNC_6,    DUAL_FUNC_7,    DUAL_FUNC_8,    DUAL_FUNC_9,    DUAL_FUNC_10,                                   DUAL_FUNC_18,   DUAL_FUNC_19,   KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT,
@@ -190,8 +190,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          TO(7),          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          TO(4),          TO(4),          KC_NO,          KC_NO,          KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,QK_DYNAMIC_TAPPING_TERM_PRINT,KC_NO,
                                                                                                     KC_NO,          KC_NO,          TO(0),          KC_NO,
-                                                                                                                    KC_NO,          KC_NO,
-                                                                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO
+                                                                                                                    KC_NO,          QK_BOOTLOADER,
+                                                                                    KC_NO,          KC_NO,          KC_NO,          QK_REBOOT,          KC_NO,          KC_NO
   ),
 };
 
