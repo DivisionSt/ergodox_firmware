@@ -1,0 +1,50 @@
+ame: Fetch and build layout
+
+on:
+  workflow_dispatch:
+    inputs:
+      layout_id:
+        description: "Layout id available in URL https://configure.zsa.io/voyager/layouts/[ID_IS_HERE]/latest"
+        required: true
+        default: "rAboj"
+      layout_geometry:
+        description: "Keyboard type"
+        type: choice
+        options:
+          - voyager
+          - moonlander
+          - ergodox_ez
+          - ergodox_ez/m32u4/glow
+          - ergodox_ez/m32u4/shine
+          - ergodox_ez/stm32
+          - ergodox_ez/stm32/glow
+          - ergodox_ez/stm32/shine
+          - planck_ez
+          - planck_ez/glow
+        default: ergodox_ez
+
+permissions:
+  contents: write
+
+jobs:
+  convert-to-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build qmk docker image
+        run: docker build -t qmk .
+
+      - name: convert
+        id: convert-layout
+        run: |
+          # convert the layout
+          docker run -v ./rAboj:/root --rm qmk /bin/sh -c "
+            qmk c2json -km ${{ github.events.inputs.layout_id }} -kb ${{ github.event.inputs.layout_geometry }} info.json
+          "
+          
+
+      - name: Upload layout
+        uses: actions/upload-artifact@v4
+        with:
+          name: info.json
+          path: info.json
