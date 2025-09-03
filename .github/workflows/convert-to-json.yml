@@ -1,4 +1,4 @@
-ame: Fetch and build layout
+name: Fetch and build layout
 
 on:
   workflow_dispatch:
