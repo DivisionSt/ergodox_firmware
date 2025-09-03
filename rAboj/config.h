@@ -9,7 +9,7 @@
 #define ONESHOT_TAP_TOGGLE 2
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "rAboj/PB7w5j"
+#define SERIAL_NUMBER "rAboj/v6ml6K"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
