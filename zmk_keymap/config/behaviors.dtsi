@@ -42,7 +42,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt LG(LS(A)) LC(TAB)>, <&kp LG(LEFT)>;
         };
 
         td_mt_6: tap_dance_mod_tap_6 {
@@ -98,42 +98,42 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt LC(LS(A)) LC(TAB)>, <&kp LA(LEFT)>;
         };
 
         td_mt_14: tap_dance_mod_tap_14 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC T>, <&kp ESC>;
+            bindings = <&mt LC(T) T>, <&kp LC(LS(T))>;
         };
 
         td_mt_15: tap_dance_mod_tap_15 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt ESC LA(LC(LG(LS(LEFT))))>, <&kp LA(LC(LG(LEFT)))>;
         };
 
         td_mt_16: tap_dance_mod_tap_16 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt ESC LA(LC(LG(LS(RIGHT))))>, <&kp LA(LC(LG(RIGHT)))>;
         };
 
         td_mt_17: tap_dance_mod_tap_17 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt ESC LA(LC(LG(LS(LEFT))))>, <&kp LA(LC(LG(LEFT)))>;
         };
 
         td_mt_18: tap_dance_mod_tap_18 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt ESC LA(LC(LG(LS(RIGHT))))>, <&kp LA(LC(LG(RIGHT)))>;
         };
 
         td_mt_19: tap_dance_mod_tap_19 {
@@ -147,14 +147,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC ESC>, <&kp ESC>;
+            bindings = <&mt LC(LS(A)) LC(TAB)>, <&kp LA(LEFT)>;
         };
 
         td_mt_21: tap_dance_mod_tap_21 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt ESC T>, <&kp ESC>;
+            bindings = <&mt LC(T) T>, <&kp LC(LS(T))>;
         };
 
         td_mt_22: tap_dance_mod_tap_22 {

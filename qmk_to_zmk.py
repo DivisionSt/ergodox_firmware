@@ -89,21 +89,46 @@ class QMKParser:
         match = re.search(pattern, self.content, re.DOTALL)
         if match:
             function_body = match.group(1)
-            # Helper to extract keycode from register_code16 or tap_code16 for a given case, robust to whitespace/line breaks
-            def extract_keycode_from_case(text, case_name):
-                # Allow for arbitrary whitespace/comments between case and function call
-                reg_pat = rf'case\s+{case_name}\s*:\s*(?:/\*.*?\*/\s*)*register_code16\s*\(([^)]+)\)\s*;'
-                reg_match = re.search(reg_pat, text, re.DOTALL)
-                if reg_match:
-                    return reg_match.group(1).strip()
-                tap_pat = rf'case\s+{case_name}\s*:\s*(?:/\*.*?\*/\s*)*tap_code16\s*\(([^)]+)\)\s*;'
-                tap_match = re.search(tap_pat, text, re.DOTALL)
-                if tap_match:
-                    return tap_match.group(1).strip()
+            
+            # Helper to extract keycode from register_code16 or tap_code16 for a given case
+            def extract_keycode_with_nested_parens(text, case_name, func_name):
+                """Extract keycode handling nested parentheses like LCTL(KC_TAB)"""
+                # Find the case statement
+                case_pattern = rf'case\s+{case_name}\s*:\s*'
+                case_match = re.search(case_pattern, text)
+                if not case_match:
+                    return None
+                
+                # Look for the function call after the case
+                start_pos = case_match.end()
+                func_pattern = rf'{func_name}\s*\('
+                func_match = re.search(func_pattern, text[start_pos:])
+                if not func_match:
+                    return None
+                
+                # Find the opening parenthesis and match nested parentheses
+                func_start = start_pos + func_match.end() - 1  # Position of opening paren
+                paren_count = 1
+                pos = func_start + 1
+                
+                while pos < len(text) and paren_count > 0:
+                    if text[pos] == '(':
+                        paren_count += 1
+                    elif text[pos] == ')':
+                        paren_count -= 1
+                    pos += 1
+                
+                if paren_count == 0:
+                    keycode = text[func_start + 1:pos - 1].strip()
+                    return keycode
                 return None
-            impl['single_tap'] = extract_keycode_from_case(function_body, 'SINGLE_TAP')
-            impl['single_hold'] = extract_keycode_from_case(function_body, 'SINGLE_HOLD')
-            impl['double_tap'] = extract_keycode_from_case(function_body, 'DOUBLE_TAP')
+            
+            impl['single_tap'] = extract_keycode_with_nested_parens(function_body, 'SINGLE_TAP', 'register_code16') or \
+                                extract_keycode_with_nested_parens(function_body, 'SINGLE_TAP', 'tap_code16')
+            impl['single_hold'] = extract_keycode_with_nested_parens(function_body, 'SINGLE_HOLD', 'register_code16') or \
+                                 extract_keycode_with_nested_parens(function_body, 'SINGLE_HOLD', 'tap_code16')
+            impl['double_tap'] = extract_keycode_with_nested_parens(function_body, 'DOUBLE_TAP', 'register_code16') or \
+                                extract_keycode_with_nested_parens(function_body, 'DOUBLE_TAP', 'tap_code16')
         return impl
     
     def parse_dual_functions(self) -> Dict[str, Dict]:
@@ -382,14 +407,31 @@ class ZMKGenerator:
                     if val is None:
                         return 'ESC'
                     v = val.strip()
+                    # If it's a modifier combo, keep the full ZMK expression (e.g., LC(TAB), LG(LS(A)), etc.)
                     if v.startswith('&kp '):
-                        return v[4:].strip()
+                        expr = v[4:].strip()
+                        # If it looks like a modifier combo, return as-is
+                        if any(expr.startswith(prefix) for prefix in ['LC(', 'LG(', 'LS(', 'LA(']):
+                            return expr
+                        return expr
                     if v.startswith('&'):
-                        return v[1:].strip()
+                        expr = v[1:].strip()
+                        if any(expr.startswith(prefix) for prefix in ['LC(', 'LG(', 'LS(', 'LA(']):
+                            return expr
+                        return expr
                     return v
-                single_tap = strip_kp_prefix(self.convert_keycode(dance_impl['single_tap'])) if dance_impl['single_tap'] else 'ESC'
-                single_hold = strip_kp_prefix(self.convert_keycode(dance_impl['single_hold'])) if dance_impl['single_hold'] else 'ESC'
-                double_tap = strip_kp_prefix(self.convert_keycode(dance_impl['double_tap'])) if dance_impl['double_tap'] else 'ESC'
+                
+                # Always pass extracted keycodes through convert_keycode for correct ZMK combo output
+                def to_zmk_expr(qmk_code):
+                    if not qmk_code:
+                        return 'ESC'
+                    converted = self.convert_keycode(qmk_code)
+                    return strip_kp_prefix(converted)
+                
+                single_tap = to_zmk_expr(dance_impl['single_tap'])
+                single_hold = to_zmk_expr(dance_impl['single_hold'])
+                double_tap = to_zmk_expr(dance_impl['double_tap'])
+                
                 # Generate the tap-dance mod-tap behavior (tap, hold, double-tap)
                 content += f"        td_mt_{i}: tap_dance_mod_tap_{i} {{\n"
                 content += "            compatible = \"zmk,behavior-tap-dance\";\n"
