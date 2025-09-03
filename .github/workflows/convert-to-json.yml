@@ -1,4 +1,4 @@
-name: Fetch and build layout
+name: Convert layout to JSON
 
 on:
   workflow_dispatch:
