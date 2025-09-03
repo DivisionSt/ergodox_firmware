@@ -90,7 +90,7 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),    TD(DANCE_4),    TD(DANCE_5),                                    KC_TRANSPARENT, TD(DANCE_7),    TD(DANCE_8),    TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   TD(DANCE_12),
+    KC_ESCAPE,      TD(DANCE_0),    TD(DANCE_1),    TD(DANCE_2),    TD(DANCE_3),    TD(DANCE_4),    TD(DANCE_5),                                    KC_REPEAT_KEY, TD(DANCE_7),    TD(DANCE_8),    TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   TD(DANCE_12),
     KC_TAB,         KC_Q,           DUAL_FUNC_0,    KC_E,           DUAL_FUNC_1,    TD(DANCE_6),    DUAL_FUNC_2,                                    DUAL_FUNC_14,   KC_Y,           DUAL_FUNC_15,   DUAL_FUNC_16,   KC_O,           KC_P,           TD(DANCE_13),
     KC_LEFT_GUI,    DUAL_FUNC_3,    DUAL_FUNC_4,    KC_D,           DUAL_FUNC_5,    KC_G,                                                                           KC_H,           KC_J,           KC_K,           DUAL_FUNC_17,   KC_SCLN,        KC_QUOTE,
     KC_LEFT_SHIFT,  DUAL_FUNC_6,    DUAL_FUNC_7,    DUAL_FUNC_8,    DUAL_FUNC_9,    DUAL_FUNC_10,   DUAL_FUNC_11,                                   DUAL_FUNC_18,   DUAL_FUNC_19,   KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT,
