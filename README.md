@@ -32,6 +32,39 @@ Each time you run the GitHub Action, the workflow will:
 7. Flash your downloaded firmware using [Keymapp](https://www.zsa.io/flash#flash-keymap).
 8. Enjoy!
 
-## Oryx Chrome extension
+## ZMK Firmware (SliceMK Ergodox Wireless)
 
-To make building even easier, [@nivekmai](https://github.com/nivekmai) created an [Oryx Chrome extension](https://chromewebstore.google.com/detail/oryx-extension/bocjciklgnhkejkdfilcikhjfbmbcjal) to be able to trigger the GitHub Actions from inside Oryx itself.
+This repository now also contains a ZMK configuration under `zmk_keymap/config` converted from the original QMK layout, preserving tap / hold / double-tap tri-function behavior for the number row via tap-dance + mod-tap, dual-function hold-tap keys, and simple hash macros.
+
+### Build via GitHub Actions
+1. Push any changes.
+2. Run the `build-zmk-layout` workflow (Actions tab).
+3. The upstream reusable workflow reads `zmk_keymap/config/build.yaml` which currently includes:
+   ```yaml
+   include:
+     - board: raytac_mdbt50q_rx_green
+       shield: slicemk_ergodox_dongle
+   ```
+4. When the job completes, download the `zmk_firmware` artifact.
+5. Inside you will find the firmware image(s) for the specified board/shield. (Single dongle build in this case.)
+
+### Flashing
+1. Put the device into bootloader (double-tap reset or per-controller method).
+2. Copy the produced UF2 (or use appropriate tool if BIN/HEX) onto the mass storage device.
+3. Device reboots with new layout.
+
+### Testing Checklist
+- Number row: tap = number, hold = shifted symbol, rapid double-tap = Fx.
+- Dual function keys: tap character vs hold modifier.
+- `dual_func_39`: tap layer 0, hold layer 9 (navigation/admin layer).
+- Macros on layer 3: 1–5 hashes plus space.
+
+### Limitations / Notes
+- Triple-tap repeating behavior intentionally omitted.
+- LED/chordal hold visual indicators not implemented.
+- Per-key timing may be fine-tuned further if needed (see `behaviors.dtsi`).
+
+### Local Development (Optional)
+If you want to build locally instead of CI:
+- Clone the upstream ZMK repo alongside this one.
+- Use `west` to build referencing this config path: `-DZMK_CONFIG=<path>/zmk_keymap/config` and select the same `board` + `shield` as in `build.yaml`.

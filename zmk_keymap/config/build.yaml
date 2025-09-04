@@ -1,0 +1,5 @@
+# ZMK build matrix for SliceMK Ergodox Wireless (single dongle build)
+# Provided hardware identifiers.
+include:
+  - board: raytac_mdbt50q_rx_green
+    shield: slicemk_ergodox_dongle
