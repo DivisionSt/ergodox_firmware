@@ -34,12 +34,12 @@ Each time you run the GitHub Action, the workflow will:
 
 ## ZMK Firmware (SliceMK Ergodox Wireless)
 
-This repository now also contains a ZMK configuration under `zmk_keymap/config` converted from the original QMK layout, preserving tap / hold / double-tap tri-function behavior for the number row via tap-dance + mod-tap, dual-function hold-tap keys, and simple hash macros.
+This repository now also contains a ZMK configuration under `config` converted from the original QMK layout, preserving tap / hold / double-tap tri-function behavior for the number row via tap-dance + mod-tap, dual-function hold-tap keys, and simple hash macros.
 
 ### Build via GitHub Actions
 1. Push any changes.
 2. Run the `build-zmk-layout` workflow (Actions tab).
-3. The upstream reusable workflow reads `zmk_keymap/config/build.yaml` which currently includes:
+3. The upstream reusable workflow reads `config/build.yaml` which currently includes:
    ```yaml
    include:
      - board: raytac_mdbt50q_rx_green
@@ -67,4 +67,4 @@ This repository now also contains a ZMK configuration under `zmk_keymap/config` 
 ### Local Development (Optional)
 If you want to build locally instead of CI:
 - Clone the upstream ZMK repo alongside this one.
-- Use `west` to build referencing this config path: `-DZMK_CONFIG=<path>/zmk_keymap/config` and select the same `board` + `shield` as in `build.yaml`.
+- Use `west` to build referencing this config path: `-DZMK_CONFIG=<path>/config` and select the same `board` + `shield` as in `build.yaml`.
