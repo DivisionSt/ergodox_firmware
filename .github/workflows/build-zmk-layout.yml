@@ -7,5 +7,6 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      config_path: zmk_keymap
+      build_matrix_path: zmk_keymap/build.yaml
+      config_path: zmk_keymap/config
       archive_name: zmk_firmware
