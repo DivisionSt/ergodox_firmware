@@ -16,6 +16,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include "zmk-helpers/helper.h"
 
+
 / {
     behaviors {
 		c_mt: c_mt {
