@@ -5,6 +5,8 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
+#define QUICK_TAP_TERM 120
+
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   ST_MACRO_0,
@@ -184,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          TO(1),          TO(3),          TO(2),          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          TO(3),          KC_NO,          KC_NO,
     KC_NO,          KC_NO,          TO(5),          KC_NO,          TO(6),          TO(8),                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          TO(7),          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          TO(4),          TO(4),          KC_NO,          KC_NO,          KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,QK_DYNAMIC_TAPPING_TERM_PRINT,KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,QK_DYNAMIC_TAPPING_TERM_PRINT,SEND_STRING("L: layers"),
                                                                                                     KC_NO,          KC_NO,          TO(0),          KC_NO,
                                                                                                                     KC_NO,          QK_BOOTLOADER,
                                                                                     KC_NO,          KC_NO,          KC_NO,          QK_REBOOT,          KC_NO,          KC_NO
