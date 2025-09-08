@@ -5,6 +5,7 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
+#undef QUICK_TAP_TERM
 #define QUICK_TAP_TERM 120
 
 enum custom_keycodes {
