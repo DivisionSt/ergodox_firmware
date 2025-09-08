@@ -1,5 +1,5 @@
 {
-	"Modified": "2025-09-07T21:16:48.458220834Z",
+	"Modified": "2025-09-08T04:44:22.145876168Z",
 	"Keyboard": "ergodox",
 	"Board": "raytac_mdbt50q_rx_green",
 	"Shield": "slicemk_ergodox_dongle",
@@ -26,11 +26,11 @@
 					]
 				},
 				{
-					"Name": "",
-					"Behavior": "&kp",
+					"Name": "1",
+					"Behavior": "$custom",
 					"Notes": "",
 					"Args": [
-						"NUMBER_1"
+						"&td_n1"
 					]
 				},
 				{
@@ -4577,5 +4577,5 @@
 			]
 		}
 	],
-	"Custom": ""
+	"Custom": "\n/ {\n    behaviors {\n\t\tc_mt: c_mt {\n   \t\t\tcompatible = \"zmk,behavior-hold-tap\";\n\t\t\t#binding-cells = <2>;\n\t\t\ttapping-term-ms = <300>; // default 200\n\t\t\tflavor = \"tap-preferred\";\n            bindings = <&kp>, <&kp>;\n        };\n        td_n1: td_n1 {\n            compatible = \"zmk,behavior-tap-dance\";\n            #binding-cells = <0>;\n            tapping-term-ms = <300>;\n            bindings = <&c_mt EXCL N1>, <&kp F1>;\n        };\n    };\n};"
 }

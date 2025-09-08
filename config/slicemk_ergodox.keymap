@@ -12,8 +12,27 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-//#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+
+
+/ {
+    behaviors {
+		c_mt: c_mt {
+   			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping-term-ms = <300>; // default 200
+			flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        td_n1: td_n1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&c_mt EXCL N1>, <&kp F1>;
+        };
+    };
+};
 
 / {
 	keymap {
@@ -21,8 +40,8 @@
 		layer_0 {
 			bindings = <
 				&bootloader
-				&kp ESCAPE        &td_n1     &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4  &kp NUMBER_5                             &mt LS(LG(A)) LC(TAB)             &key_repeat                         &kp NUMBER_6             &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9 &kp NUMBER_0    &kp MINUS
-				&kp TAB           &kp Q            &mt LG(W) W  &kp E        &kp R         &kp T                                    &kp GRAVE                         &kp EQUAL                           &kp Y                    &kp U          &kp I          &kp O        &kp P           &kp BACKSLASH
+				&kp ESCAPE        &td_n1           &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4  &kp NUMBER_5                             &mt LS(LG(A)) LC(TAB)             &key_repeat                         &kp NUMBER_6             &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9 &kp NUMBER_0    &kp MINUS
+				&kp TAB           &kp Q            &kp W        &kp E        &kp R         &kp T                                    &kp GRAVE                         &kp EQUAL                           &kp Y                    &kp U          &kp I          &kp O        &kp P           &kp BACKSLASH
 				&kp LEFT_GUI      &kp A            &kp S        &kp D        &kp F         &kp G                                                                                                          &kp H                    &kp J          &kp K          &kp L        &kp SEMICOLON   &kp SINGLE_QUOTE
 				&kp LEFT_SHIFT    &kp Z            &kp X        &kp C        &kp V         &kp B                                    &mt LEFT_PARENTHESIS LEFT_BRACKET &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N                    &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &kp RIGHT_SHIFT
 				&kp LC(LG(SPACE)) &kp LEFT_CONTROL &none        &kp LEFT_ALT &kp LEFT_GUI                                                                                                                                          &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &none
