@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: slicemk
       url-base: https://github.com/slicemk
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: slicemk
       revision: main
       import: app/west.yml
+    - name: zmk-helpers
+      remote: urob
+      revision: main
   self:
     path: config
