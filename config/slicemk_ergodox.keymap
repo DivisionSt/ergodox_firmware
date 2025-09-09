@@ -33,7 +33,7 @@
   	//quick-tap-ms = <QUICK_TAP_MS>;
 	flavor = "tap-preferred";
     bindings = <&kp>, <&kp>;
-}
+};
 
 / {
     behaviors {
