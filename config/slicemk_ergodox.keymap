@@ -17,9 +17,9 @@
 #include "zmk-helpers/helper.h"
 
 /* Global Defaults */
-#define QUICK_TAP_MS 175
-#define TAP_TERM_MS 250
-#define LONG_TAP_TERM_MS 390
+#define QUICK_TAP_MS 285
+#define TAP_TERM_MS 285
+#define LONG_TAP_TERM_MS 350
 #define PRIOR_IDLE_MS 125
 
 &mt {
@@ -30,7 +30,8 @@
 };
 &lt {
   	tapping-term-ms = <LONG_TAP_TERM_MS>;
-  	//quick-tap-ms = <QUICK_TAP_MS>;
+  	quick-tap-ms = <QUICK_TAP_MS>;
+    //require-prior-idle-ms = <PRIOR_IDLE_MS>;
 	flavor = "tap-preferred";
     bindings = <&kp>, <&kp>;
 };
