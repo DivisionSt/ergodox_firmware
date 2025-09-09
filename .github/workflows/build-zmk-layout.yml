@@ -9,4 +9,4 @@ jobs:
     with:
       build_matrix_path: build.yaml
       config_path: config
-      archive_name: zmk_firmware
+      archive_name: zmk_firmware_${{ github.event.repository.updated_at }}

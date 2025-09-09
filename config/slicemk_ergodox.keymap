@@ -132,20 +132,20 @@
 / {
 	keymap {
 		compatible = "zmk,keymap";
-		layer_0 {
+		macos {
 			bindings = <
 				&bootloader
-				&kp ESCAPE        &td_n1           &td_n2       &td_n3 		 &td_n4        &td_n5                  &mt LS(LG(A)) LC(TAB)                              &key_repeat                         &td_n6                   &td_n7         &td_n8         &td_n9       &td_n0          &td_minus
-				&kp TAB           &kp Q            &mt LG(W) W  &kp E        &mt LG(R) R   &mt LG(T) T             &mt TILDE GRAVE                                    &mt PLUS EQUAL                      &kp Y                    &mt LG(U) U    &mt LG(I) I    &kp O        &kp P           &kp BACKSLASH
-				&kp LEFT_GUI      &mt LG(A) A      &mt LG(S) S  &kp D        &mt LG(F) F   &kp G                                                                                                          &kp H                    &kp J          &kp K          &mt LG(L) L  &kp SEMICOLON   &kp SINGLE_QUOTE
-				&kp LEFT_SHIFT    &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B             &mt KP_LPAR LBKT                                   &mt KP_RPAR RBKT                    &mt LG(N) N              &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &kp RIGHT_SHIFT
-				&kp LC(LG(SPACE)) &kp LCTRL        &none        &kp LALT     &kp LGUI                                                                                                                                              &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT       &leader_sys
-				                                                                           &mt LS(LG(KP_NUMBER_2)) LS(LG(NUMBER_1)) &mt LC(LG(Q)) C_PLAY_PAUSE        &to LAYER_LAYERS                    &tog LAYER_MISC
-				                                                             &kp BACKSPACE &lt LAYER_RECT DELETE                    &kp END                           &kp PAGE_UP                         &lt LAYER_EDITING RETURN &kp SPACE
-				                                                                                                                    &kp HOME                          &kp PAGE_DOWN
+				&kp ESCAPE        &td_n1           &td_n2       &td_n3 		 &td_n4        &td_n5         &mt LS(LG(A)) LC(TAB)                          &key_repeat        &td_n6          &td_n7         &td_n8         &td_n9       &td_n0          &td_minus
+				&kp TAB           &kp Q            &mt LG(W) W  &kp E        &mt LG(R) R   &mt LG(T) T    &mt TILDE GRAVE                                &mt PLUS EQUAL     &kp Y           &mt LG(U) U    &mt LG(I) I    &kp O        &kp P           &kp BACKSLASH
+				&kp LEFT_GUI      &mt LG(A) A      &mt LG(S) S  &kp D        &mt LG(F) F   &kp G                                                                            &kp H           &kp J          &kp K          &mt LG(L) L  &kp SEMICOLON   &kp SINGLE_QUOTE
+				&kp LEFT_SHIFT    &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B    &mt KP_LPAR LBKT                               &mt KP_RPAR RBKT   &mt LG(N) N     &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &kp RIGHT_SHIFT
+				&kp LC(LG(SPACE)) &kp LCTRL        &none        &kp LALT     &kp LGUI                                                                                                       &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT       &leader_sys
+				                                                                           &mt LS(LG(N2)) LS(LG(N1))   &mt LC(LG(Q)) C_PLAY_PAUSE        &to LAYER_LAYERS    &tog LAYER_MISC
+				                                                             &kp BACKSPACE &lt LAYER_RECT DELETE       &kp END                           &kp PAGE_UP         &lt LAYER_EDITING RETURN   &kp SPACE
+				                                                                                                       &kp HOME                          &kp PAGE_DOWN
 			>;
 		};
-		layer_1 {
+		rect {
 			bindings = <
 				&bootloader
 				&trans           &kp LC(LS(LA(NUMBER_1))) &kp LC(LS(LA(NUMBER_2))) &kp LC(LS(LA(NUMBER_3))) &kp LC(LS(LA(NUMBER_4))) &trans               &mt LC(LS(A)) LC(TAB) &trans            &trans             &trans                         &trans           &trans              &trans                          &trans
@@ -158,7 +158,7 @@
 				                                                                                                                                          &trans                &kp LC(LA(MINUS))
 			>;
 		};
-		layer_2 {
+		editing {
 			bindings = <
 				&bootloader
 				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
@@ -171,7 +171,7 @@
 				                                          &trans &trans
 			>;
 		};
-		layer_3 {
+		misc {
 			bindings = <
 				&bootloader
 				&none &none &none &none &none  &none &none             &none                &none           &none           &kp KP_DIVIDE   &kp KP_MULTIPLY &kp KP_MINUS &none
@@ -184,7 +184,7 @@
 				                                     &kp C_VOLUME_DOWN &kp C_BRIGHTNESS_DEC
 			>;
 		};
-		layer_4 {
+		win {
 			bindings = <
 				&bootloader
 				&trans           &trans           &trans       &trans       &trans &trans                           &mt LC(LS(A)) LC(TAB)  &trans           &trans          &trans &trans &trans &trans &trans
@@ -197,7 +197,7 @@
 				                                                                                                    &trans                 &trans
 			>;
 		};
-		layer_5 {
+		sketchup {
 			bindings = <
 				&bootloader
 				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
@@ -210,7 +210,7 @@
 				                                          &trans &trans
 			>;
 		};
-		layer_6 {
+		fortnite {
 			bindings = <
 				&bootloader
 				&kp ESCAPE       &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &none        &trans           &trans       &trans &trans &trans &trans &kp F11
@@ -223,7 +223,7 @@
 				                                                                                  &kp EQUAL    &trans
 			>;
 		};
-		layer_7 {
+		layers {
 			bindings = <
 				&bootloader
 				&none        &to LAYER_MACOS &to LAYER_RECT     &to LAYER_EDITING &to LAYER_WIN      &to LAYER_SKETCHUP &none &none           &to LAYER_FORTNITE &none          &none &none &none &none
@@ -236,7 +236,7 @@
 				                                                                                                        &none &sys_reset
 			>;
 		};
-		layer_8 {
+		blank {
 			bindings = <
 				&bootloader
 				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
