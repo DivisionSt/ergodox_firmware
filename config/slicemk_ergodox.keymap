@@ -26,7 +26,7 @@
   flavor = "tap-preferred";
   tapping-term-ms = <TAP_TERM_MS>;
   quick-tap-ms = <QUICK_TAP_MS>;
-  require-prior-idle-ms = <PRIOR_IDLE_MS>;
+  //require-prior-idle-ms = <PRIOR_IDLE_MS>;
 };
 &lt {
   	tapping-term-ms = <LONG_TAP_TERM_MS>;
