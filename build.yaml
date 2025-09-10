@@ -3,3 +3,5 @@
 include:
   - board: raytac_mdbt50q_rx_green
     shield: slicemk_ergodox_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y

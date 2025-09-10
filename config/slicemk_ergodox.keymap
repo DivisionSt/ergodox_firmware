@@ -227,9 +227,9 @@
 				&bootloader
 				&none        &to LAYER_MACOS &to LAYER_RECT     &to LAYER_EDITING &to LAYER_WIN      &to LAYER_SKETCHUP &none &none           &to LAYER_FORTNITE &none          &none &none &none &none
 				&none        &none           &to LAYER_WIN      &to LAYER_EDITING &to LAYER_RECT     &none              &none &none           &none              &none          &none &none &none &none
-				&none        &none           &to LAYER_SKETCHUP &none             &to LAYER_FORTNITE &none                                    &none              &none          &none &none &none &none
-				&none        &none           &none              &none             &none              &none              &none &none           &to LAYER_MISC     &to LAYER_MISC &none &none &none &none
-				&out OUT_TOG &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 3      &bt BT_SEL 4                                                                   &none          &none &none &none &none
+				&out OUT_USB        &none           &to LAYER_SKETCHUP &none             &to LAYER_FORTNITE &none                                    &none              &none          &none &none &none &none
+				&out OUT_BLE        &none           &none              &none             &none              &none              &none &none           &to LAYER_MISC     &to LAYER_MISC &none &none &none &none
+				&bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4                                                                   &none          &none &none &none &none
 				                                                                                     &none              &none &to LAYER_MACOS &none
 				                                                                  &none              &none              &none &bootloader     &none              &none
 				                                                                                                        &none &sys_reset
