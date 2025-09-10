@@ -26,12 +26,12 @@
 &mt {
   flavor = "tap-preferred";
   //flavor = "balanced";
-  tapping-term-ms = <TAP_TERM_MS>;
+  tapping-term-ms = <OTHER_TAP_TERM_MS>;
   quick-tap-ms = <QUICK_TAP_MS>;
   //require-prior-idle-ms = <PRIOR_IDLE_MS>;
 };
 &lt {
-  	tapping-term-ms = <LONG_TAP_TERM_MS>;
+  	tapping-term-ms = <OTHER_TAP_TERM_MS>;
   	quick-tap-ms = <QUICK_TAP_MS>;
     //require-prior-idle-ms = <PRIOR_IDLE_MS>;
 	flavor = "tap-preferred";
@@ -43,7 +43,7 @@
 		num_mt: num_mod_tap {
    			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
   			quick-tap-ms = <QUICK_TAP_MS>;
   			require-prior-idle-ms = <PRIOR_IDLE_MS>;
 			flavor = "tap-preferred";
@@ -61,67 +61,67 @@
         td_n1: td_n1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt EXCL N1>, <&kp F1>;
         };
         td_n2: td_n2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt AT N2>, <&kp F2>;
         };
         td_n3: td_n3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt HASH N3>, <&kp F3>;
         };
         td_n4: td_n4 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt DOLLAR N4>, <&kp F4>;
         };
         td_n5: td_n5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt PERCENT N5>, <&kp F5>;
         };
         td_n6: td_n6 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt CARET N6>, <&kp F6>;
         };
         td_n7: td_n7 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt AMPERSAND N7>, <&kp F7>;
         };
         td_n8: td_n8 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt ASTERISK N8>, <&kp F8>;
         };
         td_n9: td_n9 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt LEFT_PARENTHESIS N9>, <&kp F9>;
         };
         td_n0: td_n0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt RIGHT_PARENTHESIS N0>, <&kp F10>;
         };
         td_minus: td_minus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
+  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
             bindings = <&num_mt EQUAL MINUS>, <&kp F11>;
         };
 		leader_sys: leader_sys {
