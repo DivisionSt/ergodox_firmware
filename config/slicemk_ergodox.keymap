@@ -58,72 +58,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        td_n1: td_n1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt EXCL N1>, <&kp F1>;
-        };
-        td_n2: td_n2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt AT N2>, <&kp F2>;
-        };
-        td_n3: td_n3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt HASH N3>, <&kp F3>;
-        };
-        td_n4: td_n4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt DOLLAR N4>, <&kp F4>;
-        };
-        td_n5: td_n5 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt PERCENT N5>, <&kp F5>;
-        };
-        td_n6: td_n6 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt CARET N6>, <&kp F6>;
-        };
-        td_n7: td_n7 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt AMPERSAND N7>, <&kp F7>;
-        };
-        td_n8: td_n8 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt ASTERISK N8>, <&kp F8>;
-        };
-        td_n9: td_n9 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt LEFT_PARENTHESIS N9>, <&kp F9>;
-        };
-        td_n0: td_n0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt RIGHT_PARENTHESIS N0>, <&kp F10>;
-        };
-        td_minus: td_minus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-            bindings = <&num_mt EQUAL MINUS>, <&kp F11>;
-        };
 		leader_sys: leader_sys {
 			compatible = "zmk,behavior-leader-key";
 			#binding-cells = <0>;
@@ -145,7 +79,7 @@
 		macos {
 			bindings = <
 				&bootloader
-				&kp ESCAPE          &td_n1           &td_n2       &td_n3 		 &td_n4        &td_n5         &mt LS(LG(A)) LC(TAB)                          &key_repeat        &td_n6          &td_n7         &td_n8         &td_n9       &td_n0          &td_minus
+				&kp ESCAPE          &mt EXCL N1      &mt AT N2    &mt HASH N3  &mt DOLLAR N4 &mt PERCENT N5 &mt LS(LG(A)) LC(TAB)                          &key_repeat        &mt CARET ^     &mt AMP N7     &mt STAR N8    &mt LPAR N9  &mt RPAR N0     &mt UNDERSCORE MINUS
 				&kp TAB             &kp Q            &mt LG(W) W  &kp E        &mt LG(R) R   &mt LG(T) T    &mt TILDE GRAVE                                &mt PLUS EQUAL     &kp Y           &mt LG(U) U    &mt LG(I) I    &kp O        &kp P           &kp BACKSLASH
 				&kp LEFT_GUI        &mt LG(A) A      &mt LG(S) S  &kp D        &mt LG(F) F   &kp G                                                                            &kp H           &kp J          &kp K          &mt LG(L) L  &kp SEMICOLON   &kp SINGLE_QUOTE
 				&sh_mt LSHIFT &none &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B    &mt KP_LPAR LBKT                               &mt KP_RPAR RBKT   &mt LG(N) N     &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &sh_mt RSHIFT &none
