@@ -88,7 +88,7 @@
 		macos {
 			bindings = <
 				&bootloader
-				&kp ESCAPE          &c_mt      &mt AT N2    &mt HASH N3  &mt DOLLAR N4 &mt PERCENT N5 &mt LS(LG(A)) LC(TAB)                          &key_repeat        &mt CARET ^     &mt AMP N7     &mt STAR N8    &mt LPAR N9  &mt RPAR N0     &mt UNDERSCORE MINUS
+				&kp ESCAPE          &c_mt      &mt AT N2    &mt HASH N3  &mt DOLLAR N4 &mt PERCENT N5 &mt LS(LG(A)) LC(TAB)                          &key_repeat        &mt CARET N6     &mt AMP N7     &mt STAR N8    &mt LPAR N9  &mt RPAR N0     &mt UNDERSCORE MINUS
 				&kp TAB             &kp Q            &mt LG(W) W  &kp E        &mt LG(R) R   &mt LG(T) T    &mt TILDE GRAVE                                &mt PLUS EQUAL     &kp Y           &mt LG(U) U    &mt LG(I) I    &kp O        &kp P           &kp BACKSLASH
 				&kp LEFT_GUI        &mt LG(A) A      &mt LG(S) S  &kp D        &mt LG(F) F   &kp G                                                                            &kp H           &kp J          &kp K          &mt LG(L) L  &kp SEMICOLON   &kp SINGLE_QUOTE
 				&sh_mt LSHIFT &none &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B    &mt KP_LPAR LBKT                               &mt KP_RPAR RBKT   &mt LG(N) N     &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &sh_mt RSHIFT &none
