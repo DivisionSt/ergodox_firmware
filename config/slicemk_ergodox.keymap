@@ -1,14 +1,6 @@
 #define LAYER_MACOS 0
 #define LAYER_RECT 1
-#defi		c_mt: custom_mod_tap {
-			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <0>;
-			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
-			quick-tap-ms = <QUICK_TAP_MS>;
-			require-prior-idle-ms = <PRIOR_IDLE_MS>;
-			flavor = "tap-preferred";
-			bindings = <&kp EXCL>, <&c_td N1 F1>;
-		};EDITING 2
+#define LAYER_EDITING 2
 #define LAYER_MISC 3
 #define LAYER_WIN 4
 #define LAYER_SKETCHUP 5
