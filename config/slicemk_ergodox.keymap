@@ -1,6 +1,14 @@
 #define LAYER_MACOS 0
 #define LAYER_RECT 1
-#define LAYER_EDITING 2
+#defi		c_mt: custom_mod_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <0>;
+			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
+			quick-tap-ms = <QUICK_TAP_MS>;
+			require-prior-idle-ms = <PRIOR_IDLE_MS>;
+			flavor = "tap-preferred";
+			bindings = <&kp EXCL>, <&c_td N1 F1>;
+		};EDITING 2
 #define LAYER_MISC 3
 #define LAYER_WIN 4
 #define LAYER_SKETCHUP 5
@@ -48,12 +56,12 @@
 		};
 		c_mt: custom_mod_tap {
 			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <0>;
+			#binding-cells = <2>;
 			tapping-term-ms = <ALPHA_TAP_TERM_MS>;
 			quick-tap-ms = <QUICK_TAP_MS>;
 			require-prior-idle-ms = <PRIOR_IDLE_MS>;
 			flavor = "tap-preferred";
-			bindings = <&kp EXCL>, <&c_td N1 F1>;
+			bindings = <&kp>, <&c_td N1 F1>;
 		};
 		num_mt: num_mod_tap {
    			compatible = "zmk,behavior-hold-tap";
@@ -94,10 +102,10 @@
 		macos {
 			bindings = <
 				&bootloader
-				&kp ESCAPE          &c_mt      &mt AT N2    &mt HASH N3  &mt DOLLAR N4 &mt PERCENT N5 &mt LS(LG(A)) LC(TAB)                          &key_repeat        &mt CARET N6     &mt AMP N7     &mt STAR N8    &mt LPAR N9  &mt RPAR N0     &mt UNDERSCORE MINUS
+				&kp ESCAPE          &c_mt EXCL NONE     &mt AT N2    &mt HASH N3  &mt DOLLAR N4 &mt PERCENT N5 &mt LS(LG(A)) LC(TAB)                          &key_repeat        &mt CARET N6     &mt AMP N7     &mt STAR N8    &mt LPAR N9  &mt RPAR N0     &mt UNDERSCORE MINUS
 				&kp TAB             &kp Q            &mt LG(W) W  &kp E        &mt LG(R) R   &mt LG(T) T    &mt TILDE GRAVE                                &mt PLUS EQUAL     &kp Y           &mt LG(U) U    &mt LG(I) I    &kp O        &kp P           &kp BACKSLASH
 				&kp LEFT_GUI        &mt LG(A) A      &mt LG(S) S  &kp D        &mt LG(F) F   &kp G                                                                            &kp H           &kp J          &kp K          &mt LG(L) L  &kp SEMICOLON   &kp SINGLE_QUOTE
-				&sh_mt LSHIFT NONE  &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B    &mt KP_LPAR LBKT                               &mt KP_RPAR RBKT   &mt LG(N) N     &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &kp RSHIFT
+				&sh_mt LSHIFT &none &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B    &mt KP_LPAR LBKT                               &mt KP_RPAR RBKT   &mt LG(N) N     &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &sh_mt RSHIFT &none
 				&kp LC(LG(SPACE))   &kp LCTRL        &none        &kp LALT     &kp LGUI                                                                                                       &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT       &leader_sys
 				                                                                           &mt LS(LG(N2)) LS(LG(N1))   &mt LC(LG(Q)) C_PLAY_PAUSE        &to LAYER_LAYERS    &tog LAYER_MISC
 				                                                             &kp BACKSPACE &lt LAYER_RECT DELETE       &kp END                           &kp PAGE_UP         &lt LAYER_EDITING RETURN   &kp SPACE
