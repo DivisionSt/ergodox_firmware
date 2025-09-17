@@ -1,5 +1,5 @@
 {
-	"Modified": "2025-09-17T15:15:36.36148977Z",
+	"Modified": "2025-09-17T16:43:30.032258623Z",
 	"Keyboard": "ergodox",
 	"Board": "raytac_mdbt50q_rx_green",
 	"Shield": "slicemk_ergodox_dongle",
@@ -66,7 +66,7 @@
 					]
 				},
 				{
-					"Name": "",
+					"Name": "leader",
 					"Behavior": "&none",
 					"Notes": "",
 					"Args": []
@@ -3603,10 +3603,11 @@
 					]
 				},
 				{
-					"Name": "miss ctrl",
-					"Behavior": "&kp",
+					"Name": "miss ctrl / fllscrn",
+					"Behavior": "&mt",
 					"Notes": "",
 					"Args": [
+						"LEFT_CONTROL LEFT_GUI F",
 						"LEFT_CONTROL UP_ARROW"
 					]
 				},
