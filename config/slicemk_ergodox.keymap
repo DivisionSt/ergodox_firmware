@@ -43,6 +43,18 @@
             hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
 		};
+		leader_sys: leader_sys {
+			compatible = "zmk,behavior-leader-key";
+			#binding-cells = <0>;
+            usb { sequence = <U S B>; bindings = <&out OUT_USB>; };
+            ble { sequence = <B L E>; bindings = <&out OUT_BLE>; };
+            bt0 { sequence = <B N0>; bindings = <&bt BT_SEL 0>; };
+            bt1 { sequence = <B N1>; bindings = <&bt BT_SEL 1>; };
+            bt2 { sequence = <B N2>; bindings = <&bt BT_SEL 2>; };
+            btc { sequence = <C L E A R>; bindings = <&bt BT_CLR>; };
+			boot { sequence = <B O O T>; bindings = <&bootloader>; };
+            reset { sequence = <R E S E T>; bindings = <&sys_reset>; };
+		};
     };
 };
 
@@ -52,7 +64,7 @@
 		layer_0 {
 			bindings = <
 				&bootloader
-				&kp ESCAPE        &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4                 &kp NUMBER_5         &none                             &key_repeat                         &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0        &kp MINUS
+				&kp ESCAPE        &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4                 &kp NUMBER_5         &leader                             &key_repeat                         &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0        &kp MINUS
 				&kp TAB           &kp Q        &kp W        &kp E        &kp R                        &kp T                &kp GRAVE                         &kp EQUAL                           &kp Y                 &kp U               &kp I          &kp O          &kp P               &kp BACKSLASH
 				&none             &hml LGUI A  &hml LCTRL S &hml LALT D  &hml LSHFT F                 &kp G                                                                                      &kp H                 &hmr RSHFT J        &hmr LALT K    &hmr RCTRL L   &hmr RGUI SEMICOLON &kp SINGLE_QUOTE
 				&none             &kp Z        &kp X        &kp C        &kp V                        &kp B                &mt LEFT_PARENTHESIS LEFT_BRACKET &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N                 &kp M               &kp COMMA      &kp PERIOD     &kp SLASH           &none
