@@ -143,7 +143,7 @@
 			bindings = <
 				&bootloader
 				&trans     &kp LC(LS(LA(LG(NUMBER_1)))) &kp LC(LS(LA(LG(NUMBER_2))))   &kp LC(LS(LA(LG(NUMBER_3)))) &kp LC(LS(LA(LG(NUMBER_4)))) &trans                          &trans                                &trans &trans     &trans    &trans &trans &trans &trans
-				&trans     &trans                       &kp LC(LEFT_ARROW)             &kp LC(UP_ARROW)             &kp LC(DOWN_ARROW)           &kp LC(RIGHT_ARROW)             &kp LC(TILDE)                         &trans &trans     &trans    &trans &trans &trans &trans
+				&trans     &trans                       &kp LC(LEFT_ARROW)             &mt LG(LC(F)) LC(UP_ARROW)             &kp LC(DOWN_ARROW)           &kp LC(RIGHT_ARROW)             &kp LC(TILDE)                         &trans &trans     &trans    &trans &trans &trans &trans
 				&caps_word &kp LS(LG(A))                &mt LG(LEFT_ARROW) LC(LS(TAB)) &mt LS(LG(T)) LG(T)          &kp LG(W)                    &mt LG(RIGHT_ARROW) LC(TAB)                                                  &trans     &trans    &trans &trans &trans &trans
 				&trans     &trans                       &kp LC(LS(LA(LG(LEFT_ARROW)))) &kp LC(LA(RETURN))           &kp LC(LA(C))                &kp LC(LS(LA(LG(RIGHT_ARROW)))) &mt LS(LG(NUMBER_2)) LS(LG(NUMBER_1)) &trans &trans     &trans    &trans &trans &trans &trans
 				&trans     &trans                       &trans                         &trans                       &trans                                                                                                               &trans    &trans &trans &trans &trans
