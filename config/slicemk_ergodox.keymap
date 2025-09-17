@@ -64,7 +64,7 @@
 		layer_0 {
 			bindings = <
 				&bootloader
-				&kp ESCAPE        &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4                 &kp NUMBER_5         &leader                             &key_repeat                         &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0        &kp MINUS
+				&kp ESCAPE        &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4                 &kp NUMBER_5         &leader_sys                       &key_repeat                         &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0        &kp MINUS
 				&kp TAB           &kp Q        &kp W        &kp E        &kp R                        &kp T                &kp GRAVE                         &kp EQUAL                           &kp Y                 &kp U               &kp I          &kp O          &kp P               &kp BACKSLASH
 				&none             &hml LGUI A  &hml LCTRL S &hml LALT D  &hml LSHFT F                 &kp G                                                                                      &kp H                 &hmr RSHFT J        &hmr LALT K    &hmr RCTRL L   &hmr RGUI SEMICOLON &kp SINGLE_QUOTE
 				&none             &kp Z        &kp X        &kp C        &kp V                        &kp B                &mt LEFT_PARENTHESIS LEFT_BRACKET &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N                 &kp M               &kp COMMA      &kp PERIOD     &kp SLASH           &none
