@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/xudongzheng/
     - name: urob
       url-base: https://github.com/urob
+    - name: ssbb
+      url-base: https://github.com/ssbb
   projects:
     - name: zmk
       remote: slicemk
@@ -15,5 +17,8 @@ manifest:
     - name: zmk-leader-key
       remote: urob
       revision: main
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
   self:
     path: config
