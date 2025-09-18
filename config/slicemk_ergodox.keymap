@@ -1,12 +1,16 @@
 #define LAYER_MACOS 0
-#define LAYER_RECT 1
-#define LAYER_EDITING 2
-#define LAYER_MISC 3
+#define LAYER_FORTNITE 1
+#define LAYER_MINECRAFT 2
+#define LAYER_GAMING 3
 #define LAYER_WIN 4
-#define LAYER_SKETCHUP 5
-#define LAYER_FORTNITE 6
-#define LAYER_LAYERS 7
-#define LAYER_SPARE 8
+#define LAYER_OLD_MAC 5
+#define LAYER_SHORTCUT 6
+#define LAYER_NAV 7
+#define LAYER_NUM 8
+#define LAYER_FUNC 9
+#define LAYER_MOUSE 10
+#define LAYER_LAYERS 11
+#define LAYER_BLANK_TRANSPARENT 12
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -14,106 +18,77 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
-#include "zmk-helpers/helper.h"
 
-/* Global Defaults */
-#define QUICK_TAP_MS 285
-#define TAP_TERM_MS 285
-#define LONG_TAP_TERM_MS 350
-#define PRIOR_IDLE_MS 125
+#define HRM_TAP_TERM_MS 350
+#define HRS_TAP_TERM_MS 200
+#define TAP_TERM_MS 350
+#define QUICK_TAP_MS 175
+#define PRIOR_IDLE_MS 167 // calibrated to 10500/63, where 63 is my casual WPM
 
 &mt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <TAP_TERM_MS>;
-  quick-tap-ms = <QUICK_TAP_MS>;
-  //require-prior-idle-ms = <PRIOR_IDLE_MS>;
-};
-&lt {
-  	tapping-term-ms = <LONG_TAP_TERM_MS>;
-  	quick-tap-ms = <QUICK_TAP_MS>;
-    //require-prior-idle-ms = <PRIOR_IDLE_MS>;
-	flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
+    tapping-term-ms = <TAP_TERM_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    flavor = "tap-preferred";
 };
 
 / {
     behaviors {
-		c_mt: c_mt {
-   			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-  			quick-tap-ms = <QUICK_TAP_MS>;
-  			require-prior-idle-ms = <PRIOR_IDLE_MS>;
-			flavor = "tap-preferred";
+        hrml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            tapping-term-ms = <HRM_TAP_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <8 9 10 11 12 13 14 22 23 24 25 26 27 28 35 36 37 38 39 40 49 50 51 52 53 54 60 61 62 63 64 67 68 72 73 74 76>; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
         };
-
-        td_n1: td_n1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt EXCL N1>, <&kp F1>;
+        hrmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            tapping-term-ms = <HRM_TAP_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+		};
+        hrsl: home_row_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            tapping-term-ms = <HRS_TAP_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <8 9 10 11 12 13 14 22 23 24 25 26 27 28 35 36 37 38 39 40 49 50 51 52 53 54 60 61 62 63 64 67 68 72 73 74 76>; // List of keys on the right side of the keyboard
+            // hold-trigger-on-release;
         };
-        td_n2: td_n2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt AT N2>, <&kp F2>;
-        };
-        td_n3: td_n3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt HASH N3>, <&kp F3>;
-        };
-        td_n4: td_n4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt DOLLAR N4>, <&kp F4>;
-        };
-        td_n5: td_n5 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt PERCENT N5>, <&kp F5>;
-        };
-        td_n6: td_n6 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt CARET N6>, <&kp F6>;
-        };
-        td_n7: td_n7 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt AMPERSAND N7>, <&kp F7>;
-        };
-        td_n8: td_n8 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt ASTERISK N8>, <&kp F8>;
-        };
-        td_n9: td_n9 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt LEFT_PARENTHESIS N9>, <&kp F9>;
-        };
-        td_n0: td_n0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt RIGHT_PARENTHESIS N0>, <&kp F10>;
-        };
-        td_minus: td_minus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-  			tapping-term-ms = <TAP_TERM_MS>;
-            bindings = <&c_mt EQUAL MINUS>, <&kp F11>;
-        };
+        hrsr: home_row_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            tapping-term-ms = <HRS_TAP_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
+            // hold-trigger-on-release;
+		};
+		tlt: thumb_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            // require-prior-idle-ms = <PRIOR_IDLE_MS>;
+            tapping-term-ms = <TAP_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&mo>, <&kp>;
+			display-name = "Layer-Tap";
+            // hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
+            // hold-trigger-on-release;
+		};
 		leader_sys: leader_sys {
 			compatible = "zmk,behavior-leader-key";
 			#binding-cells = <0>;
@@ -135,117 +110,169 @@
 		layer_0 {
 			bindings = <
 				&bootloader
-				&kp ESCAPE        &td_n1           &td_n2       &td_n3 		 &td_n4        &td_n5                  &mt LS(LG(A)) LC(TAB)                              &key_repeat                         &td_n6                   &td_n7         &td_n8         &td_n9       &td_n0          &td_minus
-				&kp TAB           &kp Q            &mt LG(W) W  &kp E        &mt LG(R) R   &mt LG(T) T             &mt TILDE GRAVE                                    &mt PLUS EQUAL                      &kp Y                    &mt LG(U) U    &mt LG(I) I    &kp O        &kp P           &kp BACKSLASH
-				&kp LEFT_GUI      &mt LG(A) A      &mt LG(S) S  &kp D        &mt LG(F) F   &kp G                                                                                                          &kp H                    &kp J          &kp K          &mt LG(L) L  &kp SEMICOLON   &kp SINGLE_QUOTE
-				&kp LEFT_SHIFT    &mt LG(Z) Z      &mt LG(X) X  &mt LG(C) C  &mt LG(V) V   &mt LG(B) B             &mt KP_LPAR LBKT                                   &mt KP_RPAR RBKT                    &mt LG(N) N              &kp M          &kp COMMA      &kp PERIOD   &kp SLASH       &kp RIGHT_SHIFT
-				&kp LC(LG(SPACE)) &kp LCTRL        &none        &kp LALT     &kp LGUI                                                                                                                                              &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT       &leader_sys
-				                                                                           &mt LS(LG(KP_NUMBER_2)) LS(LG(NUMBER_1)) &mt LC(LG(Q)) C_PLAY_PAUSE        &to LAYER_LAYERS                    &tog LAYER_MISC
-				                                                             &kp BACKSPACE &lt LAYER_RECT DELETE                    &kp END                           &kp PAGE_UP                         &lt LAYER_EDITING RETURN &kp SPACE
-				                                                                                                                    &kp HOME                          &kp PAGE_DOWN
+				&kp ESCAPE        &kp NUMBER_1 &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4                 &kp NUMBER_5         &leader_sys                       &key_repeat                         &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0         &kp MINUS
+				&kp TAB           &kp Q        &kp W         &kp E         &kp R                        &kp T                &kp GRAVE                         &kp EQUAL                           &kp Y                 &kp U               &kp I          &kp O          &kp P                &kp BACKSLASH
+				&none             &hrml LGUI A &hrml LCTRL S &hrml LALT D  &hrsl LSHFT F                &kp G                                                                                      &kp H                 &hrsr RSHFT J       &hrmr LALT K   &hrmr RCTRL L  &hrmr RGUI SEMICOLON &kp SINGLE_QUOTE
+				&none             &kp Z        &kp X         &kp C         &kp V                        &kp B                &mt LEFT_PARENTHESIS LEFT_BRACKET &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N                 &kp M               &kp COMMA      &kp PERIOD     &kp SLASH            &none
+				&kp LC(LG(SPACE)) &none        &none         &none         &kp LEFT_GUI                                                                                                                                  &kp RIGHT_GUI       &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW         &kp RIGHT_ARROW
+				                                                                                      &tog LAYER_SHORTCUT  &mt LC(LG(Q)) C_PLAY_PAUSE        &to LAYER_LAYERS                    &tog LAYER_NUM
+				                                                           &tlt LAYER_SHORTCUT BACKSPACE &tlt LAYER_NAV DELETE &kp C_VOLUME_UP                   &none                               &tlt LAYER_FUNC RETURN &tlt LAYER_NUM SPACE
+				                                                                                                           &kp C_VOLUME_DOWN                 &none
 			>;
 		};
 		layer_1 {
 			bindings = <
 				&bootloader
-				&trans           &kp LC(LS(LA(NUMBER_1))) &kp LC(LS(LA(NUMBER_2))) &kp LC(LS(LA(NUMBER_3))) &kp LC(LS(LA(NUMBER_4))) &trans               &mt LC(LS(A)) LC(TAB) &trans            &trans             &trans                         &trans           &trans              &trans                          &trans
-				&trans           &trans                   &kp LC(LA(RETURN))       &trans                   &kp LC(LEFT_SHIFT)       &kp LC(LS(LEFT_ALT)) &trans                &trans            &trans             &trans                         &trans           &trans              &trans                          &trans
-				&kp LEFT_CONTROL &trans                   &kp LS(LEFT_ALT)         &trans                   &kp LC(LG(F))            &trans                                                       &kp LC(LEFT_ARROW) &trans                         &kp LC(UP_ARROW) &kp LC(RIGHT_ARROW) &trans                          &trans
-				&trans           &trans                   &trans                   &trans                   &trans                   &trans               &trans                &trans            &trans             &trans                         &trans           &trans              &trans                          &trans
-				&trans           &trans                   &trans                   &trans                   &trans                                                                                                   &kp LC(LS(LA(LG(LEFT_ARROW)))) &trans           &kp LC(LA(EQUAL))   &kp LC(LS(LA(LG(RIGHT_ARROW)))) &none
-				                                                                                                                     &trans               &trans                &to LAYER_LAYERS  &tog LAYER_MISC
-				                                                                                            &trans                   &trans               &trans                &kp LC(LA(EQUAL)) &kp LC(LA(RETURN)) &trans
-				                                                                                                                                          &trans                &kp LC(LA(MINUS))
+				&kp ESCAPE       &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &none        &kp C_PLAY_PAUSE  &trans     &trans       &trans &trans &trans        &kp F11
+				&kp J            &kp Z        &kp W        &kp X        &kp R        &kp I        &kp U        &kp C_VOLUME_UP   &trans     &trans       &trans &trans &trans        &trans
+				&kp LEFT_CONTROL &kp A        &kp S        &kp D        &kp NUMBER_5 &kp H                                       &trans     &kp J        &kp K  &kp L  &kp SEMICOLON &trans
+				&kp LEFT_SHIFT   &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_1 &kp F        &kp C_VOLUME_DOWN &trans     &trans       &trans &trans &trans        &trans
+				&kp B            &none        &none        &kp E        &kp G                                                               &kp LEFT_GUI &trans &trans &trans        &trans
+				                                                                     &kp M        &kp NUMBER_7 &to LAYER_LAYERS  &none
+				                                                        &kp SPACE    &kp U        &kp N        &trans            &kp RETURN &kp SPACE
+				                                                                                  &kp EQUAL    &to LAYER_WIN
 			>;
 		};
 		layer_2 {
 			bindings = <
 				&bootloader
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans                         &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans                                                &trans &trans &trans &trans &none
-				                                   &trans &trans &to LAYER_LAYERS &tog LAYER_MISC
-				                            &trans &trans &trans &trans           &trans          &trans
-				                                          &trans &trans
+				&kp ESCAPE       &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp H            &kp C_PLAY_PAUSE  &trans     &trans        &trans &trans &trans        &kp F11
+				&kp H            &kp Q        &kp W        &kp E        &kp R        &kp T        &kp GRAVE        &kp C_VOLUME_UP   &trans     &trans        &trans &trans &trans        &trans
+				&kp LEFT_SHIFT   &kp A        &kp S        &kp D        &kp F5       &kp F                                           &trans     &kp J         &kp K  &kp L  &kp SEMICOLON &trans
+				&kp LEFT_CONTROL &kp Z        &kp X        &kp C        &kp V        &kp B        &kp LEFT_BRACKET &kp C_VOLUME_DOWN &trans     &trans        &trans &trans &trans        &trans
+				&none            &none        &none        &none        &none                                                                   &kp RIGHT_GUI &trans &trans &trans        &trans
+				                                                                     &none        &none            &to LAYER_LAYERS  &none
+				                                                        &kp SPACE    &kp J        &none            &none             &kp RETURN &kp SPACE
+				                                                                                  &none            &to LAYER_WIN
 			>;
 		};
 		layer_3 {
 			bindings = <
 				&bootloader
-				&none &none &none &none &none  &none &none             &none                &none           &none           &kp KP_DIVIDE   &kp KP_MULTIPLY &kp KP_MINUS &none
-				&none &none &none &none &none  &none &none             &none                &none           &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9    &kp KP_PLUS  &none
-				&none &none &none &none &none  &none                                        &none           &kp NUMBER_4    &kp NUMBER_5    &kp NUMBER_6    &kp KP_PLUS  &none
-				&none &none &none &none &none  &none &none             &none                &none           &kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp KP_ENTER &none
-				&none &none &none &none &none                                                               &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_DOT      &kp KP_ENTER &none
-				                               &none &kp C_MUTE        &to LAYER_LAYERS     &tog LAYER_MISC
-				                        &trans &none &kp C_VOLUME_UP   &kp C_BRIGHTNESS_INC &kp RETURN      &none
-				                                     &kp C_VOLUME_DOWN &kp C_BRIGHTNESS_DEC
+				&kp ESCAPE       &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp H            &kp C_PLAY_PAUSE  &trans     &trans        &trans &trans &trans        &kp F11
+				&kp H            &kp Q        &kp W        &kp E        &kp R        &kp T        &kp GRAVE        &kp C_VOLUME_UP   &trans     &trans        &trans &trans &trans        &trans
+				&kp LEFT_SHIFT   &kp A        &kp S        &kp D        &kp F        &kp G                                           &trans     &kp J         &kp K  &kp L  &kp SEMICOLON &trans
+				&kp LEFT_CONTROL &kp Z        &kp X        &kp C        &kp V        &kp B        &kp LEFT_BRACKET &kp C_VOLUME_DOWN &trans     &trans        &trans &trans &trans        &trans
+				&none            &none        &none        &none        &none                                                                   &kp RIGHT_GUI &trans &trans &trans        &trans
+				                                                                     &none        &none            &to LAYER_LAYERS  &none
+				                                                        &kp SPACE    &kp J        &none            &none             &kp RETURN &kp SPACE
+				                                                                                  &none            &to LAYER_WIN
 			>;
 		};
 		layer_4 {
 			bindings = <
 				&bootloader
-				&trans           &trans           &trans       &trans       &trans &trans                           &mt LC(LS(A)) LC(TAB)  &trans           &trans          &trans &trans &trans &trans &trans
-				&trans           &trans           &trans       &trans       &trans &trans                           &trans                 &trans           &trans          &trans &trans &trans &trans &trans
-				&kp LEFT_CONTROL &trans           &trans       &trans       &trans &trans                                                                   &trans          &trans &trans &trans &trans &trans
-				&trans           &trans           &trans       &trans       &trans &trans                           &trans                 &trans           &trans          &trans &trans &trans &trans &trans
-				&kp LG(KP_DOT)   &kp LEFT_CONTROL &kp LEFT_GUI &kp LEFT_ALT &none                                                                                           &trans &trans &trans &trans &none
-				                                                                   &mt LS(LEFT_GUI) LA(PRINTSCREEN) &mt LG(L) C_PLAY_PAUSE &to LAYER_LAYERS &tog LAYER_MISC
-				                                                            &trans &trans                           &trans                 &trans           &trans          &trans
-				                                                                                                    &trans                 &trans
+				&kp ESCAPE     &kp NUMBER_1       &kp NUMBER_2   &kp NUMBER_3   &kp NUMBER_4                 &kp NUMBER_5         &trans                            &trans                              &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9    &kp NUMBER_0                &kp MINUS
+				&kp TAB        &kp Q              &kp W          &kp E          &kp R                        &kp T                &kp GRAVE                         &kp EQUAL                           &kp Y                 &kp U               &kp I          &kp O           &kp P                       &kp BACKSLASH
+				&none          &hrml LCTRL A      &hrml LGUI S   &hrml LALT D   &hrsl LSHFT F                &kp G                                                                                      &kp H                 &hrsr RSHFT J       &hrmr LALT K   &hrmr RGUI L    &hrmr RCTRL SEMICOLON        &kp SINGLE_QUOTE
+				&none          &kp Z              &kp X          &kp C          &kp V                        &kp B                &mt LEFT_PARENTHESIS LEFT_BRACKET &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N                 &kp M               &kp COMMA      &kp PERIOD      &kp SLASH                   &none
+				&kp LG(PERIOD) &none              &none          &none          &kp LEFT_CONTROL                                                                                                                              &kp RIGHT_CONTROL   &kp LEFT_ARROW &kp DOWN_ARROW  &kp UP_ARROW                &kp RIGHT_ARROW
+				                                                                                             &tog LAYER_SHORTCUT  &mt LG(L) C_PLAY_PAUSE            &to LAYER_LAYERS                    &tog LAYER_NUM
+				                                                                &tlt LAYER_SHORTCUT BACKSPACE &tlt LAYER_NAV DELETE &kp C_VOLUME_UP                   &none                               &tlt LAYER_FUNC RETURN &tlt LAYER_NUM SPACE
+				                                                                                                                  &kp C_VOLUME_DOWN                 &none
 			>;
 		};
 		layer_5 {
 			bindings = <
 				&bootloader
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans                         &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans                                                &trans &trans &trans &trans &none
-				                                   &trans &trans &to LAYER_LAYERS &tog LAYER_MISC
-				                            &trans &trans &trans &trans           &trans          &trans
-				                                          &trans &trans
+				&kp ESCAPE        &kp NUMBER_1     &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4                 &kp NUMBER_5         &trans                            &trans                              &kp NUMBER_6          &kp NUMBER_7        &kp NUMBER_8   &kp NUMBER_9   &kp NUMBER_0  &kp MINUS
+				&kp TAB           &kp Q            &kp W        &kp E        &kp R                        &kp T                &kp GRAVE                         &kp EQUAL                           &kp Y                 &kp U               &kp I          &kp O          &kp P         &kp BACKSLASH
+				&kp LEFT_GUI      &kp A            &kp S        &kp D        &kp F                        &kp G                                                                                      &kp H                 &kp J               &kp K          &kp L          &kp SEMICOLON &kp SINGLE_QUOTE
+				&kp LEFT_SHIFT    &kp Z            &kp X        &kp C        &kp V                        &kp B                &mt LEFT_PARENTHESIS LEFT_BRACKET &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N                 &kp M               &kp COMMA      &kp PERIOD     &kp SLASH     &kp RIGHT_SHIFT
+				&kp LC(LG(SPACE)) &kp LEFT_CONTROL &kp LEFT_ALT &none        &kp LEFT_GUI                                                                                                                                  &kp RIGHT_GUI       &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW
+				                                                                                          &tog LAYER_SHORTCUT  &mt LC(LG(Q)) C_PLAY_PAUSE        &to LAYER_LAYERS                    &tog LAYER_NUM
+				                                                             &lt LAYER_SHORTCUT BACKSPACE &lt LAYER_NAV DELETE &kp C_VOLUME_UP                   &none                               &lt LAYER_FUNC RETURN &lt LAYER_NUM SPACE
+				                                                                                                               &kp C_VOLUME_DOWN                 &none
 			>;
 		};
 		layer_6 {
 			bindings = <
 				&bootloader
-				&kp ESCAPE       &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &none        &trans           &trans       &trans &trans &trans &trans &kp F11
-				&kp J            &kp Z        &kp W        &kp X        &kp R        &kp I        &kp U        &trans           &trans       &trans &trans &trans &trans &trans
-				&kp LEFT_CONTROL &kp A        &kp S        &kp D        &kp NUMBER_5 &kp H                                      &trans       &trans &trans &trans &trans &trans
-				&kp LEFT_SHIFT   &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_1 &kp F        &trans           &kp N        &trans &trans &trans &trans &trans
-				&kp B            &none        &none        &kp E        &kp G                                                                &trans &trans &trans &trans &none
-				                                                                     &kp M        &kp NUMBER_7 &to LAYER_LAYERS &kp LEFT_GUI
-				                                                        &kp SPACE    &kp U        &kp N        &trans           &trans       &trans
-				                                                                                  &kp EQUAL    &trans
+				&trans     &kp LC(LS(LA(NUMBER_1))) &kp LC(LS(LA(NUMBER_2)))   &kp LC(LS(LA(NUMBER_3))) &kp LC(LS(LA(NUMBER_4))) &trans                          &trans                                &trans &trans     &trans    &trans &trans &trans &trans
+				&trans     &trans                       &kp LC(LEFT_ARROW)             &mt LG(LC(F)) LC(UP_ARROW)             &kp LC(DOWN_ARROW)           &kp LC(RIGHT_ARROW)             &kp LC(TILDE)                         &trans &trans     &trans    &trans &trans &trans &trans
+				&caps_word &kp LS(LG(A))                &mt LG(LEFT_ARROW) LC(LS(TAB)) &mt LS(LG(T)) LG(T)          &kp LG(W)                    &mt LG(RIGHT_ARROW) LC(TAB)                                                  &trans     &trans    &trans &trans &trans &trans
+				&trans     &trans                       &kp LC(LS(LA(LG(LEFT_ARROW)))) &kp LC(LA(RETURN))           &kp LC(LA(C))                &kp LC(LS(LA(LG(RIGHT_ARROW)))) &mt LS(LG(NUMBER_2)) LS(LG(NUMBER_1)) &trans &trans     &trans    &trans &trans &trans &trans
+				&trans     &trans                       &trans                         &trans                       &trans                                                                                                               &trans    &trans &trans &trans &trans
+				                                                                                                                                 &trans                          &trans                                &trans &trans
+				                                                                                                    &trans                       &kp DELETE                      &trans                                &trans &kp RETURN &kp SPACE
+				                                                                                                                                                                 &trans                                &trans
 			>;
 		};
 		layer_7 {
 			bindings = <
 				&bootloader
-				&none        &to LAYER_MACOS &to LAYER_RECT     &to LAYER_EDITING &to LAYER_WIN      &to LAYER_SKETCHUP &none &none           &to LAYER_FORTNITE &none          &none &none &none &none
-				&none        &none           &to LAYER_WIN      &to LAYER_EDITING &to LAYER_RECT     &none              &none &none           &none              &none          &none &none &none &none
-				&none        &none           &to LAYER_SKETCHUP &none             &to LAYER_FORTNITE &none                                    &none              &none          &none &none &none &none
-				&none        &none           &none              &none             &none              &none              &none &none           &to LAYER_MISC     &to LAYER_MISC &none &none &none &none
-				&out OUT_TOG &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 3      &bt BT_SEL 4                                                                   &none          &none &none &none &none
-				                                                                                     &none              &none &to LAYER_MACOS &none
-				                                                                  &none              &none              &none &bootloader     &none              &none
-				                                                                                                        &none &sys_reset
+				&trans     &trans &trans &trans           &trans             &trans               &trans &trans &trans         &trans         &trans         &trans          &trans         &kp INSERT
+				&trans     &trans &trans &kp LS(LEFT_ALT) &kp LC(LEFT_SHIFT) &kp LC(LS(LEFT_ALT)) &trans &trans &kp LG(Z)      &kp LG(X)      &kp LG(C)      &kp LG(V)       &kp LS(LG(Z))  &trans
+				&caps_word &trans &trans &trans           &trans             &trans                             &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW   &kp RIGHT_ARROW &trans         &trans
+				&trans     &trans &trans &trans           &trans             &trans               &trans &trans &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP    &kp END         &kp UP_ARROW   &trans
+				&trans     &trans &trans &trans           &trans                                                               &trans         &kp LC(RETURN) &kp LEFT_ARROW  &kp DOWN_ARROW &kp RIGHT_ARROW
+				                                                             &trans               &trans &trans &trans
+				                                          &kp BACKSPACE      &trans               &trans &trans &kp RETURN     &kp SPACE
+				                                                                                  &trans &trans
 			>;
 		};
 		layer_8 {
 			bindings = <
 				&bootloader
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans                         &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans &trans &trans &trans           &trans          &trans &trans &trans &trans &trans
-				&trans &trans &trans &trans &trans                                                &trans &trans &trans &trans &none
-				                                   &trans &trans &to LAYER_LAYERS &tog LAYER_MISC
-				                            &trans &trans &trans &trans           &trans          &trans
+				&none &none  &none  &none  &none         &none      &none                &none  &none      &none        &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS    &none
+				&none &none  &none  &none  &none         &none      &none                &none  &none      &kp NUMBER_7 &kp NUMBER_8  &kp NUMBER_9    &kp KP_PLUS  &none
+				&none &trans &trans &trans &trans        &none                                  &none      &kp NUMBER_4 &kp NUMBER_5  &kp NUMBER_6    &kp KP_PLUS  &none
+				&none &none  &none  &none  &none         &none      &none                &none  &none      &kp NUMBER_1 &kp NUMBER_2  &kp NUMBER_3    &kp KP_ENTER &none
+				&none &none  &none  &none  &trans                                                          &kp NUMBER_0 &kp NUMBER_0  &kp KP_DOT      &kp KP_ENTER &none
+				                                         &none      &trans               &trans &trans
+				                           &kp BACKSPACE &kp DELETE &kp C_BRIGHTNESS_INC &none  &kp RETURN &trans
+				                                                    &kp C_BRIGHTNESS_DEC &none
+			>;
+		};
+		layer_9 {
+			bindings = <
+				&bootloader
+				&none &none  &none  &none  &none         &none      &none                &none  &none   &none        &none        &none        &none        &none
+				&none &none  &none  &none  &none         &none      &none                &none  &kp F11 &kp F7       &kp NUMBER_8 &kp NUMBER_9 &kp KP_PLUS  &none
+				&none &trans &trans &trans &trans        &none                                  &kp F11 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp KP_PLUS  &none
+				&none &none  &none  &none  &none         &none      &none                &none  &kp F10 &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp KP_ENTER &none
+				&none &none  &none  &none  &trans                                                       &kp NUMBER_0 &kp NUMBER_0 &kp KP_DOT   &kp KP_ENTER &none
+				                                         &none      &trans               &trans &trans
+				                           &kp BACKSPACE &kp DELETE &kp C_BRIGHTNESS_INC &none  &trans  &kp SPACE
+				                                                    &kp C_BRIGHTNESS_DEC &none
+			>;
+		};
+		layer_10 {
+			bindings = <
+				&bootloader
+				&none &none &none &none &none &none &none &none &none          &none          &none        &none           &none &none
+				&none &none &none &none &none &none &none &none &none          &none          &none        &none           &none &none
+				&none &none &none &none &none &none             &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
+				&none &none &none &none &none &none &none &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
+				&none &none &none &none &none                                  &mkp MCLK      &none        &none           &none &none
+				                              &none &none &none &none
+				                        &none &none &none &none &mkp LCLK      &mkp RCLK
+				                                    &none &none
+			>;
+		};
+		layer_11 {
+			bindings = <
+				&bootloader
+				&none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3       &bt BT_SEL 4     &none &bt BT_CLR           &none &none           &none &none             &none &none
+				&none        &none        &to LAYER_WIN &none               &none              &none            &out OUT_BLE &none           &none &none           &none &to LAYER_OLD_MAC &none &none
+				&out OUT_USB &none        &none         &none               &to LAYER_FORTNITE &to LAYER_GAMING                       &none &none           &none &none             &none &none
+				&out OUT_BLE &none        &none         &to LAYER_MINECRAFT &none              &none            &out OUT_USB &none           &none &to LAYER_MOUSE &none &none             &none &none
+				&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3        &bt BT_SEL 4                                                    &none           &none &none             &none &none
+				                                                                               &none            &none &to LAYER_MACOS &none
+				                                                            &none              &none            &none &bootloader     &none &none
+				                                                                                                &none &sys_reset
+			>;
+		};
+		layer_12 {
+			bindings = <
+				&bootloader
+				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans
+				                                   &trans &trans &trans &trans
+				                            &trans &trans &trans &trans &trans &trans
 				                                          &trans &trans
 			>;
 		};
