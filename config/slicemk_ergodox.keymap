@@ -19,6 +19,16 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define HRM_TAPPING_TERM = <300>;
+
+
+&mt {
+    tapping-term-ms = <325>; // This is the value already set by default
+    quick-tap-ms = <175>;
+    quick-tap-ms = <175>;
+    flavor = "tap-preferred";
+};
+
 / {
     behaviors {
         hml: home_row_mod_left {
@@ -207,10 +217,10 @@
 		layer_11 {
 			bindings = <
 				&bootloader
-				&none        &none        &none         &none               &none              &none            &none &none           &none &none           &none &none             &none &none
-				&none        &none        &to LAYER_WIN &none               &none              &none            &none &none           &none &none           &none &to LAYER_OLD_MAC &none &none
+				&none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3       &bt BT_SEL 4     &none &bt BT_CLR           &none &none           &none &none             &none &none
+				&none        &none        &to LAYER_WIN &none               &none              &none            &out OUT_BLE &none           &none &none           &none &to LAYER_OLD_MAC &none &none
 				&out OUT_USB &none        &none         &none               &to LAYER_FORTNITE &to LAYER_GAMING                       &none &none           &none &none             &none &none
-				&out OUT_BLE &none        &none         &to LAYER_MINECRAFT &none              &none            &none &none           &none &to LAYER_MOUSE &none &none             &none &none
+				&out OUT_BLE &none        &none         &to LAYER_MINECRAFT &none              &none            &out OUT_USB &none           &none &to LAYER_MOUSE &none &none             &none &none
 				&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3        &bt BT_SEL 4                                                    &none           &none &none             &none &none
 				                                                                               &none            &none &to LAYER_MACOS &none
 				                                                            &none              &none            &none &bootloader     &none &none
