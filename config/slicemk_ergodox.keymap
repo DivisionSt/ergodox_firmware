@@ -35,7 +35,6 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        // Call &haptic_feedback_in on layer enter, and &haptic_feedback_out on layer leave
         underglow_shortcut {
             layers = <LAYER_SHORTCUT>;
             bindings = <&rgb_ug RGB_COLOR_HSB(299, 78, 49) &rgb_ug RGB_COLOR_HSB(0, 0, 0)>;
@@ -265,11 +264,11 @@
 		layer_11 {
 			bindings = <
 				&bootloader
-				&none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3       &bt BT_SEL 4     &none &bt BT_CLR           &none &none           &none &none             &none &none
-				&none        &none        &to LAYER_WIN &none               &none              &none            &out OUT_BLE &none           &none &none           &none &to LAYER_OLD_MAC &none &none
-				&out OUT_USB &none        &none         &none               &to LAYER_FORTNITE &to LAYER_GAMING                       &none &none           &none &none             &none &none
-				&out OUT_BLE &none        &none         &to LAYER_MINECRAFT &none              &none            &out OUT_USB &none           &none &to LAYER_MOUSE &none &none             &none &none
-				&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3        &bt BT_SEL 4                                                    &none           &none &none             &none &none
+				&none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3       &bt BT_SEL 4     &none &bt BT_CLR           &none &none           &none &none               &none &none
+				&none        &none        &to LAYER_WIN &none               &none              &none            &out OUT_BLE &none           &none &none           &none &to LAYER_OLD_MAC &none &rgb_ug RGB_COLOR_HSB(0, 100, 0)
+				&out OUT_USB &none        &none         &none               &to LAYER_FORTNITE &to LAYER_GAMING                       &none &none           &none &none                    &none &rgb_ug RGB_COLOR_HSB(120, 100, 20)
+				&out OUT_BLE &none        &none         &to LAYER_MINECRAFT &none              &none            &out OUT_USB &none           &none &to LAYER_MOUSE &none &none             &none &rgb_ug RGB_COLOR_HSB(240, 100, 20)
+				&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3        &bt BT_SEL 4                                                    &none           &none &none                    &none &rgb_ug RGB_COLOR_HSB(0, 100, 20)
 				                                                                               &none            &none &to LAYER_MACOS &none
 				                                                            &none              &none            &none &bootloader     &none &none
 				                                                                                                &none &sys_reset
