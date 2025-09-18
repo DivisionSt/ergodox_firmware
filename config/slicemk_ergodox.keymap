@@ -32,6 +32,18 @@
 };
 
 / {
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        // Call &haptic_feedback_in on layer enter, and &haptic_feedback_out on layer leave
+        underglow_shortcut {
+            layers = <LAYER_SHORTCUT>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(299, 78, 49) &rgb_ug RGB_COLOR_HSB(0, 0, 0)>;
+        };
+    };
+};
+
+/ {
     behaviors {
         hrml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
