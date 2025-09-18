@@ -37,12 +37,32 @@
 
         underglow_shortcut {
             layers = <LAYER_SHORTCUT>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(120, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(299, 87, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };
 	    underglow_nav {
             layers = <LAYER_NAV>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(240, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(240, 96, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };	
+	    underglow_num {
+            layers = <LAYER_NUM>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(130, 57, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+        };
+	    underglow_func {
+            layers = <LAYER_FUNC>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(187, 49, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+        };
+        underglow_fortnite {
+            layers = <LAYER_FORTNITE>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+        };
+        underglow_minecraft {
+            layers = <LAYER_MINECRAFT>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(265, 70, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+        };
+        underglow_gaming {
+            layers = <LAYER_GAMING>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(55, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+        };
         underglow_layers {
             layers = <LAYER_LAYERS>;
             bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
