@@ -1,4 +1,4 @@
-name: Fetch and build layout
+name: Fetch and build ORYX layout
 
 on:
   workflow_dispatch:
