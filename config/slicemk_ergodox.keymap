@@ -91,7 +91,7 @@
             tapping-term-ms = <HRM_TAP_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 20 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
 		};
         hrsl: home_row_shift_left {
@@ -103,7 +103,6 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <8 9 10 11 12 13 14 22 23 24 25 26 27 28 35 36 37 38 39 40 49 50 51 52 53 54 60 61 62 63 64 67 68 72 73 74 76>; // List of keys on the right side of the keyboard
-            // hold-trigger-on-release;
         };
         hrsr: home_row_shift_right {
             compatible = "zmk,behavior-hold-tap";
@@ -113,8 +112,7 @@
             tapping-term-ms = <HRS_TAP_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
-            // hold-trigger-on-release;
+            hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 20 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
 		};
 		tlt: thumb_layer_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -125,8 +123,6 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&mo>, <&kp>;
 			display-name = "Layer-Tap";
-            // hold-trigger-key-positions = <1 2 3 4 5 6 7 15 16 17 18 19 2 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75>; // List of keys on the left side of the keyboard
-            // hold-trigger-on-release;
 		};
 		leader_sys: leader_sys {
 			compatible = "zmk,behavior-leader-key";
@@ -302,7 +298,7 @@
 				                                                                                                &none &sys_reset
 			>;
 		};
-		layer_12 {
+		layer_12 { // blank transparent layer (not used)
 			bindings = <
 				&bootloader
 				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
