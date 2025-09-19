@@ -1,0 +1,454 @@
+[
+  {
+    "name": "divisionst_ergodox",
+    "switchMount": "cherry",
+    "switchBrand": "cherry",
+    "switchType": "MX3A-L1xx",
+    "plate": true
+  },
+  [
+    {
+      "x": 3.5,
+      "c": "#a1a1a1",
+      "t": "#000000\n#db1bde\n\n\n#f50000",
+      "f": 4
+    },
+    "3\n<i class='kb kb-Unicode-ClearScreen-1'></i>ho\n\n\nbt2",
+    {
+      "x": 10.5,
+      "t": "#000000\n\n#74cf80\n#74cf80"
+    },
+    "8\n\n\n/"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "t": "#000000\n#db1bde\n\n\n#f50000"
+    },
+    "2\n<i class='kb kb-Unicode-ClearScreen-1'></i>wm\n\n\nbt1",
+    {
+      "x": 1
+    },
+    "4\n<i class='kb kb-Unicode-ClearScreen-1'></i>hm\n\n\nbt3",
+    {
+      "x": 8.5,
+      "t": "#000000\n\n#74cf80\n#74cf80"
+    },
+    "7",
+    {
+      "x": 1
+    },
+    "9\n\n\n*"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5,
+      "t": "#000000\n#db1bde\n\n\n#f50000"
+    },
+    "5\n\n\n\nbt4",
+    {
+      "t": "#000000"
+    },
+    "ldr",
+    {
+      "x": 4.5,
+      "t": "#000000\n\n\n\n#f50000"
+    },
+    "rpt\n\n\n\nbt clr",
+    {
+      "t": "#000000"
+    },
+    "6"
+  ],
+  [
+    {
+      "y": -0.875,
+      "w": 1.5
+    },
+    "Esc",
+    {
+      "t": "#000000\n#db1bde\n\n\n#f50000"
+    },
+    "1\n<i class='kb kb-Unicode-ClearScreen-1'></i>wo\n\n\nbt0",
+    {
+      "x": 14.5,
+      "t": "#000000\n\n#74cf80\n#74cf80"
+    },
+    "0\n\n\n-",
+    {
+      "t": "#000000",
+      "w": 1.5
+    },
+    "-"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 3.5,
+      "t": "#000000\n#db1bde\n#1f19fa"
+    },
+    "E\nm ctrl\nsz",
+    {
+      "x": 10.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "I\n\n<i class='fa fa-copy'></i>\n8\nF8"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "t": "#000000\n#db1bde"
+    },
+    "W\n<i class='fa fa-angle-left'></i> <i class='fa fa-desktop'></i>",
+    {
+      "x": 1,
+      "t": "#000000\n#db1bde\n#1f19fa"
+    },
+    "R\nexpse\nrps",
+    {
+      "x": 8.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "U\n\n<i class='fa fa-cut'></i>\n7\nF7",
+    {
+      "x": 1
+    },
+    "O\n\n<i class='fa fa-paste'></i>\n9\nF9"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5,
+      "t": "#000000\n#db1bde\n#1f19fa"
+    },
+    "T\n<i class='fa fa-desktop'></i> <i class='fa fa-angle-right'></i>\nthr",
+    {
+      "t": "#000000\n#db1bde",
+      "h": 1.5
+    },
+    "`\n<i class='fa fa-angle-double-right'></i>wndw",
+    {
+      "x": 4.5,
+      "t": "#000000\n\n\n\n#f50000",
+      "h": 1.5
+    },
+    "=\n\n\n\nble",
+    {
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "Y\n\n<i class='kb kb-Undo-3'></i>\n\nF12"
+  ],
+  [
+    {
+      "y": -0.875,
+      "t": "#000000",
+      "w": 1.5
+    },
+    "Tab",
+    {
+      "t": "#000000\n#db1bde"
+    },
+    "Q",
+    {
+      "x": 14.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80"
+    },
+    "P\n\n<i class='kb kb-Redo-1'></i>\n+",
+    {
+      "t": "#000000",
+      "w": 1.5
+    },
+    "\\"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 3.5,
+      "t": "#000000\n#db1bde"
+    },
+    "D\n<i class='fa fa-plus'>tab</i>\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Option-3'></i>",
+    {
+      "x": 10.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "K\n\n<i class='fa fa-long-arrow-up'></i>\n5\nF5\n\n\n\n\n<i class='mss mss-Unicode-Option-3'></i>"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "t": "#000000\n#db1bde"
+    },
+    "S\n<i class='fa fa-angle-double-left'></i> tab\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Control-4'></i>",
+    {
+      "x": 1
+    },
+    "F\n<i class='fa fa-close'>tab</i>\n\n\n\n\n\n\n\n&uArr;",
+    {
+      "x": 8.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "J\n\n<i class='fa fa-long-arrow-down'></i>\n4\nF4\n\n\n\n\n&uArr;",
+    {
+      "x": 1
+    },
+    "L\n\n<i class='fa fa-long-arrow-right'></i>\n6\nF6\n\n\n\n\n<i class='mss mss-Unicode-Control-4'></i>"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5,
+      "t": "#000000\n#db1bde"
+    },
+    "G\ntab <i class='fa fa-angle-double-right'></i>",
+    {
+      "x": 6.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "H\n\n<i class='fa fa-long-arrow-left'></i>\n\nF11"
+  ],
+  [
+    {
+      "y": -0.875,
+      "t": "#000000\n#db1bde",
+      "w": 1.5
+    },
+    "\ncaps",
+    "A\n<i class='fa fa-th-list'>tabs</i>\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Command-3'></i>",
+    {
+      "x": 14.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80"
+    },
+    ";\n\n\n+\n\n\n\n\n\n<i class='mss mss-Unicode-Command-3'></i>",
+    {
+      "t": "#000000",
+      "w": 1.5
+    },
+    "'"
+  ],
+  [
+    {
+      "y": -0.625,
+      "x": 6.5,
+      "t": "#000000\n#db1bde",
+      "h": 1.5
+    },
+    "[\nscrsht\n\n\n\n\n\n\n\n(",
+    {
+      "x": 4.5,
+      "t": "#000000\n\n\n\n#f50000",
+      "h": 1.5
+    },
+    "]\n\n\n\nusb\n\n\n\n\n)"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3.5,
+      "t": "#000000\n#db1bde"
+    },
+    "C\nmax",
+    {
+      "x": 10.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    ",\n\np<i class='kb kb-Arrows-Up'></i>\n2\nF2"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "t": "#000000\n#db1bde"
+    },
+    "X\n<i class='fa fa-angle-left'></i> disp",
+    {
+      "x": 1
+    },
+    "V\ncntr",
+    {
+      "x": 8.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "M\n\np<i class='kb kb-Arrows-Down'></i>\n1\nF1",
+    {
+      "x": 1
+    },
+    ".\n\nend\n3\nF3"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5,
+      "t": "#000000\n#db1bde"
+    },
+    "B\ndisp <i class='fa fa-angle-right'></i>",
+    {
+      "x": 6.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+    },
+    "N\n\nhm\n\nF10"
+  ],
+  [
+    {
+      "y": -0.875,
+      "t": "#000000",
+      "w": 1.5
+    },
+    "shft &uArr;",
+    {
+      "t": "#000000\n#db1bde"
+    },
+    "Z",
+    {
+      "x": 14.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80"
+    },
+    "/\n\n<i class='fa fa-long-arrow-up'></i>\n<i class='kb kb-Return-2'></i>",
+    {
+      "t": "#000000",
+      "w": 1.5
+    },
+    "&uArr; shft"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 3.5,
+      "a": 7
+    },
+    "",
+    {
+      "x": 10.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80",
+      "a": 4
+    },
+    "<i class='fa fa-arrow-left'></i>\n\n<i class='kb kb-Hamburger-Menu'></i>\n0"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "t": "#000000",
+      "a": 7
+    },
+    "",
+    {
+      "x": 1,
+      "a": 4
+    },
+    "<i class='mss mss-Unicode-Command-3'></i>",
+    {
+      "x": 8.5,
+      "t": "#000000\n\n#74cf80\n#74cf80"
+    },
+    "<i class='mss mss-Unicode-Command-3'></i>\n\n\n0",
+    {
+      "x": 1,
+      "t": "#000000\n\n#1f19fa\n#74cf80"
+    },
+    "<i class='fa fa-arrow-down'></i>\n\n<i class='fa fa-long-arrow-left'></i>\n."
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 0.5,
+      "t": "#000000"
+    },
+    "<i class='fa fa-globe'></i>",
+    {
+      "a": 7
+    },
+    "",
+    {
+      "x": 14.5,
+      "t": "#000000\n\n#1f19fa\n#74cf80",
+      "a": 4
+    },
+    "<i class='fa fa-arrow-up'></i>\n\n<i class='fa fa-long-arrow-down'></i>\n<i class='kb kb-Return-2'></i>",
+    {
+      "t": "#000000\n\n#1f19fa"
+    },
+    "<i class='fa fa-arrow-right'></i>\n\n<i class='fa fa-long-arrow-right'></i>"
+  ],
+  [
+    {
+      "r": 30,
+      "rx": 6.5,
+      "ry": 4.25,
+      "y": -1,
+      "x": 1,
+      "t": "#db1bde"
+    },
+    "&tog sc <i class='fa fa-share-square-o'></i>",
+    {
+      "t": "#000000"
+    },
+    "<i class='fa fa-play'></i>\n\n\n\n\n\n\n\n\n<i class='fa fa-lock'></i>"
+  ],
+  [
+    {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#db1bde",
+      "h": 2
+    },
+    "<i class='mss mss-Unicode-BackSpace-DeleteLeft-Big-2'></i>\n\n\n\n\n\n\n\n\nsc <i class='fa fa-share-square-o'></i>",
+    {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#1f19fa",
+      "h": 2
+    },
+    "del\n\n\n\n\n\n\n\n\nnav <i class='fa fa-map-marker'></i>",
+    {
+      "t": "#000000"
+    },
+    "<i class='fa fa-volume-up'></i>"
+  ],
+  [
+    {
+      "x": 2
+    },
+    "<i class='fa fa-volume-down'></i>"
+  ],
+  [
+    {
+      "r": -30,
+      "rx": 13,
+      "y": -1,
+      "x": -3,
+      "t": "#f50000"
+    },
+    "lyrs <i class='kb kb-Hamburger-Menu'></i>",
+    {
+      "t": "#74cf80"
+    },
+    "&tog nm<i class='fa fa-slack'></i>"
+  ],
+  [
+    {
+      "x": -3,
+      "t": "#000000",
+      "a": 7
+    },
+    "",
+    {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#6dcad6",
+      "a": 4,
+      "h": 2
+    },
+    "<i class='kb kb-Return-2'></i>\n\n\n\n\n\n\n\n\nfn func",
+    {
+      "t": "#000000\n\n\n\n\n\n\n\n\n#74cf80",
+      "h": 2
+    },
+    "spc\n\n\n\n\n\n\n\n\nnum<i class='fa fa-slack'></i>"
+  ],
+  [
+    {
+      "x": -3,
+      "t": "#23d0e8",
+      "a": 7
+    },
+    ""
+  ]
+]
