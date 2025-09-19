@@ -1,5 +1,5 @@
 # DivisionSt layout
-![png image of layout](kle/divisionst_ergodox.png)
+![png image of layout](blob/main/kle/divisionst_ergodox.png)
 
 ## Oryx with custom QMK
 
