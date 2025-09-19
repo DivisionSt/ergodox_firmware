@@ -78,10 +78,10 @@
     },
     "0\n\n\n-",
     {
-      "t": "#000000",
+      "t": "#000000\n\n\n\n#f50000",
       "w": 1.5
     },
-    "-"
+    "-\n\n\n\nrgb clr"
   ],
   [
     {
@@ -100,9 +100,9 @@
     {
       "y": -0.875,
       "x": 2.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#db1bde\n\n\n#f50000"
     },
-    "W\n<i class='fa fa-angle-left'></i> <i class='fa fa-desktop'></i>",
+    "W\n<i class='fa fa-angle-left'></i> <i class='fa fa-desktop'></i>\n\n\nwin",
     {
       "x": 1,
       "t": "#000000\n#db1bde\n#1f19fa"
@@ -184,9 +184,10 @@
     },
     "S\n<i class='fa fa-angle-double-left'></i> tab\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Control-4'></i>",
     {
-      "x": 1
+      "x": 1,
+      "t": "#000000\n#db1bde\n\n\n#f50000"
     },
-    "F\n<i class='fa fa-close'>tab</i>\n\n\n\n\n\n\n\n&uArr;",
+    "F\n<i class='fa fa-close'>tab</i>\n\n\nfortnite\n\n\n\n\n&uArr;",
     {
       "x": 8.5,
       "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
@@ -201,9 +202,9 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#db1bde\n\n\n#f50000"
     },
-    "G\ntab <i class='fa fa-angle-double-right'></i>",
+    "G\ntab <i class='fa fa-angle-double-right'></i>\n\n\ngaming",
     {
       "x": 6.5,
       "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
@@ -248,9 +249,9 @@
     {
       "y": -0.75,
       "x": 3.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#db1bde\n\n\n#f50000"
     },
-    "C\nmax",
+    "C\nmax\n\n\nmncraft",
     {
       "x": 10.5,
       "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
@@ -270,11 +271,14 @@
     "V\ncntr",
     {
       "x": 8.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#f50000\n#8ae5ff\n\n\n\n\n\n#8ae5ff",
+      "a": 0
     },
-    "M\n\np<i class='kb kb-Arrows-Down'></i>\n1\nF1",
+    "M\n\np<i class='kb kb-Arrows-Down'></i>\n1\n<i class='fa fa-mouse-pointer'></i>\n\n\n\n\n\n\nF1",
     {
-      "x": 1
+      "x": 1,
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff",
+      "a": 4
     },
     ".\n\nend\n3\nF3"
   ],
@@ -427,13 +431,11 @@
   [
     {
       "x": -3,
-      "t": "#000000",
-      "a": 7
+      "t": "#000000\n\n\n\n#f50000"
     },
-    "",
+    "id\n\n\n\nbootld",
     {
       "t": "#000000\n\n\n\n\n\n\n\n\n#6dcad6",
-      "a": 4,
       "h": 2
     },
     "<i class='kb kb-Return-2'></i>\n\n\n\n\n\n\n\n\nfn func",
@@ -446,9 +448,9 @@
   [
     {
       "x": -3,
-      "t": "#23d0e8",
+      "t": "#23d0e8\n\n\n\n#f50000",
       "a": 7
     },
-    ""
+    "\n\n\n\nreset"
   ]
 ]
