@@ -14,3 +14,4 @@ LTO_ENABLE = yes
 
 # Custom QMK Features
 REPEAT_KEY_ENABLE = yes
+LEADER_ENABLE = yes

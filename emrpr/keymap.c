@@ -25,7 +25,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                 QK_REPEAT_KEY, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           QK_LEADER,                                      QK_REPEAT_KEY, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_GRAVE,                                       KC_EQUAL,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_TRANSPARENT, MT(MOD_LGUI, KC_A),MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LSFT, KC_F),KC_G,                                                                           KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_LALT, KC_K),MT(MOD_RCTL, KC_L),MT(MOD_RGUI, KC_SCLN),KC_QUOTE,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           DUAL_FUNC_0,                                    DUAL_FUNC_2,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
@@ -421,3 +421,70 @@ uint16_t layer_state_set_user(uint16_t state) {
   return state;
 };
 
+
+
+
+
+
+
+# Custom QMK Features
+
+
+void process_leader_user(void) {
+  if (leader_sequence_two_keys(KC_I, KC_D)) {
+    const char *str_layer_name = "unknown";
+    uint8_t current_layer = get_highest_layer(layer_state);
+    switch (current_layer)
+    {
+    case 0:
+      str_layer_name = "macos";
+      break;
+    case 1:
+      str_layer_name = "fortnite";
+      break;
+    case 2:
+      str_layer_name = "minecraft";
+      break;
+    case 3:
+      str_layer_name = "gaming";
+      break;
+    case 4:
+      str_layer_name = "win";
+      break;
+    case 5:
+      str_layer_name = "old_mac";
+      break;
+    case 6:
+      str_layer_name = "shortcut";
+      break;
+    case 7:
+      str_layer_name = "nav";
+      break;
+    case 8:
+      str_layer_name = "num";
+      break;
+    case 9:
+      str_layer_name = "func";
+      break;
+    case 10:
+      str_layer_name = "mouse";
+      break;
+    case 11:
+      str_layer_name = "layers";
+      break;
+    default:
+      str_layer_name = "unknown";
+      break;
+    }
+    SEND_STRING("L: ");
+    SEND_STRING(str_layer_name);
+  } else if (leader_sequence_three_keys(KC_Y, KC_S, KC_Q)) {
+    SEND_STRING("Yours sincerely, QMK User");
+  /*} else if (leader_sequence_one_key(KC_C)) {
+    register_code(KC_LGUI); // Windows key
+    register_code(KC_R);    // R key
+    unregister_code(KC_R);
+    unregister_code(KC_LGUI);
+    send_string("calc\n"); // Opens calculator
+  }*/
+}
