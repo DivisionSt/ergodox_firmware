@@ -23,7 +23,7 @@
 
 
 
-# Custom QMK Features
+/* Custom QMK Features */
 #define LEADER_TIMEOUT 300
 #define LEADER_PER_KEY_TIMING
 #define LEADER_NO_TIMEOUT
