@@ -11,7 +11,7 @@
 #define PERMISSIVE_HOLD
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "emrpr/PB7KBl"
+#define SERIAL_NUMBER "emrpr/wOxK3J"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
