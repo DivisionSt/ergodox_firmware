@@ -13,7 +13,7 @@
       "t": "#000000\n#db1bde\n\n\n#f50000",
       "f": 4
     },
-    "3\n<i class='kb kb-Unicode-ClearScreen-1'></i>ho\n\n\nbt2",
+    "3\n<i class='kb kb-Unicode-ClearScreen-1'></i>ho\n\n\n<i class='fa fa-tablet'>bt2</i>",
     {
       "x": 10.5,
       "t": "#000000\n\n\n#74cf80"
@@ -26,11 +26,11 @@
       "x": 2.5,
       "t": "#000000\n#db1bde\n\n\n#f50000"
     },
-    "2\n<i class='kb kb-Unicode-ClearScreen-1'></i>wm\n\n\nbt1",
+    "2\n<i class='kb kb-Unicode-ClearScreen-1'></i>wm\n\n\n<i class='fa fa-laptop'>bt1</i>",
     {
       "x": 1
     },
-    "4\n<i class='kb kb-Unicode-ClearScreen-1'></i>hm\n\n\nbt3",
+    "4\n<i class='kb kb-Unicode-ClearScreen-1'></i>hm\n\n\n<i class='fa fa-mobile-phone'>bt3</i>",
     {
       "x": 8.5,
       "t": "#000000"
@@ -48,7 +48,7 @@
       "x": 5.5,
       "t": "#000000\n\n\n\n#f50000"
     },
-    "5\n\n\n\nbt4",
+    "5\n\n\n\n<i class='fa fa-question'>bt4</i>",
     {
       "t": "#000000"
     },
@@ -72,7 +72,7 @@
     {
       "t": "#000000\n#db1bde\n\n\n#f50000"
     },
-    "1\n<i class='kb kb-Unicode-ClearScreen-1'></i>wo\n\n\nbt0",
+    "1\n<i class='kb kb-Unicode-ClearScreen-1'></i>wo\n\n\n<i class='fa fa-user'>bt0</i>",
     {
       "x": 14.5,
       "t": "#000000\n\n\n#74cf80"
