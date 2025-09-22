@@ -16,7 +16,7 @@
     "3\n<i class='kb kb-Unicode-ClearScreen-1'></i>ho\n\n\nbt2",
     {
       "x": 10.5,
-      "t": "#000000\n\n#74cf80\n#74cf80"
+      "t": "#000000\n\n\n#74cf80"
     },
     "8\n\n\n/"
   ],
@@ -33,11 +33,12 @@
     "4\n<i class='kb kb-Unicode-ClearScreen-1'></i>hm\n\n\nbt3",
     {
       "x": 8.5,
-      "t": "#000000\n\n#74cf80\n#74cf80"
+      "t": "#000000"
     },
     "7",
     {
-      "x": 1
+      "x": 1,
+      "t": "#000000\n\n\n#74cf80"
     },
     "9\n\n\n*"
   ],
@@ -45,7 +46,7 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "t": "#000000\n\n\n\n#f50000"
     },
     "5\n\n\n\nbt4",
     {
@@ -74,7 +75,7 @@
     "1\n<i class='kb kb-Unicode-ClearScreen-1'></i>wo\n\n\nbt0",
     {
       "x": 14.5,
-      "t": "#000000\n\n#74cf80\n#74cf80"
+      "t": "#000000\n\n\n#74cf80"
     },
     "0\n\n\n-",
     {
@@ -94,7 +95,7 @@
       "x": 10.5,
       "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
     },
-    "I\n\n<i class='fa fa-copy'></i>\n8\nF8"
+    "I\n\n<i class='kb kb-Arrows-Top-4'>sl</i>\n8\nF8"
   ],
   [
     {
@@ -112,11 +113,11 @@
       "x": 8.5,
       "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
     },
-    "U\n\n<i class='fa fa-cut'></i>\n7\nF7",
+    "U\n\n<i class='kb kb-Arrows-Bottom-4'>sl</i>\n7\nF7",
     {
       "x": 1
     },
-    "O\n\n<i class='fa fa-paste'></i>\n9\nF9"
+    "O\n\n<i class='kb kb-Line-End'>sl</i>\n9\nF9"
   ],
   [
     {
@@ -137,9 +138,9 @@
     },
     "=\n\n\n\nble",
     {
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n\n#8ae5ff"
     },
-    "Y\n\n<i class='kb kb-Undo-3'></i>\n\nF12"
+    "Y\n\n<i class='kb kb-Line-Start'>sl</i>\n\nF12"
   ],
   [
     {
@@ -148,15 +149,12 @@
       "w": 1.5
     },
     "Tab",
-    {
-      "t": "#000000\n#db1bde"
-    },
     "Q",
     {
       "x": 14.5,
       "t": "#000000\n\n#1f19fa\n#74cf80"
     },
-    "P\n\n<i class='kb kb-Redo-1'></i>\n+",
+    "P\n\n\n+",
     {
       "t": "#000000",
       "w": 1.5
@@ -207,7 +205,7 @@
     "G\ntab <i class='fa fa-angle-double-right'></i>\n\n\ngaming",
     {
       "x": 6.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n\n#8ae5ff"
     },
     "H\n\n<i class='fa fa-long-arrow-left'></i>\n\nF11"
   ],
@@ -221,7 +219,7 @@
     "A\n<i class='fa fa-th-list'>tabs</i>\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Command-3'></i>",
     {
       "x": 14.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80"
+      "t": "#000000\n\n\n#74cf80"
     },
     ";\n\n\n+\n\n\n\n\n\n<i class='mss mss-Unicode-Command-3'></i>",
     {
@@ -249,9 +247,9 @@
     {
       "y": -0.75,
       "x": 3.5,
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "t": "#000000\n#db1bde\n#1f19fa\n\n#f50000"
     },
-    "C\nmax\n\n\nmncraft",
+    "C\nmax\n<i class='fa fa-copy'></i>\n\nmncraft",
     {
       "x": 10.5,
       "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
@@ -262,16 +260,16 @@
     {
       "y": -0.875,
       "x": 2.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#db1bde\n#1f19fa"
     },
-    "X\n<i class='fa fa-angle-left'></i> disp",
+    "X\n<i class='fa fa-angle-left'></i> disp\n<i class='fa fa-cut'></i>",
     {
       "x": 1
     },
-    "V\ncntr",
+    "V\ncntr\n<i class='fa fa-paste'></i>",
     {
       "x": 8.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#f50000\n#8ae5ff\n\n\n\n\n\n#8ae5ff",
+      "t": "#000000\n\n#1f19fa\n#74cf80\n#f50000\n\n\n\n\n\n\n#8ae5ff",
       "a": 0
     },
     "M\n\np<i class='kb kb-Arrows-Down'></i>\n1\n<i class='fa fa-mouse-pointer'></i>\n\n\n\n\n\n\nF1",
@@ -286,12 +284,12 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#db1bde\n#1f19fa"
     },
-    "B\ndisp <i class='fa fa-angle-right'></i>",
+    "B\ndisp <i class='fa fa-angle-right'></i>\n<i class='kb kb-Redo-1'></i>",
     {
       "x": 6.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n\n#8ae5ff"
     },
     "N\n\nhm\n\nF10"
   ],
@@ -303,9 +301,9 @@
     },
     "shft &uArr;",
     {
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n\n#1f19fa"
     },
-    "Z",
+    "Z\n\n<i class='kb kb-Undo-3'></i>",
     {
       "x": 14.5,
       "t": "#000000\n\n#1f19fa\n#74cf80"
@@ -346,7 +344,7 @@
     "<i class='mss mss-Unicode-Command-3'></i>",
     {
       "x": 8.5,
-      "t": "#000000\n\n#74cf80\n#74cf80"
+      "t": "#000000\n\n\n#74cf80"
     },
     "<i class='mss mss-Unicode-Command-3'></i>\n\n\n0",
     {
