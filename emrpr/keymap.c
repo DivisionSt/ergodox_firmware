@@ -7,6 +7,7 @@
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
+  LAYER_ID,
 };
 
 
@@ -31,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           DUAL_FUNC_0,                                    DUAL_FUNC_2,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
     LGUI(LCTL(KC_SPACE)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_GUI,                                                                                                    KC_RIGHT_GUI,   KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,
                                                                                                     TT(6),          DUAL_FUNC_1,    TO(11),         TT(8),
-                                                                                                                    KC_AUDIO_VOL_UP,KC_TRANSPARENT,
+                                                                                                                    KC_AUDIO_VOL_UP,LAYER_ID,
                                                                                     LT(6, KC_BSPC), LT(7, KC_DELETE),KC_AUDIO_VOL_DOWN,KC_TRANSPARENT, LT(9, KC_ENTER),LT(8, KC_SPACE)
   ),
   [1] = LAYOUT_ergodox_pretty(
@@ -378,6 +379,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
+    case LAYER_ID:
+      if (record->event.pressed) {
+        send_current_layer_name();
+      }
+      return false;
   }
   return true;
 }
@@ -429,53 +435,56 @@ uint16_t layer_state_set_user(uint16_t state) {
 
 /* Custom QMK Features */
 
+void send_current_layer_name(void) {
+  uint8_t current_layer = get_highest_layer(layer_state);
+  
+  SEND_STRING("L: ");
+  switch (current_layer) {
+    case 0:
+      SEND_STRING("macos");
+      break;
+    case 1:
+      SEND_STRING("fortnite");
+      break;
+    case 2:
+      SEND_STRING("minecraft");
+      break;
+    case 3:
+      SEND_STRING("gaming");
+      break;
+    case 4:
+      SEND_STRING("win");
+      break;
+    case 5:
+      SEND_STRING("old_mac");
+      break;
+    case 6:
+      SEND_STRING("shortcut");
+      break;
+    case 7:
+      SEND_STRING("nav");
+      break;
+    case 8:
+      SEND_STRING("num");
+      break;
+    case 9:
+      SEND_STRING("func");
+      break;
+    case 10:
+      SEND_STRING("mouse");
+      break;
+    case 11:
+      SEND_STRING("layers");
+      break;
+    default:
+      SEND_STRING("unknown");
+      break;
+  }
+}
 
 void process_leader_user(void) {
   if (leader_sequence_two_keys(KC_I, KC_D)) {
-    uint8_t current_layer = get_highest_layer(layer_state);
-    
-    SEND_STRING("L: ");
-    switch (current_layer) {
-      case 0:
-        SEND_STRING("macos");
-        break;
-      case 1:
-        SEND_STRING("fortnite");
-        break;
-      case 2:
-        SEND_STRING("minecraft");
-        break;
-      case 3:
-        SEND_STRING("gaming");
-        break;
-      case 4:
-        SEND_STRING("win");
-        break;
-      case 5:
-        SEND_STRING("old_mac");
-        break;
-      case 6:
-        SEND_STRING("shortcut");
-        break;
-      case 7:
-        SEND_STRING("nav");
-        break;
-      case 8:
-        SEND_STRING("num");
-        break;
-      case 9:
-        SEND_STRING("func");
-        break;
-      case 10:
-        SEND_STRING("mouse");
-        break;
-      case 11:
-        SEND_STRING("layers");
-        break;
-      default:
-        SEND_STRING("unknown");
-        break;
-    }
+    send_current_layer_name();
   } else if (leader_sequence_three_keys(KC_Y, KC_S, KC_Q)) {
     SEND_STRING("Yours sincerely, QMK User");
   }
