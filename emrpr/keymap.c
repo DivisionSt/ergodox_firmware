@@ -10,18 +10,18 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(7, KC_F17)
-#define DUAL_FUNC_1 LT(12, KC_D)
-#define DUAL_FUNC_2 LT(13, KC_L)
-#define DUAL_FUNC_3 LT(7, KC_F20)
-#define DUAL_FUNC_4 LT(3, KC_N)
-#define DUAL_FUNC_5 LT(4, KC_D)
-#define DUAL_FUNC_6 LT(14, KC_F20)
-#define DUAL_FUNC_7 LT(1, KC_F14)
-#define DUAL_FUNC_8 LT(14, KC_1)
-#define DUAL_FUNC_9 LT(10, KC_Z)
-#define DUAL_FUNC_10 LT(1, KC_4)
-#define DUAL_FUNC_11 LT(8, KC_F12)
+#define DUAL_FUNC_0 LT(5, KC_F14)
+#define DUAL_FUNC_1 LT(12, KC_X)
+#define DUAL_FUNC_2 LT(12, KC_2)
+#define DUAL_FUNC_3 LT(15, KC_F)
+#define DUAL_FUNC_4 LT(10, KC_0)
+#define DUAL_FUNC_5 LT(4, KC_F9)
+#define DUAL_FUNC_6 LT(1, KC_2)
+#define DUAL_FUNC_7 LT(12, KC_T)
+#define DUAL_FUNC_8 LT(8, KC_F6)
+#define DUAL_FUNC_9 LT(9, KC_W)
+#define DUAL_FUNC_10 LT(13, KC_O)
+#define DUAL_FUNC_11 LT(13, KC_Y)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -178,13 +178,15 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_ergodo
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_TAB:
-            return g_tapping_term -50;
-        case KC_W:
-            return g_tapping_term + 150;
-        case KC_T:
-            return g_tapping_term + 150;
-        case KC_N:
-            return g_tapping_term + 150;
+            return g_tapping_term -200;
+        case MT(MOD_LSFT, KC_F):
+            return g_tapping_term -100;
+        case KC_MINUS:
+            return g_tapping_term -150;
+        case KC_EQUAL:
+            return g_tapping_term -150;
+        case MT(MOD_RSFT, KC_J):
+            return g_tapping_term -100;
         default:
             return g_tapping_term;
     }

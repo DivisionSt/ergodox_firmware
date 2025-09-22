@@ -1,14 +1,17 @@
-#define FLOW_TAP_TERM 150
+#define FLOW_TAP_TERM 167
 #define CHORDAL_HOLD
 #undef DEBOUNCE
 #define DEBOUNCE 5
+
+#undef TAPPING_TERM
+#define TAPPING_TERM 350
 
 #define ONESHOT_TAP_TOGGLE 2
 
 #define PERMISSIVE_HOLD
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "emrpr/wOx0vj"
+#define SERIAL_NUMBER "emrpr/PB7KBl"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
