@@ -10,18 +10,18 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(11, KC_F1)
-#define DUAL_FUNC_1 LT(7, KC_F24)
-#define DUAL_FUNC_2 LT(6, KC_F5)
-#define DUAL_FUNC_3 LT(11, KC_L)
-#define DUAL_FUNC_4 LT(3, KC_9)
-#define DUAL_FUNC_5 LT(8, KC_F6)
-#define DUAL_FUNC_6 LT(10, KC_F7)
-#define DUAL_FUNC_7 LT(1, KC_F13)
-#define DUAL_FUNC_8 LT(2, KC_F24)
-#define DUAL_FUNC_9 LT(8, KC_F13)
-#define DUAL_FUNC_10 LT(13, KC_F)
-#define DUAL_FUNC_11 LT(8, KC_F1)
+#define DUAL_FUNC_0 LT(12, KC_C)
+#define DUAL_FUNC_1 LT(11, KC_N)
+#define DUAL_FUNC_2 LT(3, KC_U)
+#define DUAL_FUNC_3 LT(12, KC_N)
+#define DUAL_FUNC_4 LT(12, KC_5)
+#define DUAL_FUNC_5 LT(8, KC_F7)
+#define DUAL_FUNC_6 LT(15, KC_H)
+#define DUAL_FUNC_7 LT(3, KC_L)
+#define DUAL_FUNC_8 LT(1, KC_I)
+#define DUAL_FUNC_9 LT(11, KC_F12)
+#define DUAL_FUNC_10 LT(13, KC_J)
+#define DUAL_FUNC_11 LT(6, KC_F20)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -180,13 +180,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case KC_TAB:
             return g_tapping_term -200;
         case MT(MOD_LSFT, KC_F):
-            return g_tapping_term -100;
+            return g_tapping_term -150;
         case KC_MINUS:
             return g_tapping_term -150;
         case KC_EQUAL:
             return g_tapping_term -150;
         case MT(MOD_RSFT, KC_J):
-            return g_tapping_term -100;
+            return g_tapping_term -150;
         default:
             return g_tapping_term;
     }
