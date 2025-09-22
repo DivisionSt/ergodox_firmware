@@ -427,7 +427,7 @@ uint16_t layer_state_set_user(uint16_t state) {
 
 
 
-# Custom QMK Features
+/* Custom QMK Features */
 
 
 void process_leader_user(void) {
