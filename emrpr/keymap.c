@@ -478,6 +478,7 @@ void process_leader_user(void) {
     }
   } else if (leader_sequence_three_keys(KC_Y, KC_S, KC_Q)) {
     SEND_STRING("Yours sincerely, QMK User");
+  }
   /*} else if (leader_sequence_one_key(KC_C)) {
     register_code(KC_LGUI); // Windows key
     register_code(KC_R);    // R key
