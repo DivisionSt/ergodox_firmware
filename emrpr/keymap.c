@@ -432,52 +432,50 @@ uint16_t layer_state_set_user(uint16_t state) {
 
 void process_leader_user(void) {
   if (leader_sequence_two_keys(KC_I, KC_D)) {
-    const char *str_layer_name = "unknown";
     uint8_t current_layer = get_highest_layer(layer_state);
-    switch (current_layer)
-    {
-    case 0:
-      str_layer_name = "macos";
-      break;
-    case 1:
-      str_layer_name = "fortnite";
-      break;
-    case 2:
-      str_layer_name = "minecraft";
-      break;
-    case 3:
-      str_layer_name = "gaming";
-      break;
-    case 4:
-      str_layer_name = "win";
-      break;
-    case 5:
-      str_layer_name = "old_mac";
-      break;
-    case 6:
-      str_layer_name = "shortcut";
-      break;
-    case 7:
-      str_layer_name = "nav";
-      break;
-    case 8:
-      str_layer_name = "num";
-      break;
-    case 9:
-      str_layer_name = "func";
-      break;
-    case 10:
-      str_layer_name = "mouse";
-      break;
-    case 11:
-      str_layer_name = "layers";
-      break;
-    default:
-      str_layer_name = "unknown";
-      break;
-    }
+    
     SEND_STRING("L: ");
-    SEND_STRING(str_layer_name);
+    switch (current_layer) {
+      case 0:
+        SEND_STRING("macos");
+        break;
+      case 1:
+        SEND_STRING("fortnite");
+        break;
+      case 2:
+        SEND_STRING("minecraft");
+        break;
+      case 3:
+        SEND_STRING("gaming");
+        break;
+      case 4:
+        SEND_STRING("win");
+        break;
+      case 5:
+        SEND_STRING("old_mac");
+        break;
+      case 6:
+        SEND_STRING("shortcut");
+        break;
+      case 7:
+        SEND_STRING("nav");
+        break;
+      case 8:
+        SEND_STRING("num");
+        break;
+      case 9:
+        SEND_STRING("func");
+        break;
+      case 10:
+        SEND_STRING("mouse");
+        break;
+      case 11:
+        SEND_STRING("layers");
+        break;
+      default:
+        SEND_STRING("unknown");
+        break;
+    }
   } else if (leader_sequence_three_keys(KC_Y, KC_S, KC_Q)) {
     SEND_STRING("Yours sincerely, QMK User");
   /*} else if (leader_sequence_one_key(KC_C)) {
