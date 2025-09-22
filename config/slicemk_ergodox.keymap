@@ -71,6 +71,17 @@
 };
 
 / {
+    macros {
+        identify: identify {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &kp Z &kp M &kp K>;
+        };
+    };
+};
+
+/ {
     behaviors {
         hrml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
@@ -135,6 +146,7 @@
             btc { sequence = <C L E A R>; bindings = <&bt BT_CLR>; };
 			boot { sequence = <B O O T>; bindings = <&bootloader>; };
             reset { sequence = <R E S E T>; bindings = <&sys_reset>; };
+            id { sequence = <I D>; bindings = <&identify>; };
 		};
     };
 };
