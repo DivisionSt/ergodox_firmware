@@ -1,0 +1,20 @@
+# Copyright (c) 2025 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Layer identification behavior that sends the current layer name as text
+
+compatible: "zmk,behavior-layer-id"
+
+include: zero_param.yaml
+
+properties:
+  layer-names:
+    type: string-array
+    required: true
+    description: Array of layer names corresponding to layer indices
+  
+  prefix:
+    type: string
+    required: false
+    default: "L: "
+    description: Prefix string to send before the layer name

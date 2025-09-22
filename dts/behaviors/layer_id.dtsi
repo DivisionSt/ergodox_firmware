@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2025 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ layer_id: layer_id {
+            compatible = "zmk,behavior-layer-id";
+            #binding-cells = <0>;
+            layer-names = "macos", "fortnite", "minecraft", "gaming", "win", 
+                         "old_mac", "shortcut", "nav", "num", "func", 
+                         "mouse", "layers";
+            prefix = "L: ";
+        };
+    };
+};
