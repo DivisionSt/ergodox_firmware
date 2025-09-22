@@ -239,7 +239,7 @@
 				&trans     &trans    &trans    &trans           &trans              &trans               &trans &trans &trans                 &trans             &trans           &trans                 &trans         &kp INSERT
 				&trans     &trans    &trans    &kp LS(LEFT_ALT) &kp LC(LEFT_SHIFT)  &kp LC(LS(LEFT_ALT)) &trans &trans &kp LS(LA(LEFT_ARROW)) &kp LS(DOWN_ARROW) &kp LS(UP_ARROW) &kp LS(LA(LEFT_ARROW)) &trans         &trans
 				&caps_word &trans    &trans    &trans           &trans              &trans                             &kp LEFT_ARROW         &kp DOWN_ARROW     &kp UP_ARROW     &kp RIGHT_ARROW        &trans         &trans
-				&trans     &kp LG(Z) &kp LG(X) &kp LG(C)        &mt LG(LS(V)) LG(V) &kp LG(LS(Z))        &trans &trans &kp HOME               &kp PAGE_DOWN      &kp PAGE_UP      &kp END                &kp UP_ARROW   &trans
+				&trans     &kp LG(Z) &kp LG(X) &kp LG(C)        &mt LG(LS(V)) LG(V) &kp LG(LS(Z))        &trans &trans &kp LG(LEFT)           &kp PAGE_DOWN      &kp PAGE_UP      &kp LG(RIGHT)          &kp UP_ARROW   &trans
 				&trans     &trans    &trans    &trans           &trans                                                                        &trans             &kp LC(RETURN)   &kp LEFT_ARROW         &kp DOWN_ARROW &kp RIGHT_ARROW
 				                                                             &trans               &trans &trans &trans
 				                                          &kp BACKSPACE      &trans               &trans &trans &kp RETURN     &kp SPACE
