@@ -71,6 +71,17 @@
 };
 
 / {
+    macros {
+        identify: identify {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &kp Z &kp M &kp K>;
+        };
+    };
+};
+
+/ {
     behaviors {
         layer_id: layer_id {
             compatible = "zmk,behavior-layer-id";
