@@ -311,10 +311,10 @@
 		layer_12 { // layers
 			bindings = <
 				&bootloader
-				&none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3       &bt BT_SEL 4     &none &bt BT_CLR           &none &none           &none &none               &none &rgb_ug RGB_COLOR_HSB(0, 100, 0)
-				&none        &none        &to LAYER_WIN &none               &none              &none            &out OUT_BLE &none           &none &none           &none &to LAYER_OLD_MAC &none &rgb_ug RGB_EFF
-				&none        &none        &to LAYER_SKETCHUP &none          &to LAYER_FORTNITE &to LAYER_GAMING                       &none &none           &none &none                    &none &rgb_ug RGB_BRI
-				&none        &none        &none         &to LAYER_MINECRAFT &none              &none            &out OUT_USB &none           &none &to LAYER_MOUSE &none &none             &none &rgb_ug RGB_BRD
+				&none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2        &bt BT_SEL 3       &bt BT_SEL 4     &none &bt BT_CLR           &none &none           &none &none               &none &none
+				&none        &none        &to LAYER_WIN &none               &none              &none            &out OUT_BLE &none           &none &to LAYER_UNDERGLOW  &none &to LAYER_OLD_MAC &none &none
+				&none        &none        &to LAYER_SKETCHUP &none          &to LAYER_FORTNITE &to LAYER_GAMING                       &none &none           &none &none                    &none &none
+				&none        &none        &none         &to LAYER_MINECRAFT &none              &none            &out OUT_USB &none           &none &to LAYER_MOUSE &none &none             &none &none
 				&none        &none        &none         &none               &none                                                    &none           &none &none                    &none &none
 				                                                                               &none            &none &to LAYER_MACOS &none
 				                                                            &none              &none            &none &bootloader     &none &none
@@ -324,8 +324,8 @@
 		layer_13 { // underglow testing
 			bindings = <
 				&bootloader
-				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-				&trans &trans &rgb_ug RGB_BRI &trans &rgb_ug RGB_COLOR_HSB(0, 0, 20) &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &rgb_ug RGB_COLOR_HSB(0, 100, 0)
+				&trans &trans &rgb_ug RGB_BRI &trans &rgb_ug RGB_COLOR_HSB(0, 0, 20) &trans &trans &trans &trans &trans &trans &trans &trans 
 				&trans &rgb_ug RGB_EFR &rgb_ug RGB_BRD &rgb_ug RGB_EFF &trans &trans               &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans &trans
 				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 				&trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans
