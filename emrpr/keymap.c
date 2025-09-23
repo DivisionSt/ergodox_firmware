@@ -10,6 +10,9 @@ enum custom_keycodes {
   LAYER_ID,
 };
 
+// Function declarations
+void send_current_layer_name(void);
+
 
 #define DUAL_FUNC_0 LT(10, KC_I)
 #define DUAL_FUNC_1 LT(14, KC_1)
