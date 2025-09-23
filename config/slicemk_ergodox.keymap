@@ -11,7 +11,8 @@
 #define LAYER_FUNC 10
 #define LAYER_MOUSE 11
 #define LAYER_LAYERS 12
-#define LAYER_BLANK_TRANSPARENT 13
+#define LAYER_UNDERGLOW 13
+#define LAYER_BLANK_TRANSPARENT 14
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -302,7 +303,7 @@
 				&none &none &none &none &none &none             &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
 				&none &none &none &none &none &none &none &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
 				&none &none &none &none &none                                  &mkp MCLK      &none        &none           &none &none
-				                              &none &none &none &none
+				                              &none &none &to LAYER_LAYERS  &none
 				                        &none &none &none &none &mkp LCLK      &mkp RCLK
 				                                    &none &none
 			>;
@@ -320,7 +321,20 @@
 				                                                                                                &none &sys_reset
 			>;
 		};
-		layer_13 { // blank transparent layer (not used)
+		layer_13 { // underglow testing
+			bindings = <
+				&bootloader
+				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &rgb_ug RGB_BRI &trans &rgb_ug RGB_COLOR_HSB(0, 0, 20) &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &rgb_ug RGB_EFR &rgb_ug RGB_BRD &rgb_ug RGB_EFF &trans &trans               &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans &trans
+				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+				&trans &trans &trans &trans &trans                             &trans &trans &trans &trans &trans
+				                                   &trans &trans &to LAYER_LAYERS  &trans
+				                            &trans &trans &trans &trans &trans &trans
+				                                          &trans &trans
+			>;
+		};
+		layer_14 { // blank transparent layer (not used)
 			bindings = <
 				&bootloader
 				&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
