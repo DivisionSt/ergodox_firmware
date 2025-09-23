@@ -11,8 +11,7 @@
 #define PERMISSIVE_HOLD
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define HOLD_ON_OTHER_KEY_PRESS
-#define SERIAL_NUMBER "emrpr/JaPWAp"
+#define SERIAL_NUMBER "emrpr/YneGOa"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
