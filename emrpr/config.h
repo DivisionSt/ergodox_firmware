@@ -4,14 +4,15 @@
 #define DEBOUNCE 5
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 350
+#define TAPPING_TERM 300
 
 #define ONESHOT_TAP_TOGGLE 2
 
 #define PERMISSIVE_HOLD
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "emrpr/Wvzxzy"
+#define HOLD_ON_OTHER_KEY_PRESS
+#define SERIAL_NUMBER "emrpr/3vwElD"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
