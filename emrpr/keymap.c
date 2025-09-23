@@ -485,7 +485,7 @@ void send_current_layer_name(void) {
   }
 }
 
-void process_leader_user(void) {
+void leader_end_user(void) {
   if (leader_sequence_two_keys(KC_I, KC_D)) {
     send_current_layer_name();
   } else if (leader_sequence_three_keys(KC_Y, KC_S, KC_Q)) {
