@@ -46,11 +46,11 @@
         };	
 	    underglow_num {
             layers = <LAYER_NUM>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(127, 43, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };
 	    underglow_func {
             layers = <LAYER_FUNC>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(187, 49, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(187, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };
         underglow_fortnite {
             layers = <LAYER_FORTNITE>;
@@ -58,7 +58,7 @@
         };
         underglow_minecraft {
             layers = <LAYER_MINECRAFT>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(265, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(150, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };
         underglow_gaming {
             layers = <LAYER_GAMING>;
@@ -70,11 +70,11 @@
         };
         underglow_win {
             layers = <LAYER_WIN>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(90, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(180, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };
         underglow_sketchup {
             layers = <LAYER_SKETCHUP>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(320, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(30, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
         };
     };
 };
