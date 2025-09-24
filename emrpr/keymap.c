@@ -495,3 +495,18 @@ void leader_end_user(void) {
     send_string("calc\n"); // Opens calculator
   }*/
 }
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+
+        case LT(6, KC_BSPC):
+        case LT(7, KC_DELETE):
+        case LT(9, KC_ENTER):
+        case LT(8, KC_SPACE):
+            // Do not select the hold action when another key is tapped.
+            return false;
+        default:
+            // Immediately select the hold action when another key is tapped.
+            return true;
+    }
+}
