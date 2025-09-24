@@ -1,17 +1,17 @@
-#define FLOW_TAP_TERM 167
+#define FLOW_TAP_TERM 150
 #define CHORDAL_HOLD
 #undef DEBOUNCE
 #define DEBOUNCE 5
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 350
+#define TAPPING_TERM 185
 
 #define ONESHOT_TAP_TOGGLE 2
 
 #define PERMISSIVE_HOLD
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "emrpr/PB7KWm"
+#define SERIAL_NUMBER "emrpr/XbNZDg"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
@@ -26,4 +26,5 @@
 /* Custom QMK Features */
 #define LEADER_TIMEOUT 300
 #define LEADER_PER_KEY_TIMING
-#define LEADER_NO_TIMEOUT
+//#define LEADER_NO_TIMEOUT
+#define PERMISSIVE_HOLD_PER_KEY

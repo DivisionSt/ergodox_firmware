@@ -10,19 +10,22 @@ enum custom_keycodes {
   LAYER_ID,
 };
 
+// Function declarations
+void send_current_layer_name(void);
 
-#define DUAL_FUNC_0 LT(12, KC_C)
-#define DUAL_FUNC_1 LT(11, KC_N)
-#define DUAL_FUNC_2 LT(3, KC_U)
-#define DUAL_FUNC_3 LT(12, KC_N)
-#define DUAL_FUNC_4 LT(12, KC_5)
-#define DUAL_FUNC_5 LT(8, KC_F7)
-#define DUAL_FUNC_6 LT(15, KC_H)
-#define DUAL_FUNC_7 LT(3, KC_L)
-#define DUAL_FUNC_8 LT(1, KC_I)
-#define DUAL_FUNC_9 LT(11, KC_F12)
-#define DUAL_FUNC_10 LT(13, KC_J)
-#define DUAL_FUNC_11 LT(6, KC_F20)
+
+#define DUAL_FUNC_0 LT(12, KC_F20)
+#define DUAL_FUNC_1 LT(5, KC_F18)
+#define DUAL_FUNC_2 LT(12, KC_2)
+#define DUAL_FUNC_3 LT(15, KC_F9)
+#define DUAL_FUNC_4 LT(6, KC_F14)
+#define DUAL_FUNC_5 LT(9, KC_F9)
+#define DUAL_FUNC_6 LT(11, KC_T)
+#define DUAL_FUNC_7 LT(5, KC_4)
+#define DUAL_FUNC_8 LT(4, KC_F8)
+#define DUAL_FUNC_9 LT(2, KC_F2)
+#define DUAL_FUNC_10 LT(15, KC_F7)
+#define DUAL_FUNC_11 LT(13, KC_E)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -86,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [6] = LAYOUT_ergodox_pretty(
-    KC_TRANSPARENT, LALT(LGUI(LCTL(LSFT(KC_1)))),LALT(LGUI(LCTL(LSFT(KC_2)))),LALT(LGUI(LCTL(LSFT(KC_3)))),LALT(LGUI(LCTL(LSFT(KC_4)))),KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, LALT(LGUI(LCTL(LSFT(KC_1)))),LALT(LGUI(LCTL(LSFT(KC_2)))),LALT(LGUI(LCTL(LSFT(KC_3)))),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, LALT(LGUI(LCTL(LSFT(KC_6)))),LALT(LGUI(LCTL(LSFT(KC_7)))),LALT(LGUI(LCTL(LSFT(KC_8)))),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_LEFT),  DUAL_FUNC_4,    LCTL(KC_DOWN),  LCTL(KC_RIGHT), LGUI(KC_GRAVE),                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     CW_TOGG,        LGUI(LSFT(KC_A)),DUAL_FUNC_5,    DUAL_FUNC_6,    LGUI(KC_W),     DUAL_FUNC_7,                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_8,    LALT(LCTL(KC_ENTER)),LALT(LCTL(KC_C)),DUAL_FUNC_9,    DUAL_FUNC_10,                                   KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -139,8 +142,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,
     KC_NO,          KC_NO,          TO(4),          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          TO(5),          KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          TO(1),          TO(3),                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          TO(2),          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          TO(10),         KC_NO,          KC_NO,          KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,QK_DYNAMIC_TAPPING_TERM_PRINT,KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          TO(2),          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          TO(10),         KC_NO,          KC_NO,          QK_DYNAMIC_TAPPING_TERM_PRINT,KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          KC_NO,          QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,KC_NO,
                                                                                                     KC_NO,          KC_NO,          TO(0),          KC_NO,
                                                                                                                     KC_NO,          KC_NO,
                                                                                     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO
@@ -178,16 +181,8 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_ergodo
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_TAB:
-            return g_tapping_term -200;
-        case MT(MOD_LSFT, KC_F):
-            return g_tapping_term -150;
-        case KC_MINUS:
-            return g_tapping_term -150;
-        case KC_EQUAL:
-            return g_tapping_term -150;
-        case MT(MOD_RSFT, KC_J):
-            return g_tapping_term -150;
+        case LT(8, KC_SPACE):
+            return g_tapping_term + 40;
         default:
             return g_tapping_term;
     }
@@ -482,7 +477,7 @@ void send_current_layer_name(void) {
   }
 }
 
-void process_leader_user(void) {
+void leader_end_user(void) {
   if (leader_sequence_two_keys(KC_I, KC_D)) {
     send_current_layer_name();
   } else if (leader_sequence_three_keys(KC_Y, KC_S, KC_Q)) {
@@ -495,4 +490,19 @@ void process_leader_user(void) {
     unregister_code(KC_LGUI);
     send_string("calc\n"); // Opens calculator
   }*/
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+
+        case LT(6, KC_BSPC):
+        case LT(7, KC_DELETE):
+        case LT(9, KC_ENTER):
+        case LT(8, KC_SPACE):
+            // Do not select the hold action when another key is tapped.
+            return false;
+        default:
+            // Immediately select the hold action when another key is tapped.
+            return true;
+    }
 }
