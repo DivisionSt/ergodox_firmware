@@ -21,11 +21,11 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define HRM_TAP_TERM_MS 185
-#define HRS_TAP_TERM_MS 185 
-#define THUMB_TAP_TERM_MS 220
-#define TAP_TERM_MS 185
-#define QUICK_TAP_MS 185
+#define HRM_TAP_TERM_MS 200
+#define HRS_TAP_TERM_MS 200
+#define THUMB_TAP_TERM_MS 240
+#define TAP_TERM_MS 200
+#define QUICK_TAP_MS 200
 #define PRIOR_IDLE_MS 150 // 167 is calibrated to 10500/63, where 63 is my casual WPM; 150 is calibrated to 10500/70 where 70 is my more regular typing speed
 
 &mt {
