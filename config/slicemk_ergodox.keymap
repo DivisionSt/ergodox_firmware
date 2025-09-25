@@ -14,8 +14,10 @@
 #define LAYER_UNDERGLOW 13
 #define LAYER_BLANK_TRANSPARENT 14
 
-#define LEFT_KEYS 1 2 3 4 5 6 7 15 16 17 18 19 20 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59 65 66 69 70 71 75
-#define RIGHT_KEYS 8 9 10 11 12 13 14 22 23 24 25 26 27 28 35 36 37 38 39 40 49 50 51 52 53 54 60 61 62 63 64 67 68 72 73 74 76
+#define LEFT_KEYS 1 2 3 4 5 6 7 15 16 17 18 19 20 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59
+#define LEFT_THUMB_KEYS 65 66 69 70 71 75
+#define RIGHT_KEYS 8 9 10 11 12 13 14 22 23 24 25 26 27 28 35 36 37 38 39 40 48 49 50 51 52 53 54 60 61 62 63 64
+#define RIGHT_THUMB_KEYS 67 68 72 73 74 76
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -24,11 +26,11 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define HRM_TAP_TERM_MS 200
-#define HRS_TAP_TERM_MS 200
-#define THUMB_TAP_TERM_MS 240
+#define HRM_TAP_TERM_MS 250
+#define HRS_TAP_TERM_MS 250
+#define THUMB_TAP_TERM_MS 280
 #define TAP_TERM_MS 200
-#define QUICK_TAP_MS 200
+#define QUICK_TAP_MS 160
 #define PRIOR_IDLE_MS 150 // 167 is calibrated to 10500/63, where 63 is my casual WPM; 150 is calibrated to 10500/70 where 70 is my more regular typing speed
 
 &mt {
@@ -117,6 +119,7 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RIGHT_KEYS>; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
         };
         hrsr: home_row_shift_right {
             compatible = "zmk,behavior-hold-tap";
@@ -127,6 +130,7 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_KEYS>; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
 		};
 		tlt: thumb_layer_tap {
             compatible = "zmk,behavior-hold-tap";
