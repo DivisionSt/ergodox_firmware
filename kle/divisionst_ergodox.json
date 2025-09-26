@@ -10,13 +10,13 @@
     {
       "x": 3.5,
       "c": "#a1a1a1",
-      "t": "#000000\n#db1bde\n\n\n#f50000",
+      "t": "#000000\n#a416a9\n\n\n#ab0000",
       "f": 4
     },
     "3\n<i class='kb kb-Unicode-ClearScreen-1'></i>ho\n\n\n<i class='fa fa-tablet'>bt2</i>",
     {
       "x": 10.5,
-      "t": "#000000\n\n\n#74cf80"
+      "t": "#000000\n\n\n#348f03"
     },
     "8\n\n\n/"
   ],
@@ -24,7 +24,7 @@
     {
       "y": -0.875,
       "x": 2.5,
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "t": "#000000\n#a416a9\n\n\n#ab0000"
     },
     "2\n<i class='kb kb-Unicode-ClearScreen-1'></i>wm\n\n\n<i class='fa fa-laptop'>bt1</i>",
     {
@@ -38,7 +38,7 @@
     "7",
     {
       "x": 1,
-      "t": "#000000\n\n\n#74cf80"
+      "t": "#000000\n\n\n#348f03"
     },
     "9\n\n\n*"
   ],
@@ -46,7 +46,7 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n\n\n\n#f50000"
+      "t": "#000000\n\n\n\n#ab0000"
     },
     "5\n\n\n\n<i class='fa fa-question'>bt4</i>",
     {
@@ -55,7 +55,7 @@
     "ldr",
     {
       "x": 4.5,
-      "t": "#000000\n\n\n\n#f50000"
+      "t": "#000000\n\n\n\n#ab0000"
     },
     "rpt\n\n\n\nbt clr",
     {
@@ -70,16 +70,16 @@
     },
     "Esc",
     {
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "t": "#000000\n#a416a9\n\n\n#ab0000"
     },
     "1\n<i class='kb kb-Unicode-ClearScreen-1'></i>wo\n\n\n<i class='fa fa-user'>bt0</i>",
     {
       "x": 14.5,
-      "t": "#000000\n\n\n#74cf80"
+      "t": "#000000\n\n\n#348f03"
     },
     "0\n\n\n-",
     {
-      "t": "#000000\n\n\n\n#f50000",
+      "t": "#000000\n\n\n\n#ab0000",
       "w": 1.5
     },
     "-\n\n\n\nrgb clr"
@@ -88,12 +88,12 @@
     {
       "y": -0.375,
       "x": 3.5,
-      "t": "#000000\n#db1bde\n#1f19fa"
+      "t": "#000000\n#a416a9\n#1f19fa"
     },
     "E\nm ctrl\nsz",
     {
       "x": 10.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n#348f03\n#0c8191"
     },
     "I\n\n<i class='kb kb-Arrows-Top-4'>sl</i>\n8\nF8"
   ],
@@ -101,17 +101,17 @@
     {
       "y": -0.875,
       "x": 2.5,
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "t": "#000000\n#a416a9\n\n\n#ab0000"
     },
     "W\n<i class='fa fa-angle-left'></i> <i class='fa fa-desktop'></i>\n\n\nwin",
     {
       "x": 1,
-      "t": "#000000\n#db1bde\n#1f19fa"
+      "t": "#000000\n#a416a9\n#1f19fa"
     },
     "R\nexpse\nrps",
     {
       "x": 8.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n#348f03\n#0c8191"
     },
     "U\n\n<i class='kb kb-Arrows-Bottom-4'>sl</i>\n7\nF7",
     {
@@ -123,22 +123,22 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n#db1bde\n#1f19fa"
+      "t": "#000000\n#a416a9\n#1f19fa"
     },
     "T\n<i class='fa fa-desktop'></i> <i class='fa fa-angle-right'></i>\nthr",
     {
-      "t": "#000000\n#db1bde",
+      "t": "#000000\n#a416a9",
       "h": 1.5
     },
     "`\n<i class='fa fa-angle-double-right'></i>wndw",
     {
       "x": 4.5,
-      "t": "#000000\n\n\n\n#f50000",
+      "t": "#000000\n\n\n\n#ab0000",
       "h": 1.5
     },
     "=\n\n\n\nble",
     {
-      "t": "#000000\n\n#1f19fa\n\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n\n#0c8191"
     },
     "Y\n\n<i class='kb kb-Line-Start'>sl</i>\n\nF12"
   ],
@@ -152,7 +152,7 @@
     "Q",
     {
       "x": 14.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80"
+      "t": "#000000\n\n\n#348f03"
     },
     "P\n\n\n+",
     {
@@ -165,12 +165,12 @@
     {
       "y": -0.375,
       "x": 3.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#a416a9"
     },
     "D\n<i class='fa fa-plus'>tab</i>\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Option-3'></i>",
     {
       "x": 10.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n#348f03\n#0c8191"
     },
     "K\n\n<i class='fa fa-long-arrow-up'></i>\n5\nF5\n\n\n\n\n<i class='mss mss-Unicode-Option-3'></i>"
   ],
@@ -178,17 +178,16 @@
     {
       "y": -0.875,
       "x": 2.5,
-      "t": "#000000\n#db1bde"
+      "t": "#000000\n#a416a9\n\n\n#ab0000"
     },
-    "S\n<i class='fa fa-angle-double-left'></i> tab\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Control-4'></i>",
+    "S\n<i class='fa fa-angle-double-left'></i> tab\n\n\nsketch\n\n\n\n\n<i class='mss mss-Unicode-Control-4'></i>",
     {
-      "x": 1,
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "x": 1
     },
     "F\n<i class='fa fa-close'>tab</i>\n\n\nfortnite\n\n\n\n\n&uArr;",
     {
       "x": 8.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n#348f03\n#0c8191"
     },
     "J\n\n<i class='fa fa-long-arrow-down'></i>\n4\nF4\n\n\n\n\n&uArr;",
     {
@@ -200,26 +199,26 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n#db1bde\n\n\n#f50000"
+      "t": "#000000\n#a416a9\n\n\n#ab0000"
     },
     "G\ntab <i class='fa fa-angle-double-right'></i>\n\n\ngaming",
     {
       "x": 6.5,
-      "t": "#000000\n\n#1f19fa\n\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n\n#0c8191"
     },
     "H\n\n<i class='fa fa-long-arrow-left'></i>\n\nF11"
   ],
   [
     {
       "y": -0.875,
-      "t": "#000000\n#db1bde",
+      "t": "#000000\n#a416a9",
       "w": 1.5
     },
     "\ncaps",
     "A\n<i class='fa fa-th-list'>tabs</i>\n\n\n\n\n\n\n\n<i class='mss mss-Unicode-Command-3'></i>",
     {
       "x": 14.5,
-      "t": "#000000\n\n\n#74cf80"
+      "t": "#000000\n\n\n#348f03"
     },
     ";\n\n\n+\n\n\n\n\n\n<i class='mss mss-Unicode-Command-3'></i>",
     {
@@ -232,13 +231,13 @@
     {
       "y": -0.625,
       "x": 6.5,
-      "t": "#000000\n#db1bde",
+      "t": "#000000\n#a416a9",
       "h": 1.5
     },
     "[\nscrsht\n\n\n\n\n\n\n\n(",
     {
       "x": 4.5,
-      "t": "#000000\n\n\n\n#f50000",
+      "t": "#000000\n\n\n\n#ab0000",
       "h": 1.5
     },
     "]\n\n\n\nusb\n\n\n\n\n)"
@@ -247,12 +246,12 @@
     {
       "y": -0.75,
       "x": 3.5,
-      "t": "#000000\n#db1bde\n#1f19fa\n\n#f50000"
+      "t": "#000000\n#a416a9\n#1f19fa\n\n#ab0000"
     },
     "C\nmax\n<i class='fa fa-copy'></i>\n\nmncraft",
     {
       "x": 10.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n#348f03\n#0c8191"
     },
     ",\n\np<i class='kb kb-Arrows-Up'></i>\n2\nF2"
   ],
@@ -260,7 +259,7 @@
     {
       "y": -0.875,
       "x": 2.5,
-      "t": "#000000\n#db1bde\n#1f19fa"
+      "t": "#000000\n#a416a9\n#1f19fa"
     },
     "X\n<i class='fa fa-angle-left'></i> disp\n<i class='fa fa-cut'></i>",
     {
@@ -269,13 +268,13 @@
     "V\ncntr\n<i class='fa fa-paste'></i>",
     {
       "x": 8.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#f50000\n\n\n\n\n\n\n#8ae5ff",
+      "t": "#000000\n\n#1f19fa\n#348f03\n#ab0000\n\n\n\n\n\n\n#0c8191",
       "a": 0
     },
     "M\n\np<i class='kb kb-Arrows-Down'></i>\n1\n<i class='fa fa-mouse-pointer'></i>\n\n\n\n\n\n\nF1",
     {
       "x": 1,
-      "t": "#000000\n\n#1f19fa\n#74cf80\n#8ae5ff",
+      "t": "#000000\n\n#1f19fa\n#348f03\n#0c8191",
       "a": 4
     },
     ".\n\nend\n3\nF3"
@@ -284,12 +283,12 @@
     {
       "y": -0.875,
       "x": 5.5,
-      "t": "#000000\n#db1bde\n#1f19fa"
+      "t": "#000000\n#a416a9\n#1f19fa"
     },
     "B\ndisp <i class='fa fa-angle-right'></i>\n<i class='kb kb-Redo-1'></i>",
     {
       "x": 6.5,
-      "t": "#000000\n\n#1f19fa\n\n#8ae5ff"
+      "t": "#000000\n\n#1f19fa\n\n#0c8191"
     },
     "N\n\nhm\n\nF10"
   ],
@@ -306,7 +305,7 @@
     "Z\n\n<i class='kb kb-Undo-3'></i>",
     {
       "x": 14.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80"
+      "t": "#000000\n\n#1f19fa\n#348f03"
     },
     "/\n\n<i class='fa fa-long-arrow-up'></i>\n<i class='kb kb-Return-2'></i>",
     {
@@ -324,7 +323,7 @@
     "",
     {
       "x": 10.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80",
+      "t": "#000000\n\n#1f19fa\n#348f03",
       "a": 4
     },
     "<i class='fa fa-arrow-left'></i>\n\n<i class='kb kb-Hamburger-Menu'></i>\n0"
@@ -344,12 +343,12 @@
     "<i class='mss mss-Unicode-Command-3'></i>",
     {
       "x": 8.5,
-      "t": "#000000\n\n\n#74cf80"
+      "t": "#000000\n\n\n#348f03"
     },
     "<i class='mss mss-Unicode-Command-3'></i>\n\n\n0",
     {
       "x": 1,
-      "t": "#000000\n\n#1f19fa\n#74cf80"
+      "t": "#000000\n\n#1f19fa\n#348f03"
     },
     "<i class='fa fa-arrow-down'></i>\n\n<i class='fa fa-long-arrow-left'></i>\n."
   ],
@@ -366,7 +365,7 @@
     "",
     {
       "x": 14.5,
-      "t": "#000000\n\n#1f19fa\n#74cf80",
+      "t": "#000000\n\n#1f19fa\n#348f03",
       "a": 4
     },
     "<i class='fa fa-arrow-up'></i>\n\n<i class='fa fa-long-arrow-down'></i>\n<i class='kb kb-Return-2'></i>",
@@ -382,7 +381,7 @@
       "ry": 4.25,
       "y": -1,
       "x": 1,
-      "t": "#db1bde"
+      "t": "#a416a9"
     },
     "&tog sc <i class='fa fa-share-square-o'></i>",
     {
@@ -392,7 +391,7 @@
   ],
   [
     {
-      "t": "#000000\n\n\n\n\n\n\n\n\n#db1bde",
+      "t": "#000000\n\n\n\n\n\n\n\n\n#a416a9",
       "h": 2
     },
     "<i class='mss mss-Unicode-BackSpace-DeleteLeft-Big-2'></i>\n\n\n\n\n\n\n\n\nsc <i class='fa fa-share-square-o'></i>",
@@ -418,27 +417,27 @@
       "rx": 13,
       "y": -1,
       "x": -3,
-      "t": "#f50000"
+      "t": "#ab0000"
     },
     "lyrs <i class='kb kb-Hamburger-Menu'></i>",
     {
-      "t": "#74cf80"
+      "t": "#348f03"
     },
     "&tog nm<i class='fa fa-slack'></i>"
   ],
   [
     {
       "x": -3,
-      "t": "#000000\n\n\n\n#f50000"
+      "t": "#000000\n\n\n\n#ab0000"
     },
     "id\n\n\n\nbootld",
     {
-      "t": "#000000\n\n\n\n\n\n\n\n\n#6dcad6",
+      "t": "#000000\n\n\n\n\n\n\n\n\n#0c8191",
       "h": 2
     },
     "<i class='kb kb-Return-2'></i>\n\n\n\n\n\n\n\n\nfn func",
     {
-      "t": "#000000\n\n\n\n\n\n\n\n\n#74cf80",
+      "t": "#000000\n\n\n\n\n\n\n\n\n#348f03",
       "h": 2
     },
     "spc\n\n\n\n\n\n\n\n\nnum<i class='fa fa-slack'></i>"
@@ -446,7 +445,7 @@
   [
     {
       "x": -3,
-      "t": "#23d0e8\n\n\n\n#f50000",
+      "t": "#23d0e8\n\n\n\n#ab0000",
       "a": 7
     },
     "\n\n\n\nreset"
