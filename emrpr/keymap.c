@@ -1,14 +1,10 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#ifndef ZSA_SAFE_RANGE
-#define ZSA_SAFE_RANGE SAFE_RANGE
-#endif
 
 enum custom_keycodes {
   ALT_TAB = SAFE_RANGE,
-  CMD_TAB = SAFE_RANGE,
-  RGB_SLD = ZSA_SAFE_RANGE,
+  CMD_TAB,
   LAYER_ID,
 };
 
