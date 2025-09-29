@@ -423,7 +423,7 @@
                                                                                    &trans                    &trans                                                                                     &trans                    &trans
 //                                                                                 │ TRANS                    │ TRANS                    │                              │ TRANS                    │ TRANS                    │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &trans                    &kp DELETE                &kp C_NEXT                                                     &trans                    &kp RETURN                &kp SPACE
+                                                        &trans                    &kp DELETE                &kp C_NEXT                        &trans                    &kp RETURN                &kp SPACE
 //                                                     │ TRANS                    │ DELETE                   │ NEXT TRACK               │  │ TRANS                    │ ENTER                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &kp C_PREV                                                     &trans
@@ -455,7 +455,7 @@
                                                                                    &trans                    &trans                                                                                     &trans                    &trans
 //                                                                                 │ TRANS                    │ TRANS                    │                              │ TRANS                    │ TRANS                    │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp BACKSPACE             &trans                    &trans                                                     &trans                    &kp RETURN                &kp SPACE
+                                                        &kp BACKSPACE             &trans                    &trans                           &trans                    &kp RETURN                &kp SPACE
 //                                                     │ BSPC                     │ TRANS                    │ TRANS                    │  │ TRANS                    │ ENTER                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &trans                                                     &trans
@@ -487,7 +487,7 @@
                                                                                    &none                     &trans                                                                                     &trans                    &trans
 //                                                                                 │ NONE                     │ TRANS                    │                              │ TRANS                    │ TRANS                    │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC                                               &none                     &kp RETURN                &trans
+                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC             &none                     &kp RETURN                &trans
 //                                                     │ BSPC                     │ DELETE                   │ BRIGHTNESS +             │  │ NONE                     │ ENTER                    │ TRANS                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &kp C_BRIGHTNESS_DEC                                               &none
@@ -519,7 +519,7 @@
                                                                                    &none                     &trans                                                                                     &trans                    &trans
 //                                                                                 │ NONE                     │ TRANS                    │                              │ TRANS                    │ TRANS                    │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC                                               &none                     &trans                    &kp SPACE
+                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC             &none                     &trans                    &kp SPACE
 //                                                     │ BSPC                     │ DELETE                   │ BRIGHTNESS +             │  │ NONE                     │ TRANS                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &kp C_BRIGHTNESS_DEC                                               &none
