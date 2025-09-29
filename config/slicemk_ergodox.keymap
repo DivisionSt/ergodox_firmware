@@ -161,6 +161,7 @@
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 			ignored-key-positions = <59 60>;
+			timeout-ms = 1000;
         };
 		cmd_tab: cmd_tab {
             compatible = "zmk,behavior-tri-state";
@@ -168,6 +169,7 @@
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
 			ignored-key-positions = <59 60>;
+			timeout-ms = 1000;
         };
     };
 };
