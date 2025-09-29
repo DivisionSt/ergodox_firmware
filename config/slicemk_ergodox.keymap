@@ -160,14 +160,14 @@
             label = "ALT-TAB";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-			ignored-key-positions = <59 60 69 70 73 74>;
+			ignored-key-positions = <59 60>;
         };
 		cmd_tab: cmd_tab {
             compatible = "zmk,behavior-tri-state";
             label = "CMD-TAB";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-			ignored-key-positions = <59 60 69 70 73 74>;
+			ignored-key-positions = <59 60>;
         };
     };
 };
@@ -423,11 +423,11 @@
                                                                                    &trans                    &trans                                                                                     &trans                    &trans
 //                                                                                 │ TRANS                    │ TRANS                    │                              │ TRANS                    │ TRANS                    │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &trans                    &kp DELETE                &trans                                                     &trans                    &kp RETURN                &kp SPACE
-//                                                     │ TRANS                    │ DELETE                   │ TRANS                    │  │ TRANS                    │ ENTER                    │ SPACE                    │
+                                                        &trans                    &kp DELETE                &kp C_NEXT                                                     &trans                    &kp RETURN                &kp SPACE
+//                                                     │ TRANS                    │ DELETE                   │ NEXT TRACK               │  │ TRANS                    │ ENTER                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &trans                                                     &trans
-//                                                                                                          │ TRANS                    │  │ TRANS                    │
+                                                                                                             &kp C_PREV                                                     &trans
+//                                                                                                          │ PREV TRACK               │  │ TRANS                    │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
@@ -443,8 +443,8 @@
   &trans                      &trans                    &trans                    &kp LS(LEFT_ALT)          &kp LC(LEFT_SHIFT)        &kp LC(LS(LEFT_ALT))      &trans                                                     &trans                    &kp LS(LA(LEFT_ARROW))    &kp LS(DOWN_ARROW)        &kp LS(UP_ARROW)          &kp LS(LA(RIGHT_ARROW))   &trans                    &trans
 //│ TRANS                    │ TRANS                    │ TRANS                    │ SHIFT+ALT                │ CTRL+SHIFT               │ CTRL+SHIFT+ALT           │ TRANS                    │                              │ TRANS                    │ SHIFT+ALT+←              │ SHIFT+↓                  │ SHIFT+↑                  │ SHIFT+ALT+→              │ TRANS                    │ TRANS                    │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &caps_word                  &trans                    &trans                    &trans                    &trans                    &trans                                                                                   &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW           &trans                    &trans
-//│ CAPS WORD                │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │                              │ ←                        │ ↓                        │ ↑                        │ →                        │ TRANS                    │ TRANS                    │
+  &caps_word                  &kp LG(A)                  &trans                    &trans                    &trans                    &trans                                                                                   &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW           &trans                    &trans
+//│ CAPS WORD                │ GUI+A                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │                              │ ←                        │ ↓                        │ ↑                        │ →                        │ TRANS                    │ TRANS                    │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
   &trans                      &kp LG(Z)                 &kp LG(X)                 &kp LG(C)                 &mt LG(LS(V)) LG(V)       &kp LG(LS(Z))             &trans                                                     &trans                    &kp LG(LEFT)              &kp PAGE_DOWN             &kp PAGE_UP               &kp LG(RIGHT)             &kp UP_ARROW              &trans
 //│ TRANS                    │ CMD+Z                    │ CMD+X                    │ CMD+C                    │ CMD+SHIFT+V/CMD+V        │ CMD+SHIFT+Z              │ TRANS                    │                              │ TRANS                    │ CMD+←                    │ PAGE DOWN                │ PAGE UP                  │ CMD+→                    │ ↑                        │ TRANS                    │
