@@ -6,12 +6,18 @@
 #endif
 
 enum custom_keycodes {
+  ALT_TAB = SAFE_RANGE,
+  CMD_TAB = SAFE_RANGE,
   RGB_SLD = ZSA_SAFE_RANGE,
   LAYER_ID,
 };
 
-// Function declarations
+// custom declarations
 void send_current_layer_name(void);
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+bool is_cmd_tab_active = false;
+uint16_t cmd_tab_timer = 0;
 
 
 #define DUAL_FUNC_0 LT(12, KC_F20)
@@ -33,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_GRAVE,                                       KC_EQUAL,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_TRANSPARENT, MT(MOD_LGUI, KC_A),MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LSFT, KC_F),KC_G,                                                                           KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_LALT, KC_K),MT(MOD_RCTL, KC_L),MT(MOD_RGUI, KC_SCLN),KC_QUOTE,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           DUAL_FUNC_0,                                    DUAL_FUNC_2,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
-    LGUI(LCTL(KC_SPACE)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_GUI,                                                                                                    KC_RIGHT_GUI,   KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,
+    LGUI(LCTL(KC_SPACE)),KC_TRANSPARENT, KC_TRANSPARENT, CMD_TAB, KC_LEFT_GUI,                                                                                                    KC_RIGHT_GUI,   KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,
                                                                                                     TT(6),          DUAL_FUNC_1,    TO(11),         TT(8),
                                                                                                                     KC_AUDIO_VOL_UP,LAYER_ID,
                                                                                     LT(6, KC_BSPC), LT(7, KC_DELETE),KC_AUDIO_VOL_DOWN,KC_TRANSPARENT, LT(9, KC_ENTER),LT(8, KC_SPACE)
@@ -73,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_GRAVE,                                       KC_EQUAL,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_TRANSPARENT, MT(MOD_LCTL, KC_A),MT(MOD_LGUI, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LSFT, KC_F),KC_G,                                                                           KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_LALT, KC_K),MT(MOD_RGUI, KC_L),MT(MOD_RCTL, KC_SCLN),KC_QUOTE,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           DUAL_FUNC_0,                                    DUAL_FUNC_2,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
-    LGUI(KC_DOT),   KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_CTRL,                                                                                                   KC_RIGHT_CTRL,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    LGUI(KC_DOT),   KC_TRANSPARENT, KC_TRANSPARENT, ALT_TAB, KC_LEFT_CTRL,                                                                                                   KC_RIGHT_CTRL,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, DUAL_FUNC_3,    TO(11),         KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
@@ -379,8 +385,47 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         send_current_layer_name();
       }
       return false;
+    case ALT_TAB:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+    case CMD_TAB:
+      if (record->event.pressed) {
+        if (!is_cmd_tab_active) {
+          is_cmd_tab_active = true;
+          register_code(KC_LGUI);
+        }
+        cmd_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
   }
   return true;
+}
+
+void matrix_scan_user(void) { // The very important timer.
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > 1000) {
+      unregister_code(KC_LALT);
+      is_alt_tab_active = false;
+    }
+  }
+  if (is_cmd_tab_active) {
+    if (timer_elapsed(cmd_tab_timer) > 1000) {
+      unregister_code(KC_LGUI);
+      is_cmd_tab_active = false;
+    }
+  }
 }
 
 uint16_t layer_state_set_user(uint16_t state) {
