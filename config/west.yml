@@ -18,6 +18,10 @@ manifest:
       remote: urob
       path: modules/zmk/leader-key
       revision: main
+    - name: zmk-tri-state
+      remote: urob
+      path: modules/zmk/tri-state
+      revision: main
     - name: zmk-listeners
       remote: ssbb
       revision: v1
