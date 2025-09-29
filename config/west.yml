@@ -16,6 +16,7 @@ manifest:
       revision: main
     - name: zmk-leader-key
       remote: urob
+      path: modules/zmk/leader-key
       revision: main
     - name: zmk-listeners
       remote: ssbb
