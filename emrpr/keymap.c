@@ -10,27 +10,27 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(1, KC_O)
-#define DUAL_FUNC_1 LT(15, KC_N)
-#define DUAL_FUNC_2 LT(2, KC_4)
-#define DUAL_FUNC_3 LT(9, KC_W)
-#define DUAL_FUNC_4 LT(3, KC_Q)
-#define DUAL_FUNC_5 LT(4, KC_4)
-#define DUAL_FUNC_6 LT(11, KC_K)
-#define DUAL_FUNC_7 LT(15, KC_T)
-#define DUAL_FUNC_8 LT(9, KC_F10)
-#define DUAL_FUNC_9 LT(3, KC_S)
-#define DUAL_FUNC_10 LT(7, KC_H)
-#define DUAL_FUNC_11 LT(7, KC_F11)
-#define DUAL_FUNC_12 LT(9, KC_2)
-#define DUAL_FUNC_13 LT(1, KC_X)
-#define DUAL_FUNC_14 LT(12, KC_Q)
+#define DUAL_FUNC_0 LT(8, KC_F9)
+#define DUAL_FUNC_1 LT(8, KC_F4)
+#define DUAL_FUNC_2 LT(15, KC_D)
+#define DUAL_FUNC_3 LT(4, KC_F8)
+#define DUAL_FUNC_4 LT(3, KC_4)
+#define DUAL_FUNC_5 LT(12, KC_C)
+#define DUAL_FUNC_6 LT(5, KC_F18)
+#define DUAL_FUNC_7 LT(13, KC_C)
+#define DUAL_FUNC_8 LT(5, KC_Q)
+#define DUAL_FUNC_9 LT(2, KC_2)
+#define DUAL_FUNC_10 LT(5, KC_I)
+#define DUAL_FUNC_11 LT(15, KC_F18)
+#define DUAL_FUNC_12 LT(3, KC_F1)
+#define DUAL_FUNC_13 LT(2, KC_E)
+#define DUAL_FUNC_14 LT(3, KC_F17)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_GRAVE,                                       KC_EQUAL,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
-    KC_TRANSPARENT, KC_A,           MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LGUI, KC_F),KC_G,                                                                           KC_H,           MT(MOD_RGUI, KC_J),MT(MOD_LALT, KC_K),MT(MOD_RCTL, KC_L),MT(MOD_RGUI, KC_SCLN),KC_QUOTE,
+    KC_TRANSPARENT, KC_A,           MT(MOD_LCTL, KC_S),MT(MOD_LALT, KC_D),MT(MOD_LGUI, KC_F),KC_G,                                                                           KC_H,           MT(MOD_RGUI, KC_J),MT(MOD_LALT, KC_K),MT(MOD_RCTL, KC_L),KC_SCLN,        KC_QUOTE,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           DUAL_FUNC_0,                                    DUAL_FUNC_2,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
     LGUI(LCTL(KC_SPACE)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_SHIFT,                                                                                                  KC_RIGHT_SHIFT, KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,
                                                                                                     TT(6),          DUAL_FUNC_1,    TO(11),         TT(8),
