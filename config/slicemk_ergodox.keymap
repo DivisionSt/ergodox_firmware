@@ -111,28 +111,6 @@
             hold-trigger-key-positions = <LEFT_KEYS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
 		};
-        hrsl: home_row_shift_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <PRIOR_IDLE_MS>;
-            tapping-term-ms = <HRS_TAP_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <RIGHT_KEYS>; // List of keys on the right side of the keyboard
-            hold-trigger-on-release;
-        };
-        hrsr: home_row_shift_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <PRIOR_IDLE_MS>;
-            tapping-term-ms = <HRS_TAP_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <LEFT_KEYS>; // List of keys on the left side of the keyboard
-            hold-trigger-on-release;
-		};
 		tlt: thumb_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
