@@ -547,16 +547,12 @@ void leader_end_user(void) {
     send_current_layer_name();
   } else if (leader_sequence_two_keys(KC_R, KC_1)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
   } else if (leader_sequence_two_keys(KC_R, KC_2)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_2)))));
-  }
   } else if (leader_sequence_two_keys(KC_R, KC_3)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_3)))));
-  }
   } else if (leader_sequence_two_keys(KC_R, KC_6)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_6)))));
-  }
   } else if (leader_sequence_two_keys(KC_R, KC_7)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
   }
