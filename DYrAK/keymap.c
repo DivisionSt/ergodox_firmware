@@ -1,13 +1,21 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#ifndef ZSA_SAFE_RANGE
-#define ZSA_SAFE_RANGE SAFE_RANGE
-#endif
 
 enum custom_keycodes {
-  RGB_SLD = ZSA_SAFE_RANGE,
+  ALT_TAB = SAFE_RANGE,
+  CMD_TAB,
+  LAYER_ID,
 };
+
+
+// custom declarations
+void send_current_layer_name(void);
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+bool is_cmd_tab_active = false;
+uint16_t cmd_tab_timer = 0;
+
 
 
 #define DUAL_FUNC_0 LT(6, KC_F19)
@@ -378,9 +386,55 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
+    case LAYER_ID:
+      if (record->event.pressed) {
+        send_current_layer_name();
+      }
+      return false;
+    case ALT_TAB:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+    case CMD_TAB:
+      if (record->event.pressed) {
+        if (!is_cmd_tab_active) {
+          is_cmd_tab_active = true;
+          register_code(KC_LGUI);
+        }
+        cmd_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
   }
   return true;
 }
+
+
+void matrix_scan_user(void) { // The very important timer.
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > 500) {
+      unregister_code(KC_LALT);
+      is_alt_tab_active = false;
+    }
+  }
+  if (is_cmd_tab_active) {
+    if (timer_elapsed(cmd_tab_timer) > 500) {
+      unregister_code(KC_LGUI);
+      is_cmd_tab_active = false;
+    }
+  }
+}
+
 
 uint16_t layer_state_set_user(uint16_t state) {
     uint8_t layer = biton16(state);
@@ -421,3 +475,140 @@ uint16_t layer_state_set_user(uint16_t state) {
   return state;
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom QMK Features */
+
+void send_current_layer_name(void) {
+  uint8_t current_layer = get_highest_layer(layer_state);
+  
+  SEND_STRING("L: ");
+  switch (current_layer) {
+    case 0:
+      SEND_STRING("macos");
+      break;
+    case 1:
+      SEND_STRING("fortnite");
+      break;
+    case 2:
+      SEND_STRING("minecraft");
+      break;
+    case 3:
+      SEND_STRING("gaming");
+      break;
+    case 4:
+      SEND_STRING("win");
+      break;
+    case 5:
+      SEND_STRING("old_mac");
+      break;
+    case 6:
+      SEND_STRING("shortcut");
+      break;
+    case 7:
+      SEND_STRING("nav");
+      break;
+    case 8:
+      SEND_STRING("num");
+      break;
+    case 9:
+      SEND_STRING("func");
+      break;
+    case 10:
+      SEND_STRING("mouse");
+      break;
+    case 11:
+      SEND_STRING("layers");
+      break;
+    default:
+      SEND_STRING("unknown");
+      break;
+  }
+}
+
+void leader_end_user(void) {
+  if (leader_sequence_two_keys(KC_I, KC_D)) {
+    send_current_layer_name();
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_2)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_2)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_3)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_3)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_6)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_6)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_7)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
+  }
+  /* } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  }
+  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  } */
+  /*} else if (leader_sequence_one_key(KC_C)) {
+    register_code(KC_LGUI); // Windows key
+    register_code(KC_R);    // R key
+    unregister_code(KC_R);
+    unregister_code(KC_LGUI);
+    send_string("calc\n"); // Opens calculator
+  }*/
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+
+        case LT(3, KC_BSPC):
+        case LT(4, KC_SPACE):
+            // Do not select the hold action when another key is tapped.
+            return false;
+        default:
+            // Immediately select the hold action when another key is tapped.
+            return true;
+    }
+}
