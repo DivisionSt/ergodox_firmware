@@ -408,13 +408,13 @@
   &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &trans            &trans     &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
 //│ TRANS    │ F1       │ F2       │ F3       │ F4       │ F5       │ TRANS    │      │ TRANS    │ F6       │ F7       │ F8       │ F9       │ F10      │ F11      │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &trans     &trans     &trans     &trans     &kp LCTRL(TAB) &trans        &trans     &trans     &trans     &trans     &trans     &trans     &kp F12
+  &trans     &trans     &trans     &trans     &trans     &kp LC(TAB) &trans            &trans     &trans     &trans     &trans     &trans     &trans     &kp F12
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ CTRL+TAB │ TRANS    │      │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ F12      │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &caps_word &sk LSHFT  &sk LCTRL  &sk LALT   &sk LGUI   &trans                                  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
 //│ CAPS WRD │ SHIFT    │ CTRL     │ ALT      │ GUI      │ TRANS    │          │      │          │ ←        │ ↓        │ ↑        │ →        │ TRANS    │ TRANS    │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &trans     &trans     &trans     &trans     &kp LGUI(LEFT) &trans        &trans     &trans     &kp PG_DN  &kp PG_UP  &trans     &kp UP     &trans
+  &trans     &trans     &trans     &trans     &trans     &kp LG(LEFT) &trans           &trans     &trans     &kp PG_DN  &kp PG_UP  &trans     &kp UP     &trans
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ GUI+←    │ TRANS    │      │ TRANS    │ TRANS    │ PG DN    │ PG UP    │ TRANS    │ ↑        │ TRANS    │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans                                             &trans     &kp LC(RET) &kp LEFT  &kp DOWN   &kp RIGHT
