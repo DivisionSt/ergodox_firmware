@@ -1,18 +1,18 @@
-#define LAYER_MACOS 0
-#define LAYER_FORTNITE 1
-#define LAYER_MINECRAFT 2
-#define LAYER_GAMING 3
-#define LAYER_WIN 4
-#define LAYER_SKETCHUP 5
-#define LAYER_OLD_MAC 6
-#define LAYER_SHORTCUT 7
-#define LAYER_NAV 8
-#define LAYER_NUM 9
-#define LAYER_FUNC 10
-#define LAYER_MOUSE 11
-#define LAYER_LAYERS 12
-#define LAYER_UNDERGLOW 13
-#define LAYER_BLANK_TRANSPARENT 14
+#define L_BASE_MAC 0
+#define L_BASE_FORT 1
+#define L_BASE_MINE 2
+#define L_BASE_GAME 3
+#define L_BASE_WIN 4
+#define L_BASE_SKETCHUP 5
+#define L_BASE_OLD 6
+#define L_EXT_NAV 7
+#define L_EXT_NUM 8
+#define L_EXT_FUNC 9
+#define L_EXT_OLD 10
+#define L_MOUSE 11
+#define L_LAYERS 12
+#define L_UNDERGLOW 13
+#define L_BLANK_TRANSPARENT 14
 
 #define LEFT_KEYS 1 2 3 4 5 6 7 15 16 17 18 19 20 21 29 30 31 32 33 34 41 42 43 44 45 46 47 55 56 57 58 59
 #define LEFT_THUMB_KEYS 65 66 69 70 71 75
@@ -39,154 +39,174 @@
 };
 
 / {
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
+  layer_listeners {
+    compatible = "zmk,layer-listeners";
 
-        underglow_shortcut {
-            layers = <LAYER_SHORTCUT>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(299, 87, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-	    underglow_nav {
-            layers = <LAYER_NAV>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(240, 96, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };	
-	    underglow_num {
-            layers = <LAYER_NUM>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-	    underglow_func {
-            layers = <LAYER_FUNC>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(187, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-        underglow_fortnite {
-            layers = <LAYER_FORTNITE>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-        underglow_minecraft {
-            layers = <LAYER_MINECRAFT>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(150, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-        underglow_gaming {
-            layers = <LAYER_GAMING>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(55, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-        underglow_layers {
-            layers = <LAYER_LAYERS>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-        underglow_win {
-            layers = <LAYER_WIN>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(180, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
-        underglow_sketchup {
-            layers = <LAYER_SKETCHUP>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(30, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-        };
+    underglow_shortcut {
+      layers = <L_EXT_NAV>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(299, 87, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
     };
+    underglow_nav {
+      layers = <L_EXT_NUM>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(240, 96, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };	
+    underglow_num {
+      layers = <L_EXT_FUNC>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+    /* underglow_func {
+      layers = <LAYER_FUNC>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(187, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    }; */
+    underglow_fortnite {
+      layers = <L_BASE_FORT>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+    underglow_minecraft {
+      layers = <L_BASE_MINE>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(150, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+    underglow_gaming {
+      layers = <L_BASE_GAME>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(55, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+    underglow_layers {
+      layers = <L_LAYERS>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+    underglow_win {
+      layers = <L_BASE_WIN>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(180, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+    underglow_sketchup {
+      layers = <L_BASE_SKETCHUP>;
+      bindings = <&rgb_ug RGB_COLOR_HSB(30, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    };
+  };
 };
 
 
 / {
-    behaviors {
-        hrml: home_row_mod_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <PRIOR_IDLE_MS>;
-            tapping-term-ms = <HRM_TAP_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <RIGHT_KEYS>; // List of keys on the right side of the keyboard
-            hold-trigger-on-release;
-        };
-        hrmr: home_row_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <PRIOR_IDLE_MS>;
-            tapping-term-ms = <HRM_TAP_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <LEFT_KEYS>; // List of keys on the left side of the keyboard
-            hold-trigger-on-release;
-		};
+  behaviors {
+    hrml: home_row_mod_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
+      tapping-term-ms = <HRM_TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <RIGHT_KEYS>; // List of keys on the right side of the keyboard
+      hold-trigger-on-release;
+    };
+    hrmr: home_row_mod_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
+      tapping-term-ms = <HRM_TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <LEFT_KEYS>; // List of keys on the left side of the keyboard
+      hold-trigger-on-release;
+    };
 		tlt: thumb_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            // require-prior-idle-ms = <PRIOR_IDLE_MS>;
-            tapping-term-ms = <THUMB_TAP_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;
-            bindings = <&mo>, <&kp>;
-			display-name = "Layer-Tap";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      // require-prior-idle-ms = <PRIOR_IDLE_MS>;
+      tapping-term-ms = <THUMB_TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      bindings = <&mo>, <&kp>;
+			display-name = "Thumb-Layer-Tap";
+		};
+    tmt: thumb_mod_tap {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      // require-prior-idle-ms = <PRIOR_IDLE_MS>;
+      tapping-term-ms = <THUMB_TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      bindings = <&kp>, <&kp>;
+			display-name = "Thumb-Mod-Tap";
+    };
+    mt_rpt: modtap_repeat {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      // require-prior-idle-ms = <PRIOR_IDLE_MS>;
+      tapping-term-ms = <THUMB_TAP_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;
+      bindings = <&key_repeat>, <&kp>;
+			display-name = "Mod-Tap-Repeat";
 		};
 		leader_sys: leader_sys {
 			compatible = "zmk,behavior-leader-key";
 			#binding-cells = <0>;
-            usb { sequence = <U S B>; bindings = <&out OUT_USB>; };
-            ble { sequence = <B L E>; bindings = <&out OUT_BLE>; };
-            bt0 { sequence = <B N0>; bindings = <&bt BT_SEL 0>; };
-            bt1 { sequence = <B N1>; bindings = <&bt BT_SEL 1>; };
-            bt2 { sequence = <B N2>; bindings = <&bt BT_SEL 2>; };
-            btc { sequence = <C L E A R>; bindings = <&bt BT_CLR>; };
-			boot { sequence = <B O O T>; bindings = <&bootloader>; };
-            reset { sequence = <R E S E T>; bindings = <&sys_reset>; };
+        usb { sequence = <U S B>; bindings = <&out OUT_USB>; };
+        ble { sequence = <B L E>; bindings = <&out OUT_BLE>; };
+        bt0 { sequence = <B N0>; bindings = <&bt BT_SEL 0>; };
+        bt1 { sequence = <B N1>; bindings = <&bt BT_SEL 1>; };
+        bt2 { sequence = <B N2>; bindings = <&bt BT_SEL 2>; };
+        btc { sequence = <C L E A R>; bindings = <&bt BT_CLR>; };
+			  boot { sequence = <B O O T>; bindings = <&bootloader>; };
+        reset { sequence = <R E S E T>; bindings = <&sys_reset>; };
 		};
 		alt_tab: alt_tab {
-            compatible = "zmk,behavior-tri-state";
-            label = "ALT-TAB";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <59 60>;
-            timeout-ms = <1000>;
-        };
-		cmd_tab: cmd_tab {
-            compatible = "zmk,behavior-tri-state";
-            label = "CMD-TAB";
-            #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <59 60>;
-            timeout-ms = <1000>;
-        };
+      compatible = "zmk,behavior-tri-state";
+      label = "ALT-TAB";
+      #binding-cells = <0>;
+      bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+      ignored-key-positions = <59 60>;
+      timeout-ms = <1000>;
     };
+		cmd_tab: cmd_tab {
+      compatible = "zmk,behavior-tri-state";
+      label = "CMD-TAB";
+      #binding-cells = <0>;
+      bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+      ignored-key-positions = <59 60>;
+      timeout-ms = <1000>;
+    };
+  };
 };
 
 / {
 	keymap {
 		compatible = "zmk,keymap";
-		layer_0 { // macos
+		layer_0 { // base-mac
 			bindings = <
-//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
+//╭───────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
-//│ BOOTLOADER                                                                                       │
-//├───────────────────┬──────────────────┬───────────────┬──────────────┬─────────────────┬────────────────┬──────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
-  &kp ESCAPE           &kp NUMBER_1        &kp NUMBER_2   &kp NUMBER_3   &kp NUMBER_4      &kp NUMBER_5     &leader_sys                                            &key_repeat               &kp NUMBER_6              &kp NUMBER_7              &kp NUMBER_8              &kp NUMBER_9              &kp NUMBER_0              &kp MINUS
-//│ ESC               │ 1                │ 2             │ 3            │ 4               │ 5              │ LEADER               │                              │ KEY REPEAT               │ 6                        │ 7                        │ 8                        │ 9                        │ 0                        │ -                        │
-//├───────────────────┼──────────────────┼───────────────┼──────────────┼─────────────────┼────────────────┼──────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &kp TAB              &kp Q               &kp W           &kp E          &kp R            &kp T            &kp GRAVE                                              &kp EQUAL                 &kp Y                     &kp U                     &kp I                     &kp O                     &kp P                     &kp BACKSLASH
-//│ TAB               │ Q                │ W             │ E            │ R               │ T              │ `                    │                              │ =                        │ Y                        │ U                        │ I                        │ O                        │ P                        │ \                        │
-//├───────────────────┼──────────────────┼───────────────┼──────────────┼─────────────────┼────────────────┼──────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                &kp A               &kp S           &kp D         &kp F             &kp G                                                                                                 &kp H                     &hrmr RGUI J                &hrmr LALT K              &hrmr RCTRL L             &kp SEMICOLON               &kp SINGLE_QUOTE
-//│ NONE              │ A                │ S             │ D            │ F               │ G              │                      │                                                          │ H                        │ GUI/J                    │ ALT/K                    │ CTRL/L                   │ ;   i                    │ '                        │
-//├───────────────────┼──────────────────┼───────────────┼──────────────┼─────────────────┼────────────────┼──────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                &kp Z              &kp X            &kp C          &kp V            &kp B            &kp LEFT_BRACKET                     &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N            &kp M                     &kp COMMA                 &kp PERIOD                &kp SLASH                 &none
-//│ NONE              │ Z                │ X             │ C            │ V               │ B              │ [                    │                              │ )/]                      │ N                        │ M                        │ ,                        │ .                        │ /                        │ none                   │
-//├───────────────────┼──────────────────┼───────────────┼──────────────┼─────────────────┼────────────────┼──────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &kp LC(LG(SPACE))    &none              &none            &cmd_tab      &kp LEFT_SHIFT                                                                                                                  &kp RIGHT_SHIFT             &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW
-//│ CTRL+CMD+SPC      │ NONE             │ NONE          │ CMD+TAB      │ LSHIFT          │                                                                                    │                          │ RSHIFT                   │ ←                        │ ↓                        │ ↑                        │ →                        │                          │
-//╰───────────────────┴──────────────────┴───────────────┼──────────────┼─────────────────┼                                                                                    ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &tog LAYER_SHORTCUT       &mt LC(LG(Q)) C_PLAY_PAUSE                                                                    &to LAYER_LAYERS          &tog LAYER_NUM
-//                                                                                 │ TOG SHORTCUT             │ CTRL+CMD+Q/PLAY          │                              │ TO LAYERS                │ TOG NUM                  │
-//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &tlt LAYER_SHORTCUT BACKSPACE &tlt LAYER_NAV DELETE     &kp C_VOLUME_UP                                                &none                     &tlt LAYER_FUNC RETURN    &tlt LAYER_NUM SPACE
-//                                                     │ LT SHORTCUT/BSPC         │ LT NAV/DEL               │ VOL+                     │  │ NONE                     │ LT FUNC/RET              │ LT NUM/SPC               │
-//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &kp C_VOLUME_DOWN                                                &none
-//                                                                                                          │ VOL-                     │  │ NONE                     │
-//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
+//│ BOOTLOADER                                                                        │
+//├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐      ╭────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+  &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &leader_sys       &key_repeat  &kp N6    &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS
+//│ ESC      │ 1        │ 2        │ 3        │ 4        │ 5        │ LEADER   │      │ KEY_RPT    │ 6        │ 7        │ 8        │ 9        │ 0        │ -        │
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+  &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T      &kp GRAVE         &kp EQUAL    &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSLH
+//│ TAB      │ Q        │ W        │ E        │ R        │ T        │ `        │      │ =          │ Y        │ U        │ I        │ O        │ P        │ \        │
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+  &none      &kp A      &kp S      &kp D      &kp F      &kp G                                     &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
+//│ NONE     │ A        │ S        │ D        │ F        │ G        │          │      │            │ H        │ J        │ K        │ L        │ ;        │ '        │
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+  &none      &kp Z      &kp X      &kp C      &kp V      &kp B      &mt LPAR LBKT     &mt RPAR RBKT &kp N     &kp M      &kp COMMA  &kp DOT    &kp FSLH   &none
+//│ NONE     │ Z        │ X        │ C        │ V        │ B        │ (/[      │      │ )/]        │ N        │ M        │ ,        │ .        │ /        │ NONE     │
+//├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+  &kp LC(LG(SPACE)) &none &none    &cmd_tab   &kp LSHFT                                            &kp RSHFT  &none      &none      &none      &none
+//│ emoji    │ NONE     │ NONE     │ CMD+TAB  │ LSHFT    │          │          │      │            │ RSHFT    │          │          │          │          │          │
+//╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤      ├────────────┼──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
+                                              &tog L_EXT_NAV &mt LC(LG(Q)) C_PP       &to L_LAYERS &tog L_EXT_NUM
+//                                            │ TOG NAV      │ LOCK/PP         │      │ TO LYR     │ TOG NUM      │
+//                        ╭───────────────────├──────────────┼─────────────────┤      ├────────────┼──────────────┤──────────────────╮
+                          &tlt L_EXT_NAV BSPC &mt_rpt 0 LCMD  &kp C_VOL_UP             &none        &tmt RCMD RET &tlt L_EXT_NUM SPACE
+//                        │ LT SC/BSPC        │ LT NAV/CMD   │ VOL+            │      │ NONE       │ CMD/RET      │ L: NUM/SPC       │
+//                        ╰───────────────────┴──────────────┼─────────────────┤      ├────────────┼──────────────┴──────────────────╯
+                                                             &kp C_VOL_DN             &none
+//                                                           │ VOL-            │      │ NONE       │
+//                                                           ╰─────────────────╯      ╰────────────╯
 			>;
 		};
-		layer_1 { // fortnite
+		layer_1 { // base-fortnite
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -207,18 +227,18 @@
   &kp B                       &none                     &none                     &kp E                     &kp G                                                                                                                            &kp LEFT_GUI              &trans                    &trans                    &trans                    &trans
 //│ B                        │ NONE                     │ NONE                     │ E                        │ G                        │                          │                          │                              │                          │ LGUI                     │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &kp M                     &kp NUMBER_7                                                                                 &to LAYER_LAYERS          &none
+                                                                                   &kp M                     &kp NUMBER_7                                                                                 &to L_LAYERS          &none
 //                                                                                 │ M                        │ 7                        │                              │ TO LAYERS                │ NONE                     │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
                                                         &kp SPACE                 &kp U                     &kp N                                                      &trans                    &kp RETURN                &kp SPACE
 //                                                     │ SPACE                    │ U                        │ N                        │  │ TRANS                    │ ENTER                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &kp EQUAL                                                  &to LAYER_WIN
+                                                                                                             &kp EQUAL                                                  &to L_BASE_WIN
 //                                                                                                          │ =                        │  │ TO WIN                   │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
-		layer_2 { // minecraft
+		layer_2 { // base-minecraft
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -239,18 +259,18 @@
   &none                       &none                     &none                     &none                     &none                                                                                                                            &kp RIGHT_GUI             &trans                    &trans                    &trans                    &trans
 //│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │                          │                              │                          │ RGUI                     │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &none                     &none                                                                                    &to LAYER_LAYERS          &none
+                                                                                   &none                     &none                                                                                    &to L_LAYERS          &none
 //                                                                                 │ NONE                     │ NONE                     │                              │ TO LAYERS                │ NONE                     │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
                                                         &kp SPACE                 &kp J                     &none                                                      &none                     &kp RETURN                &kp SPACE
 //                                                     │ SPACE                    │ J                        │ NONE                     │  │ NONE                     │ ENTER                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &none                                                      &to LAYER_WIN
+                                                                                                             &none                                                      &to L_BASE_WIN
 //                                                                                                          │ NONE                     │  │ TO WIN                   │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
-		layer_3 { // gaming
+		layer_3 { // base-gaming
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -271,18 +291,18 @@
   &none                       &none                     &none                     &none                     &kp LALT                                                                                                                       &kp RIGHT_GUI             &trans                    &trans                    &trans                    &trans
 //│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ LEFT_ALT                 │                          │                          │                              │                          │ RGUI                     │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &none                     &none                                                                                    &to LAYER_LAYERS          &none
+                                                                                   &none                     &none                                                                                    &to L_LAYERS          &none
 //                                                                                 │ NONE                     │ NONE                     │                              │ TO LAYERS                │ NONE                     │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
                                                         &kp SPACE                 &kp LEFT_ALT                &none                                                      &none                     &kp RETURN                &kp SPACE
 //                                                     │ SPACE                    │ LALT                     │ NONE                     │  │ NONE                     │ ENTER                    │ SPACE                    │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &none                                                      &to LAYER_WIN
+                                                                                                             &none                                                      &to L_BASE_WIN
 //                                                                                                          │ NONE                     │  │ TO WIN                   │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
-		layer_4 { // win
+		layer_4 { // base-win
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -294,27 +314,27 @@
   &kp TAB                     &kp Q                     &kp W                     &kp E                     &kp R                     &kp T                     &kp GRAVE                                                  &kp EQUAL                 &kp Y                     &kp U                     &kp I                     &kp O                     &kp P                     &kp BACKSLASH
 //│ TAB                      │ Q                        │ W                        │ E                        │ R                        │ T                        │ `                        │                              │ =                        │ Y                        │ U                        │ I                        │ O                        │ P                        │ \                        │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &kp A                      &hrml LGUI S              &hrml LALT D               &hrml LCTRL F             &kp G                                                                                                              &kp H                     &hrmr RCTRL J             &hrmr LALT K              &hrmr RGUI L              &kp SEMICOLON               &kp SINGLE_QUOTE
-//│ NONE                     │ A                        │ GUI/S                    │ ALT/D                    │ CTRL/F                   │ G                        │                          │                                                         │ H                        │ CTRL/J                   │ ALT/K                    │ GUI/L                    │ ;                        │ '                        │
+  &none                       &kp A                      &kp S              &kp D               &kp F             &kp G                                                                                                              &kp H                     &kp J             &kp K              &kp L              &kp SEMICOLON               &kp SINGLE_QUOTE
+//│ NONE                     │ A                        │ S                    │ D                    │ F                   │ G                        │                          │                                                         │ H                        │ J                   │ K                    │ L                    │ ;                        │ '                        │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
   &kp LSHFT                   &kp Z                     &kp X                     &kp C                     &kp V                     &kp B                     &mt LEFT_PARENTHESIS LEFT_BRACKET                      &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N            &kp M                     &kp COMMA                 &kp PERIOD                &kp SLASH                 &kp RSHFT
 //│ LSHIFT                   │ Z                        │ X                        │ C                        │ V                        │ B                        │ (/[                      │                              │ )/]                      │ N                        │ M                        │ ,                        │ .                        │ /                        │ RSHIFT                   │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &kp LG(PERIOD)              &none                     &none                     &alt_tab                     &kp LEFT_SHIFT                                                                                                                   &kp RIGHT_SHIFT         &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW
+  &kp LG(DOT)                &none                     &none                     &alt_tab                     &kp LEFT_SHIFT                                                                                                                   &kp RIGHT_SHIFT         &kp LEFT &kp DOWN &kp UP &kp RIGHT
 //│ WIN+.                    │ NONE                     │ NONE                     │ ALT+TAB                  │ LSHIFT                   │                          │                          │                              │                          │ RSHIFT                   │ ←                        │ ↓                        │ ↑                        │ →                        │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &tog LAYER_SHORTCUT       &mt LG(L) C_PLAY_PAUSE                                                                     &to LAYER_LAYERS          &tog LAYER_NUM
+                                                                                   &tog L_EXT_NAV       &mt LG(L) C_PLAY_PAUSE                                                                     &to L_LAYERS          &tog L_EXT_NUM
 //                                                                                 │ TOG SHORTCUT             │ WIN+L/PLAY               │                              │ TO LAYERS                │ TOG NUM                  │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &tlt LAYER_SHORTCUT BACKSPACE &tlt LAYER_NAV DELETE     &kp C_VOLUME_UP                                                &none                     &tlt LAYER_FUNC RETURN    &tlt LAYER_NUM SPACE
-//                                                     │ LT SHORTCUT/BSPC         │ LT NAV/DEL               │ VOL+                     │  │ NONE                     │ LT FUNC/RET              │ LT NUM/SPC               │
+                                                        &tlt L_EXT_NAV BACKSPACE &mt_rpt 0 LCTRL     &kp C_VOLUME_UP                                                &none                     &tmt RCTRL RET    &tlt L_EXT_NUM SPACE
+//                                                     │ LT NAV/BSPC         │ LT NAV/DEL               │ VOL+                     │  │ NONE                     │ LT FUNC/RET              │ LT NUM/SPC               │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &kp C_VOLUME_DOWN                                                &none
 //                                                                                                          │ VOL-                     │  │ NONE                     │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
-		layer_5 { // sketchup
+		layer_5 { // base-sketchup
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -326,8 +346,8 @@
   &kp TAB                     &kp Q                     &kp W                     &kp E                     &kp R                     &kp T                     &kp GRAVE                                                  &kp EQUAL                 &kp Y                     &kp U                     &kp I                     &kp O                     &kp P                     &kp BACKSLASH
 //│ TAB                      │ Q                        │ W                        │ E                        │ R                        │ T                        │ `                        │                              │ =                        │ Y                        │ U                        │ I                        │ O                        │ P                        │ \                        │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &kp A                       &hrml LGUI S              &hrml LALT D              &hrml LCTRL F                &kp G                                                                                &kp H                     &hrmr RCTRL J             &hrmr LALT K              &hrmr RGUI L              &kp SEMICOLON     &kp SINGLE_QUOTE
-//│ NONE                     │ A                        │ GUI/S                    │ ALT/D                    │ CTRL/F                   │ G                        │                          │                              │ H                        │ CTRL/J                   │ ALT/K                    │ GUI/L                    │ ;                   │ '                        │
+  &none                       &kp A                       &kp S              &kp D              &kp F                &kp G                                                                                &kp H                     &kp J             &kp K              &kp L              &kp SEMICOLON     &kp SINGLE_QUOTE
+//│ NONE                     │ A                        │ S                    │ D                    │ F                   │ G                        │                          │                              │ H                        │ J                   │ K                    │ L                    │ ;                   │ '                        │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
   &kp LSHFT                   &kp Z                     &kp X                     &kp C                     &kp V                     &kp B                     &mt LEFT_PARENTHESIS LEFT_BRACKET                      &mt RIGHT_PARENTHESIS RIGHT_BRACKET &kp N            &kp M                     &kp COMMA                 &kp PERIOD                &kp SLASH                 &kp RSHFT
 //│ LSHIFT                   │ Z                        │ X                        │ C                        │ V                        │ B                        │ (/[                      │                              │ )/]                      │ N                        │ M                        │ ,                        │ .                        │ /                        │ RSHIFT                   │
@@ -335,10 +355,10 @@
   &kp LG(PERIOD)              &none                     &none                     &alt_tab                     &kp LEFT_SHIFT                                                                                                                   &kp RIGHT_SHIFT         &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW
 //│ WIN+.                    │ NONE                     │ NONE                     │ ALT+TAB                     │ LSHFT                    │                          │                          │                              │                          │ RSHFT                    │ ←                        │ ↓                        │ ↑                        │ →                        │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &tog LAYER_SHORTCUT       &mt LG(L) C_PLAY_PAUSE                                                                     &to LAYER_LAYERS          &tog LAYER_NUM
+                                                                                   &tog L_EXT_NAV       &mt LG(L) C_PLAY_PAUSE                                                                     &to L_LAYERS          &tog L_EXT_NUM
 //                                                                                 │ TOG SHORTCUT             │ WIN+L/PLAY               │                              │ TO LAYERS                │ TOG NUM                  │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp SPACE                 &mt DELETE BACKSPACE      &kp C_VOLUME_UP                                                &none                     &tlt LAYER_FUNC RETURN    &tlt LAYER_NUM SPACE
+                                                        &tlt L_EXT_NAV SPACE       &tmt LCTRL BACKSPACE      &kp C_VOLUME_UP                                                &none                     &tmt RCTRL RETURN    &tlt L_EXT_NUM SPACE
 //                                                     │ SPACE                    │ DEL/BSPC                 │ VOL+                     │  │ NONE                     │ LT FUNC/RET              │ LT NUM/SPC               │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &kp C_VOLUME_DOWN                                                &none
@@ -346,7 +366,7 @@
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
-		layer_6 { // old_mac
+		layer_6 { // base-old
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -367,18 +387,115 @@
   &kp LC(LG(SPACE))           &kp LEFT_CONTROL          &kp LEFT_ALT              &none                     &kp LEFT_GUI                                                                                                                           &kp RIGHT_GUI             &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW
 //│ CTRL+CMD+SPC             │ LCTRL                    │ LALT                     │ NONE                     │ LGUI                     │                          │                          │                              │                          │ RGUI                     │ ←                        │ ↓                        │ ↑                        │ →                        │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &tog LAYER_SHORTCUT       &mt LC(LG(Q)) C_PLAY_PAUSE                                                                    &to LAYER_LAYERS          &tog LAYER_NUM
-//                                                                                 │ TOG SHORTCUT             │ CTRL+CMD+Q/PLAY          │                              │ TO LAYERS                │ TOG NUM                  │
+                                                                                   &tog L_EXT_NAV       &mt LC(LG(Q)) C_PLAY_PAUSE                                                                    &to L_LAYERS          &tog L_EXT_NUM
+//                                                                                 │ TOG NAV             │ CTRL+CMD+Q/PLAY          │                              │ TO LAYERS                │ TOG NUM                  │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &lt LAYER_SHORTCUT BACKSPACE &lt LAYER_NAV DELETE     &kp C_VOLUME_UP                                                &none                     &lt LAYER_FUNC RETURN     &lt LAYER_NUM SPACE
-//                                                     │ LT SHORTCUT/BSPC         │ LT NAV/DEL               │ VOL+                     │  │ NONE                     │ LT FUNC/RET              │ LT NUM/SPC               │
+                                                        &lt L_EXT_NAV BACKSPACE &kp DELETE     &kp C_VOLUME_UP                                                &none                     &kp RETURN     &lt L_EXT_NUM SPACE
+//                                                     │ LT NAV/BSPC         │ DEL               │ VOL+                     │  │ NONE                     │ RET              │ LT NUM/SPC               │
 //                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
                                                                                                              &kp C_VOLUME_DOWN                                                &none
 //                                                                                                          │ VOL-                     │  │ NONE                     │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
 		};
-		layer_7 { // shortcut
+
+		layer_7 { // extend-nav
+			bindings = <
+//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
+  &bootloader
+//│ BOOTLOADER                                                                                       │
+//├──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
+  &trans                      &kp F1                    &kp F2                    &kp F3                    &kp F4                    &kp F5                    &trans                                                     &trans                    &kp F6                    &kp F7                    &kp F8                    &kp F9                    &kp F10                    &kp F11
+//│ TRANS                    │ F1                    │ F2                    │ F3                    │ F4                    │ F5                    │ TRANS                    │                              │ TRANS                    │ F6                    │ F7                    │ F8                    │ F9                    │ F10                    │ F11                   │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                      &trans                    &trans                    &trans           &trans        &kp LCTRL(TAB)      &trans                                                     &trans                    &trans    &trans        &trans          &trans   &trans                    &kp F12
+//│ TRANS                    │ TRANS                    │ TRANS                    │ trans                │ trans              │ CTRL+TAB          │ TRANS                    │                              │ TRANS                    │ trans              │ trans                  │ trans                  │ SHIFT+ALT+→              │ TRANS                    │ F12                    │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &caps_word                  &sk LSHFT                  &sk LCTRL                   &sk LALT                    &sk LGUI                    &trans                                                                                   &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW           &trans                    &trans
+//│ CAPS WORD                │ SHIFT                    │ CTRL                    │ ALT                    │ GUI                    │ TRANS                    │                          │                              │ ←                        │ ↓                        │ ↑                        │ →                        │ TRANS                    │ TRANS                    │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                      &trans                 &trans                 &trans                 &trans       &kp LGUI(LEFT)             &trans                                                     &trans                    &trans               &kp PAGE_DOWN             &kp PAGE_UP               &trans             &kp UP_ARROW              &trans
+//│ TRANS                    │ trans                    │ trans                    │                     │ trans        │ back             │ TRANS                    │                              │ TRANS                    │ trans                   │ PAGE DOWN                │ PAGE UP                  │ trans                   │ ↑                        │ TRANS                    │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                      &trans                    &trans                    &trans                    &trans                                                                                                                           &trans                    &kp LC(RETURN)            &kp LEFT_ARROW            &kp DOWN_ARROW            &kp RIGHT_ARROW
+//│ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │                          │                              │                          │ TRANS                    │ CTRL+ENTER               │ ←                        │ ↓                        │ →                        │                          │
+//╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
+                                                                                   &trans                    &trans                                                                                     &trans                    &trans
+//                                                                                 │ TRANS                    │ TRANS                    │                              │ TRANS                    │ TRANS                    │
+//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
+                                                        &kp BACKSPACE             &trans                    &kp C_NEXT                           &trans                    &trans                &kp DEL
+//                                                     │ BSPC                     │ TRANS                    │ NEXT                    │  │ TRANS                    │ TRANS                    │ DEL                    │
+//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
+                                                                                                             &kp C_PREV                                                     &trans
+//                                                                                                          │ PREV
+//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
+			>;
+		};
+		layer_8 { // extend-num
+			bindings = <
+//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
+  &bootloader
+//│ BOOTLOADER                                                                                       │
+//├──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                     &trans                     &trans                                                      &trans                     &trans                   &trans                          &trans                     &kp KP_DIVIDE             &kp KP_MULTIPLY           &kp MINUS                 
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │                            NONE                     │ KP /                     │ KP *                     │ -                        │ 
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                     &trans                     &trans                                                      &trans                     &trans                   &trans                         &kp NUMBER_7              &kp NUMBER_8              &kp NUMBER_9              &kp KP_PLUS               
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │                          │7                        │ 8                        │ 9                        │ KP +                     │ 
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                      &sk LSHIFT                 &sk LCTRL                  &sk LALT                  &sk LGUI                    &trans                                                                                                             &trans                      &trans                          &kp NUMBER_4              &kp NUMBER_5              &kp NUMBER_6              &kp KP_PLUS               
+//│ NONE                     │ SHIFT                    │ CTRL                     │ ALT                      │ CMD                    │ NONE                     │                          │                              │                          │                          │                          │4                        │ 5                        │ 6                        │ KP +                     │ 
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                     &trans                     &trans                                                      &trans                     &trans                   &trans                          &kp NUMBER_1              &kp NUMBER_2              &kp NUMBER_3              &kp KP_ENTER             
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │                           1                        │ 2                        │ 3                        │ KP ENTER                 │ 
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                                                                                                                                                                &trans                          &kp NUMBER_0              &kp NUMBER_0              &kp KP_DOT                &kp KP_ENTER             
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ TRANS                    │                          │                          │                              │                          │                          │                           0                        │ 0                        │ KP .                     │ KP ENTER                 │ 
+//╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
+                                                                                   &trans                     &trans                                                                                     &trans                    &trans
+//                                                                                 │ NONE                     │ TRANS                    │                              │ TRANS                    │ TRANS                    │
+//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
+                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC             &trans                     &kp RETURN                &trans
+//                                                     │ BSPC                     │ DELETE                   │ BRIGHTNESS +             │  │ NONE                     │ ENTER                    │ TRANS                    │
+//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
+                                                                                                             &kp C_BRIGHTNESS_DEC                                               &trans
+//                                                                                                          │ BRIGHTNESS -             │  │ NONE                     │
+//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
+			>;
+		};
+		layer_9 { // extend-func
+			bindings = <
+//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
+  &bootloader
+//│ BOOTLOADER                                                                                       │
+//├──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                     &trans                     &trans                                                      &trans                     &trans                     &trans                 &kp F10                     &kp F11                   &kp F12                    &trans
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │ NONE                     │ F10                      │ F11                      │ F12                      │ NONE                     │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                     &trans                     &trans                                                      &trans                  &trans                    &kp F12                    &kp F7                    &kp F8                    &kp F9                    &trans    
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ TRANS                    │ F12                      │ F7                       │ F8                       │ F9                       │ TRANS                    │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &sk LSHFT                 &sk LCTRL                 &sk LALT                    &sk LGUI                    &trans                                                                                                              &trans                   &kp F11                    &kp F4                    &kp F5                    &kp F6                    &trans       
+//│ NONE                     │ SHIFT                    │ CTRL                     │ ALT                      │ CMD                    │ NONE                     │                          │                              │                          │ TRANS                    │ F11                      │ F4                       │ F5                       │ F6                       │ NONE                     │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                     &trans                     &trans                                                      &trans                   &trans                   &kp F10                    &kp F1                    &kp F2                    &kp F3                    &trans       
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ TRANS                    │ F10                      │ F1                       │ F2                       │ F3                       │ NONE                     │
+//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  &trans                       &trans                     &trans                     &trans                     &trans                                                                                                                                   &trans                     &trans                     &trans                     &trans                     &trans
+//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ TRANS                    │                          │                          │                              │                          │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │
+//╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
+                                                                                   &trans                     &trans                                                                                     &trans                    &trans
+//                                                                                 │ NONE                     │ TRANS                    │                              │ TRANS                    │ TRANS                    │
+//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
+                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC             &trans                     &kp RET                    &kp SPACE
+//                                                     │ BSPC                     │ DELETE                   │ BRIGHTNESS +             │  │ NONE                     │ ENTER                    │ SPACE                    │
+//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
+                                                                                                             &kp C_BRIGHTNESS_DEC                                               &trans
+//                                                                                                          │ BRIGHTNESS -             │  │ NONE                     │
+//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
+			>;
+		};
+		layer_10 { // extend-old
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
   &bootloader
@@ -409,103 +526,7 @@
 //                                                                                                          │ PREV TRACK               │  │ TRANS                    │
 //                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
 			>;
-		};
-		layer_8 { // nav
-			bindings = <
-//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
-  &bootloader
-//│ BOOTLOADER                                                                                       │
-//├──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
-  &trans                      &trans                    &trans                    &trans                    &trans                    &trans                    &trans                                                     &trans                    &trans                    &trans                    &trans                    &trans                    &trans                    &kp INSERT
-//│ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                              │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ INSERT                   │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &trans                      &trans                    &trans                    &kp LS(LEFT_ALT)          &kp LC(LEFT_SHIFT)        &kp LC(LS(LEFT_ALT))      &trans                                                     &trans                    &kp LS(LA(LEFT_ARROW))    &kp LS(DOWN_ARROW)        &kp LS(UP_ARROW)          &kp LS(LA(RIGHT_ARROW))   &trans                    &trans
-//│ TRANS                    │ TRANS                    │ TRANS                    │ SHIFT+ALT                │ CTRL+SHIFT               │ CTRL+SHIFT+ALT           │ TRANS                    │                              │ TRANS                    │ SHIFT+ALT+←              │ SHIFT+↓                  │ SHIFT+↑                  │ SHIFT+ALT+→              │ TRANS                    │ TRANS                    │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &caps_word                  &kp LG(A)                  &trans                    &trans                    &trans                    &trans                                                                                   &kp LEFT_ARROW            &kp DOWN_ARROW            &kp UP_ARROW              &kp RIGHT_ARROW           &trans                    &trans
-//│ CAPS WORD                │ GUI+A                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │                              │ ←                        │ ↓                        │ ↑                        │ →                        │ TRANS                    │ TRANS                    │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &trans                      &kp LG(Z)                 &kp LG(X)                 &kp LG(C)                 &mt LG(LS(V)) LG(V)       &kp LG(LS(Z))             &trans                                                     &trans                    &kp LG(LEFT)              &kp PAGE_DOWN             &kp PAGE_UP               &kp LG(RIGHT)             &kp UP_ARROW              &trans
-//│ TRANS                    │ CMD+Z                    │ CMD+X                    │ CMD+C                    │ CMD+SHIFT+V/CMD+V        │ CMD+SHIFT+Z              │ TRANS                    │                              │ TRANS                    │ CMD+←                    │ PAGE DOWN                │ PAGE UP                  │ CMD+→                    │ ↑                        │ TRANS                    │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &trans                      &trans                    &trans                    &trans                    &trans                                                                                                                           &trans                    &kp LC(RETURN)            &kp LEFT_ARROW            &kp DOWN_ARROW            &kp RIGHT_ARROW
-//│ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │                          │                              │                          │ TRANS                    │ CTRL+ENTER               │ ←                        │ ↓                        │ →                        │                          │
-//╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &trans                    &trans                                                                                     &trans                    &trans
-//                                                                                 │ TRANS                    │ TRANS                    │                              │ TRANS                    │ TRANS                    │
-//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp BACKSPACE             &trans                    &trans                           &trans                    &kp RETURN                &kp SPACE
-//                                                     │ BSPC                     │ TRANS                    │ TRANS                    │  │ TRANS                    │ ENTER                    │ SPACE                    │
-//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &trans                                                     &trans
-//                                                                                                          │ TRANS                    │  │ TRANS                    │
-//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
-			>;
-		};
-		layer_9 { // num
-			bindings = <
-//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
-  &bootloader
-//│ BOOTLOADER                                                                                       │
-//├──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
-  &none                       &none                     &none                     &none                     &none                     &none                     &none                                                      &none                     &none                     &none                     &kp KP_DIVIDE             &kp KP_MULTIPLY           &kp MINUS                 &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │ NONE                     │ KP /                     │ KP *                     │ -                        │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &none                     &none                     &none                     &none                                                      &none                     &none                     &kp NUMBER_7              &kp NUMBER_8              &kp NUMBER_9              &kp KP_PLUS               &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │ 7                        │ 8                        │ 9                        │ KP +                     │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &trans                    &trans                    &trans                    &trans                    &none                                                                                    &none                     &kp NUMBER_4              &kp NUMBER_5              &kp NUMBER_6              &kp KP_PLUS               &none
-//│ NONE                     │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ NONE                     │                          │                              │ NONE                     │ 4                        │ 5                        │ 6                        │ KP +                     │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &none                     &none                     &none                     &none                                                      &none                     &none                     &kp NUMBER_1              &kp NUMBER_2              &kp NUMBER_3              &kp KP_ENTER              &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │ 1                        │ 2                        │ 3                        │ KP ENTER                 │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &none                     &trans                                                                                                                         &kp NUMBER_0              &kp NUMBER_0              &kp KP_DOT                &kp KP_ENTER              &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ TRANS                    │                          │                          │                              │                          │ 0                        │ 0                        │ KP .                     │ KP ENTER                 │ NONE                     │                          │
-//╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &none                     &trans                                                                                     &trans                    &tog LAYER_NUM
-//                                                                                 │ NONE                     │ TRANS                    │                              │ TRANS                    │ TRANS                    │
-//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC             &none                     &kp RETURN                &trans
-//                                                     │ BSPC                     │ DELETE                   │ BRIGHTNESS +             │  │ NONE                     │ ENTER                    │ TRANS                    │
-//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &kp C_BRIGHTNESS_DEC                                               &none
-//                                                                                                          │ BRIGHTNESS -             │  │ NONE                     │
-//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
-			>;
-		};
-		layer_10 { // func
-			bindings = <
-//╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
-  &bootloader
-//│ BOOTLOADER                                                                                       │
-//├──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┐                              ╭──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┤
-  &none                       &none                     &none                     &none                     &none                     &none                     &none                                                      &none                     &none                     &none                     &none                     &none                     &none                     &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &none                     &none                     &none                     &none                                                      &none                     &kp F11                   &kp F7                    &kp F8                    &kp F9                    &kp F10                   &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ F11                      │ F7                       │ F8                       │ F9                       │ F10                      │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &trans                    &trans                    &trans                    &trans                    &none                                                                                    &kp F12                   &kp F4                    &kp F5                    &kp F6                    &none                     &none
-//│ NONE                     │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ NONE                     │                          │                              │ F12                      │ F4                       │ F5                       │ F6                       │ NONE                     │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &none                     &none                     &none                     &none                                                      &none                     &none                     &kp F1                    &kp F2                    &kp F3                    &none                     &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ NONE                     │ NONE                     │ F1                       │ F2                       │ F3                       │ NONE                     │ NONE                     │
-//├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &none                     &trans                                                                                                                         &none                     &none                     &none                     &none                     &none
-//│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ TRANS                    │                          │                          │                              │                          │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │
-//╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &none                     &trans                                                                                     &trans                    &trans
-//                                                                                 │ NONE                     │ TRANS                    │                              │ TRANS                    │ TRANS                    │
-//                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
-                                                        &kp BACKSPACE             &kp DELETE                &kp C_BRIGHTNESS_INC             &none                     &trans                    &kp SPACE
-//                                                     │ BSPC                     │ DELETE                   │ BRIGHTNESS +             │  │ NONE                     │ TRANS                    │ SPACE                    │
-//                                                     ╰──────────────────────────┴──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┴──────────────────────────┤
-                                                                                                             &kp C_BRIGHTNESS_DEC                                               &none
-//                                                                                                          │ BRIGHTNESS -             │  │ NONE                     │
-//                                                                                                          ╰──────────────────────────╯  ╰──────────────────────────╯
-			>;
-		};
+		}; 
 		layer_11 { // mouse
 			bindings = <
 //╭─────────────────────────────────────────────────────────────────────────────────────────────────╮
@@ -527,7 +548,7 @@
   &none                       &none                     &none                     &none                     &none                                                                                                                            &mkp MCLK                 &none                     &none                     &none                     &none
 //│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │                          │                              │                          │ MIDDLE CLICK             │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &none                     &none                                                                                      &to LAYER_LAYERS          &none
+                                                                                   &none                     &none                                                                                      &to L_LAYERS          &none
 //                                                                                 │ NONE                     │ NONE                     │                              │ TO LAYERS                │ NONE                     │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
                                                         &none                     &none                     &none                                                      &none                     &mkp LCLK                 &mkp RCLK
@@ -547,19 +568,19 @@
   &none                       &bt BT_SEL 0              &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3              &bt BT_SEL 4              &none                                                      &bt BT_CLR                &none                     &none                     &none                     &none                     &none                     &none
 //│ NONE                     │ BT 0                     │ BT 1                     │ BT 2                     │ BT 3                     │ BT 4                     │ NONE                     │                              │ BT CLEAR                 │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &to LAYER_WIN             &none                     &none                     &none                     &none                                                      &out OUT_BLE              &none                     &to LAYER_UNDERGLOW       &none                     &to LAYER_OLD_MAC         &none                     &none
+  &none                       &none                     &to L_BASE_WIN             &none                     &none                     &none                     &none                                                      &out OUT_BLE              &none                     &to L_UNDERGLOW       &none                     &to L_BASE_OLD         &none                     &none
 //│ NONE                     │ NONE                     │ TO WIN                   │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                              │ OUT BLE                  │ NONE                     │ TO UNDERGLOW             │ NONE                     │ TO OLD MAC               │ NONE                     │ NONE                     │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &to LAYER_SKETCHUP        &none                     &to LAYER_FORTNITE        &to LAYER_GAMING                                                                         &none                     &none                     &none                     &none                     &none                     &none
-//│ NONE                     │ NONE                     │ TO SKETCHUP              │ NONE                     │ TO FORTNITE              │ TO GAMING                │                          │                              │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │
+  &none                       &none                     &to L_BASE_SKETCHUP        &none                     &to L_BASE_FORT        &to L_BASE_GAME                                                                                                      &none                     &none                     &none                     &none                     &none                     &none
+//│ NONE                     │ NONE                     │ TO SKETCHUP              │ NONE                     │ TO FORTNITE              │ TO GAMING                │                          │                              │                          │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
-  &none                       &none                     &none                     &to LAYER_MINECRAFT       &none                     &none                     &none                                                      &out OUT_USB              &none                     &to LAYER_MOUSE           &none                     &none                     &none                     &none
+  &none                       &none                     &none                     &to L_BASE_MINE       &none                     &none                     &none                                                      &out OUT_USB              &none                     &to L_MOUSE           &none                     &none                     &none                     &none
 //│ NONE                     │ NONE                     │ NONE                     │ TO MINECRAFT             │ NONE                     │ NONE                     │ NONE                     │                              │ OUT USB                  │ NONE                     │ TO MOUSE                 │ NONE                     │ NONE                     │ NONE                     │ NONE                     │
 //├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤
   &none                       &none                     &none                     &none                     &none                                                                                                                            &none                     &none                     &none                     &none                     &none
 //│ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │                          │                              │                          │ NONE                     │ NONE                     │ NONE                     │ NONE                     │ NONE                     │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &none                     &none                                                                                      &to LAYER_MACOS           &none
+                                                                                   &none                     &none                                                                                      &to L_BASE_MAC           &none
 //                                                                                 │ NONE                     │ NONE                     │                              │ TO MACOS                 │ NONE                     │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
                                                         &none                     &none                     &none                                                      &bootloader               &none                     &none
@@ -591,7 +612,7 @@
   &trans                      &trans                    &trans                    &trans                    &trans                                                                                                                         &trans                    &trans                    &trans                    &trans                    &trans
 //│ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │                          │                              │                          │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │ TRANS                    │                          │
 //╰──────────────────────────┴──────────────────────────┴──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┤                              ├──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┴──────────────────────────╯
-                                                                                   &trans                    &trans                                                                                     &to LAYER_LAYERS          &trans
+                                                                                   &trans                    &trans                                                                                     &to L_LAYERS          &trans
 //                                                                                 │ TRANS                    │ TRANS                    │                              │ TO LAYERS                │ TRANS                    │
 //                                                                                 ├──────────────────────────┼──────────────────────────┼──────────────────────────┤  ├──────────────────────────┼──────────────────────────┤
                                                         &trans                    &trans                    &trans                                                     &trans                    &trans                    &trans
