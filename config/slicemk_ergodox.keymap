@@ -153,12 +153,12 @@
         btc { sequence = <B C>; bindings = <&bt BT_CLR>; };
 		boot { sequence = <B O O T>; bindings = <&bootloader>; };
         reset { sequence = <R E S E T>; bindings = <&sys_reset>; };
-		rect_layout_home_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(1)))); };
-		rect_layout_home_meet { sequence = <R N2>; bindings = <&kp LG(LA(LC(LS(2)))); };
-		rect_layout_home_code { sequence = <R N3>; bindings = <&kp LG(LA(LC(LS(3)))); };
-		rect_layout_work_obsidian { sequence = <R N6>; bindings = <&kp LG(LA(LC(LS(6)))); };
-		rect_layout_work_meet { sequence = <R N7>; bindings = <&kp LG(LA(LC(LS(7)))); };
-		rect_layout_work_code { sequence = <R N8>; bindings = <&kp LG(LA(LC(LS(8)))); };
+		rect_layout_home_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
+		rect_layout_home_meet { sequence = <R N2>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
+		rect_layout_home_code { sequence = <R N3>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
+		rect_layout_work_obsidian { sequence = <R N6>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
+		rect_layout_work_meet { sequence = <R N7>; bindings = <&kp LG(LA(LC(LS(N7))))>; };
+		rect_layout_work_code { sequence = <R N8>; bindings = <&kp LG(LA(LC(LS(N8))))>; };
 		rect_next_display { sequence = <R G>; bindings = <&kp LG(LA(LC(LS(RIGHT)))); };
 		rect_next_display2 { sequence = <R L>; bindings = <&kp LG(LA(LC(LS(RIGHT)))); };
 		rect_prev_display { sequence = <R S>; bindings = <&kp LG(LA(LC(LS(LEFT)))); };
