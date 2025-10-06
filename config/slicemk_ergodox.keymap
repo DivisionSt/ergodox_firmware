@@ -137,7 +137,7 @@
       // require-prior-idle-ms = <PRIOR_IDLE_MS>;
       tapping-term-ms = <THUMB_TAP_TERM_MS>;
       quick-tap-ms = <QUICK_TAP_MS>;
-      bindings = <&key_repeat>, <&kp>;
+      bindings = <&kp>, <&key_repeat>;
 	  display-name = "Mod-Tap-Repeat";
 	};
 	leader_sys: leader_sys {
@@ -198,7 +198,7 @@
                                               &tog L_EXT_NAV &mt LC(LG(Q)) C_PP       &to L_LAYERS &tog L_EXT_NUM
 //                                            │ TOG NAV      │ LOCK/PP         │      │ TO LYR     │ TOG NUM      │
 //                        ╭───────────────────├──────────────┼─────────────────┤      ├────────────┼──────────────┤──────────────────╮
-                          &tlt L_EXT_NAV BSPC &mt_rpt 0 LCMD &kp C_VOL_UP             &none        &tmt RCMD RET &tlt L_EXT_NUM SPACE
+                          &tlt L_EXT_NAV BSPC &mt_rpt LCMD 0 &kp C_VOL_UP             &none        &tmt RCMD RET &tlt L_EXT_NUM SPACE
 //                        │ LT SC/BSPC        │ RPT/CMD      │ VOL+            │      │ NONE       │ CMD/RET      │ L: NUM/SPC       │
 //                        ╰───────────────────┴──────────────┼─────────────────┤      ├────────────┼──────────────┴──────────────────╯
                                                              &kp C_VOL_DN             &none
@@ -326,7 +326,7 @@
                                    &tog L_EXT_NAV &mt LG(L) C_PP                       &to L_LAYERS &tog L_EXT_NUM
 //                                 │ TOG NAV  │ WIN+L/PP │          │ TO LYR   │ TOG NUM  │
 //                  ╭──────────────├──────────┼──────────┤          ├──────────┼──────────┤──────────────╮
-                    &tlt L_EXT_NAV BSPC &mt_rpt 0 LCTRL  &kp C_VOL_UP  &none    &tmt RCTRL RET &tlt L_EXT_NUM SPACE
+                    &tlt L_EXT_NAV BSPC &mt_rpt LCTRL 0  &kp C_VOL_UP  &none    &tmt RCTRL RET &tlt L_EXT_NUM SPACE
 //                  │ LT NAV/BSPC  │ LCTRL/RPT │ VOL+    │          │ NONE     │ RCTRL/RET │ LT NUM/SPC  │
 //                  ╰──────────────┴──────────┼──────────┤          ├──────────┼──────────┴──────────────╯
                                               &kp C_VOL_DN           &none
