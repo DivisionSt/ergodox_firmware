@@ -145,12 +145,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_ergodo
   '*', '*', '*', '*'
 );
 
-const uint16_t PROGMEM combo0[] = { KC_LEFT_GUI, KC_A, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo0, LGUI(LSFT(KC_A))),
-};
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(4, KC_SPACE):
@@ -420,20 +414,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         unregister_code(KC_TAB);
       }
       break;
+    default:
+      if (is_cmd_tab_active) {
+        if (keycode != KC_TAB && record->event.pressed) {
+          unregister_code(KC_LGUI);
+          is_cmd_tab_active = false;
+        }
+      }
+      if (is_alt_tab_active) {
+        if (keycode != KC_TAB && record->event.pressed) {
+          unregister_code(KC_LALT);
+          is_alt_tab_active = false;
+        }
+      }
+    break;
   }
   return true;
 }
 
-
 void matrix_scan_user(void) { // The very important timer.
   if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 500) {
+    if (timer_elapsed(alt_tab_timer) > 9000) {
       unregister_code(KC_LALT);
       is_alt_tab_active = false;
     }
   }
   if (is_cmd_tab_active) {
-    if (timer_elapsed(cmd_tab_timer) > 500) {
+    if (timer_elapsed(cmd_tab_timer) > 9000) {
       unregister_code(KC_LGUI);
       is_cmd_tab_active = false;
     }
