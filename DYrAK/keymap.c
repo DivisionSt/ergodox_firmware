@@ -10,21 +10,21 @@ enum custom_keycodes {
 };
 
 
-#define DUAL_FUNC_0 LT(8, KC_5)
-#define DUAL_FUNC_1 LT(13, KC_P)
-#define DUAL_FUNC_2 LT(10, KC_N)
-#define DUAL_FUNC_3 LT(11, KC_S)
-#define DUAL_FUNC_4 LT(7, KC_V)
-#define DUAL_FUNC_5 LT(10, KC_P)
-#define DUAL_FUNC_6 LT(14, KC_H)
-#define DUAL_FUNC_7 LT(5, KC_F13)
-#define DUAL_FUNC_8 LT(14, KC_F24)
-#define DUAL_FUNC_9 LT(12, KC_F11)
-#define DUAL_FUNC_10 LT(3, KC_7)
-#define DUAL_FUNC_11 LT(11, KC_D)
-#define DUAL_FUNC_12 LT(2, KC_F23)
-#define DUAL_FUNC_13 LT(1, KC_F5)
-#define DUAL_FUNC_14 LT(13, KC_F11)
+#define DUAL_FUNC_0 LT(14, KC_5)
+#define DUAL_FUNC_1 LT(9, KC_F12)
+#define DUAL_FUNC_2 LT(15, KC_4)
+#define DUAL_FUNC_3 LT(5, KC_F)
+#define DUAL_FUNC_4 LT(9, KC_7)
+#define DUAL_FUNC_5 LT(5, KC_D)
+#define DUAL_FUNC_6 LT(13, KC_F)
+#define DUAL_FUNC_7 LT(3, KC_Z)
+#define DUAL_FUNC_8 LT(6, KC_O)
+#define DUAL_FUNC_9 LT(2, KC_0)
+#define DUAL_FUNC_10 LT(6, KC_F13)
+#define DUAL_FUNC_11 LT(11, KC_Z)
+#define DUAL_FUNC_12 LT(11, KC_M)
+#define DUAL_FUNC_13 LT(5, KC_R)
+#define DUAL_FUNC_14 LT(7, KC_F6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -138,9 +138,13 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_ergodo
 );
 
 const uint16_t PROGMEM combo0[] = { LT(3, KC_BSPC), LT(4, KC_SPACE), COMBO_END};
+const uint16_t PROGMEM combo1[] = { OSM(MOD_LGUI), LT(3, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM combo2[] = { MT(MOD_RGUI, KC_ENTER), LT(4, KC_SPACE), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TG(5)),
+    COMBO(combo1, TG(3)),
+    COMBO(combo2, TG(4)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
