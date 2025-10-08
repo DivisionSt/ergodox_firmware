@@ -18,21 +18,10 @@ uint16_t cmd_tab_timer = 0;
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_5)
-#define DUAL_FUNC_1 LT(9, KC_F12)
-#define DUAL_FUNC_2 LT(15, KC_4)
-#define DUAL_FUNC_3 LT(5, KC_F)
-#define DUAL_FUNC_4 LT(9, KC_7)
-#define DUAL_FUNC_5 LT(5, KC_D)
-#define DUAL_FUNC_6 LT(13, KC_F)
-#define DUAL_FUNC_7 LT(3, KC_Z)
-#define DUAL_FUNC_8 LT(6, KC_O)
-#define DUAL_FUNC_9 LT(2, KC_0)
-#define DUAL_FUNC_10 LT(6, KC_F13)
-#define DUAL_FUNC_11 LT(11, KC_Z)
-#define DUAL_FUNC_12 LT(11, KC_M)
-#define DUAL_FUNC_13 LT(5, KC_R)
-#define DUAL_FUNC_14 LT(7, KC_F6)
+#define DUAL_FUNC_0 LT(2, KC_F20)
+#define DUAL_FUNC_1 LT(12, KC_X)
+#define DUAL_FUNC_2 LT(6, KC_3)
+#define DUAL_FUNC_3 LT(8, KC_C)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -96,16 +85,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_BRIGHTNESS_DOWN,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [6] = LAYOUT_ergodox_pretty(
-    KC_TRANSPARENT, LALT(LGUI(LCTL(LSFT(KC_1)))),LALT(LGUI(LCTL(LSFT(KC_2)))),LALT(LGUI(LCTL(LSFT(KC_3)))),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, LALT(LGUI(LCTL(LSFT(KC_6)))),LALT(LGUI(LCTL(LSFT(KC_7)))),LALT(LGUI(LCTL(LSFT(KC_8)))),KC_TRANSPARENT, KC_TRANSPARENT, KC_INSERT,
-    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_LEFT),  DUAL_FUNC_4,    LCTL(KC_DOWN),  LCTL(KC_RIGHT), LGUI(KC_GRAVE),                                 KC_TRANSPARENT, DUAL_FUNC_11,   DUAL_FUNC_12,   DUAL_FUNC_13,   DUAL_FUNC_14,   KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, LGUI(LSFT(KC_A)),DUAL_FUNC_5,    DUAL_FUNC_6,    LGUI(KC_W),     DUAL_FUNC_7,                                                                    KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_8,    LALT(LCTL(KC_ENTER)),LALT(LCTL(KC_C)),DUAL_FUNC_9,    DUAL_FUNC_10,                                   KC_TRANSPARENT, KC_HOME,        KC_PGDN,        KC_PAGE_UP,     KC_END,         KC_UP,          KC_TRANSPARENT,
-    KC_TRANSPARENT, LALT(KC_LEFT_SHIFT),LSFT(KC_LEFT_CTRL),KC_MEH,         KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, LCTL(KC_ENTER), KC_LEFT,        KC_DOWN,        KC_RIGHT,
-                                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                    KC_MEDIA_NEXT_TRACK,KC_TRANSPARENT,
-                                                                                    KC_NO,          KC_TRANSPARENT, KC_MEDIA_PREV_TRACK,KC_TRANSPARENT, KC_TRANSPARENT, KC_NO
-  ),
-  [7] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                 KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_UP,       KC_MS_RIGHT,    KC_TRANSPARENT, KC_TRANSPARENT,
@@ -115,11 +94,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_BTN1,     KC_MS_BTN2
   ),
-  [8] = LAYOUT_ergodox_pretty(
+  [7] = LAYOUT_ergodox_pretty(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          TO(1),          TO(6),          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          TO(2),          KC_NO,          KC_NO,
+    KC_NO,          KC_NO,          TO(1),          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          TO(2),          KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          TO(7),          KC_NO,          KC_NO,          QK_DYNAMIC_TAPPING_TERM_PRINT,KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          TO(6),          KC_NO,          KC_NO,          QK_DYNAMIC_TAPPING_TERM_PRINT,KC_NO,
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          KC_NO,          QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,KC_NO,
                                                                                                     KC_NO,          KC_NO,          TO(0),          KC_NO,
                                                                                                                     KC_NO,          KC_NO,
@@ -227,171 +206,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_RPRN);
         } else {
           unregister_code16(KC_RPRN);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_4:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LCTL(KC_UP));
-        } else {
-          unregister_code16(LCTL(KC_UP));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LCTL(KC_F)));
-        } else {
-          unregister_code16(LGUI(LCTL(KC_F)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_5:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LCTL(LSFT(KC_TAB)));
-        } else {
-          unregister_code16(LCTL(LSFT(KC_TAB)));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(KC_LEFT));
-        } else {
-          unregister_code16(LGUI(KC_LEFT));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_6:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LGUI(KC_T));
-        } else {
-          unregister_code16(LGUI(KC_T));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_T)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_T)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_7:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LCTL(KC_TAB));
-        } else {
-          unregister_code16(LCTL(KC_TAB));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(KC_RIGHT));
-        } else {
-          unregister_code16(LGUI(KC_RIGHT));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_8:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
-        } else {
-          unregister_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LALT(LGUI(LCTL(KC_LEFT))));
-        } else {
-          unregister_code16(LALT(LGUI(LCTL(KC_LEFT))));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_9:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
-        } else {
-          unregister_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LALT(LGUI(LCTL(KC_RIGHT))));
-        } else {
-          unregister_code16(LALT(LGUI(LCTL(KC_RIGHT))));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_10:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_1)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_1)));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_2)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_2)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_11:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LALT(LSFT(KC_LEFT)));
-        } else {
-          unregister_code16(LALT(LSFT(KC_LEFT)));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_LEFT)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_LEFT)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_12:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LSFT(KC_DOWN));
-        } else {
-          unregister_code16(LSFT(KC_DOWN));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_DOWN)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_DOWN)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_13:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LSFT(KC_UP));
-        } else {
-          unregister_code16(LSFT(KC_UP));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_UP)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_UP)));
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_14:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LALT(LSFT(KC_RIGHT)));
-        } else {
-          unregister_code16(LALT(LSFT(KC_RIGHT)));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(LGUI(LSFT(KC_RIGHT)));
-        } else {
-          unregister_code16(LGUI(LSFT(KC_RIGHT)));
         }  
       }  
       return false;
