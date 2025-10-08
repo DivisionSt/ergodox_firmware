@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           DUAL_FUNC_1,                                    DUAL_FUNC_3,    KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
     LGUI(KC_DOT),   KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_SHIFT,                                                                                                  KC_RIGHT_SHIFT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, DUAL_FUNC_2,    TO(8),          KC_TRANSPARENT,
-                                                                                                                    KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                    KC_TRANSPARENT, LAYER_ID,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_ergodox_pretty(
@@ -514,39 +514,30 @@ void send_current_layer_name(void) {
   SEND_STRING("L: ");
   switch (current_layer) {
     case 0:
-      SEND_STRING("macos");
+      SEND_STRING("base-mac");
       break;
     case 1:
-      SEND_STRING("fortnite");
+      SEND_STRING("base-win");
       break;
     case 2:
-      SEND_STRING("minecraft");
+      SEND_STRING("base-old");
       break;
     case 3:
-      SEND_STRING("gaming");
+      SEND_STRING("ext-nav");
       break;
     case 4:
-      SEND_STRING("win");
+      SEND_STRING("ext-num");
       break;
     case 5:
-      SEND_STRING("old_mac");
+      SEND_STRING("ext-func");
       break;
     case 6:
-      SEND_STRING("shortcut");
+      SEND_STRING("ext-old");
       break;
     case 7:
-      SEND_STRING("nav");
-      break;
-    case 8:
-      SEND_STRING("num");
-      break;
-    case 9:
-      SEND_STRING("func");
-      break;
-    case 10:
       SEND_STRING("mouse");
       break;
-    case 11:
+    case 8:
       SEND_STRING("layers");
       break;
     default:
