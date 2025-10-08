@@ -364,9 +364,9 @@ void send_current_layer_name(void) {
 void leader_end_user(void) {
   // leaves
   if (leader_sequence_one_key(KC_T)) {
-    tap_code16(LGUI(LSFT(KC_T)))
+    tap_code16(LGUI(LSFT(KC_T)));
   } else if (leader_sequence_one_key(KC_V)) {
-    tap_code16(LGUI(LSFT(KC_V)))
+    tap_code16(LGUI(LSFT(KC_V)));
   }
   // system (/)
   else if (leader_sequence_two_keys(KC_SLASH, KC_I)) {
