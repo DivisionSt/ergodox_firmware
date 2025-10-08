@@ -256,7 +256,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void matrix_scan_user(void) { // The very important timer.
+void matrix_scan_user(void) { 
   if (is_alt_tab_active) {
     if (timer_elapsed(alt_tab_timer) > 9000) {
       unregister_code(KC_LALT);
@@ -286,11 +286,11 @@ uint16_t layer_state_set_user(uint16_t state) {
       ergodox_right_led_2_on();
       break;
     case 3:
-      ergodox_right_led_3_on();
-      break;
-    case 4:
       ergodox_right_led_1_on();
       ergodox_right_led_2_on();
+      break;
+    case 4:
+      ergodox_right_led_3_on();
       break;
     case 5:
       ergodox_right_led_1_on();
