@@ -350,12 +350,9 @@ void send_current_layer_name(void) {
       SEND_STRING("ext-func");
       break;
     case 6:
-      SEND_STRING("ext-old");
-      break;
-    case 7:
       SEND_STRING("mouse");
       break;
-    case 8:
+    case 7:
       SEND_STRING("layers");
       break;
     default:
@@ -365,9 +362,19 @@ void send_current_layer_name(void) {
 }
 
 void leader_end_user(void) {
-  if (leader_sequence_two_keys(KC_I, KC_D)) {
+  // leaves
+  if (leader_sequence_one_key(KC_T)) {
+    tap_code16(LGUI(LSFT(KC_T)))
+  } else if (leader_sequence_one_key(KC_V)) {
+    tap_code16(LGUI(LSFT(KC_V)))
+  }
+  // system (/)
+  else if (leader_sequence_two_keys(KC_SLASH, KC_I)) {
     send_current_layer_name();
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
+  }
+
+  // rectangle (r)
+  else if (leader_sequence_two_keys(KC_R, KC_1)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
   } else if (leader_sequence_two_keys(KC_R, KC_2)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_2)))));
@@ -377,50 +384,9 @@ void leader_end_user(void) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_6)))));
   } else if (leader_sequence_two_keys(KC_R, KC_7)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
+  } else if (leader_sequence_two_keys(KC_R, KC_8)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_8)))));
   }
-  /* } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  }
-  } else if (leader_sequence_two_keys(KC_R, KC_1)) {
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  } */
-  /*} else if (leader_sequence_one_key(KC_C)) {
-    register_code(KC_LGUI); // Windows key
-    register_code(KC_R);    // R key
-    unregister_code(KC_R);
-    unregister_code(KC_LGUI);
-    send_string("calc\n"); // Opens calculator
-  }*/
 }
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
