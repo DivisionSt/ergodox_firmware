@@ -164,9 +164,9 @@
 		compatible = "zmk,behavior-leader-key";
 		#binding-cells = <0>;
         // leaves
-        reopen_tab { sequence = <T>; bindings = <LG(LS(T))>; };
-        clipboard_history { sequence = <V>; bindings = <LG(LS(V))>; };
-        tabs_list { sequence = <A>; bindings = <LG(LS(A))>; };
+        reopen_tab { sequence = <T>; bindings = <&kp LG(LS(T))>; };
+        clipboard_history { sequence = <V>; bindings = <&kp LG(LS(V))>; };
+        tabs_list { sequence = <A>; bindings = <&kp LG(LS(A))>; };
 
 		// system (/)
     	usb { sequence = <FSLH U>; bindings = <&out OUT_USB>; };
