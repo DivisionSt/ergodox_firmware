@@ -163,6 +163,10 @@
 	leader: leader {
 		compatible = "zmk,behavior-leader-key";
 		#binding-cells = <0>;
+        // leaves
+        reopen_tab { sequence = <T>; bindings = <LG(LS(T))>; };
+        clipboard_history { sequence = <V>; bindings = <LG(LS(V))>; };
+        tabs_list { sequence = <A>; bindings = <LG(LS(A))>; };
 
 		// system (/)
     	usb { sequence = <FSLH U>; bindings = <&out OUT_USB>; };
@@ -175,40 +179,47 @@
         btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
 		//boot { sequence = <S B L>; bindings = <&bootloader>; };
         //reset { sequence = <S R>; bindings = <&sys_reset>; };
-		rect_layout_home_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
-		rect_layout_home_obsidian2 { sequence = <R H O>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
-		rect_layout_home_meet { sequence = <R N2>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
-		rect_layout_home_meet2 { sequence = <R H M>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
-		rect_layout_home_code { sequence = <R N3>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
-		rect_layout_home_code2 { sequence = <R H C>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
-		rect_layout_office_obsidian { sequence = <R N6>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
-		rect_layout_office_obsidian2 { sequence = <R O O>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
-		rect_layout_office_meet { sequence = <R N7>; bindings = <&kp LG(LA(LC(LS(N7))))>; };
-		rect_layout_office_meet2 { sequence = <R O M>; bindings = <&kp LG(LA(LC(LS(N7))))>; };
-		rect_layout_office_code { sequence = <R N8>; bindings = <&kp LG(LA(LC(LS(N8))))>; };
-		rect_layout_office_code2 { sequence = <R O C>; bindings = <&kp LG(LA(LC(LS(N8))))>; };
-		rect_next_display { sequence = <R D G>; bindings = <&kp LG(LA(LC(LS(RIGHT))))>; };
-		rect_next_display2 { sequence = <R D L>; bindings = <&kp LG(LA(LC(LS(RIGHT))))>; };
-		rect_prev_display { sequence = <R D S>; bindings = <&kp LG(LA(LC(LS(LEFT))))>; };
-		rect_prev_display2 { sequence = <R D H>; bindings = <&kp LG(LA(LC(LS(LEFT))))>; };
+
+		// rectangle (r)
+		rect_layout_office_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
+		rect_layout_office_obsidian2 { sequence = <R W O>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
+		rect_layout_office_meet { sequence = <R N2>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
+		rect_layout_office_meet2 { sequence = <R W M>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
+		rect_layout_office_code { sequence = <R N3>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
+		rect_layout_office_code2 { sequence = <R W C>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
+		rect_layout_home_obsidian { sequence = <R N6>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
+		rect_layout_home_obsidian2 { sequence = <R H O>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
+		rect_layout_home_meet { sequence = <R N7>; bindings = <&kp LG(LA(LC(LS(N7))))>; };
+		rect_layout_home_meet2 { sequence = <R H M>; bindings = <&kp LG(LA(LC(LS(N7))))>; };
+		rect_layout_home_code { sequence = <R N8>; bindings = <&kp LG(LA(LC(LS(N8))))>; };
+		rect_layout_home_code2 { sequence = <R H C>; bindings = <&kp LG(LA(LC(LS(N8))))>; };
+		rect_next_display { sequence = <R G>; bindings = <&kp LG(LA(LC(LS(RIGHT))))>; };
+		rect_next_display2 { sequence = <R L>; bindings = <&kp LG(LA(LC(LS(RIGHT))))>; };
+		rect_prev_display { sequence = <R S>; bindings = <&kp LG(LA(LC(LS(LEFT))))>; };
+		rect_prev_display2 { sequence = <R H>; bindings = <&kp LG(LA(LC(LS(LEFT))))>; };
 		rect_maximize { sequence = <R D>; bindings = <&kp LA(LC(RET))>; };
 		rect_maximize2 { sequence = <R K>; bindings = <&kp LA(LC(RET))>; };
+		rect_maximize3 { sequence = <R M>; bindings = <&kp LA(LC(RET))>; };
 		rect_center { sequence = <R F>; bindings = <&kp LA(LC(C))>; };
 		rect_center2 { sequence = <R J>; bindings = <&kp LA(LC(C))>; };
-		wm_mission_ctrl { sequence = <W D>; bindings = <&kp LC(UP)>; };
-		wm_mission_ctrl2 { sequence = <W K>; bindings = <&kp LC(UP)>; };
-		wm_fullscreen { sequence = <W W>; bindings = <&kp LG(LC(F))>; };
-		wm_expose { sequence = <W F>; bindings = <&kp LC(DOWN)>; };
-		wm_expose2 { sequence = <W J>; bindings = <&kp LC(DOWN)>; };
-		wm_next_desktop { sequence = <W G>; bindings = <&kp LC(RIGHT)>; };
-		wm_next_desktop2 { sequence = <W L>; bindings = <&kp LC(RIGHT)>; };
-		wm_prev_desktop { sequence = <W S>; bindings = <&kp LC(LEFT)>; };
-		wm_prev_desktop2 { sequence = <W H>; bindings = <&kp LC(LEFT)>; };
-		shortcut_tabs_list { sequence = <S T S>; bindings = <&kp LG(LS(LC(A)))>; };
-		shortcut_tabs_list2 { sequence = <S T A>; bindings = <&kp LG(LS(LC(A)))>; };
-		shortcut_tabs_list3 { sequence = <S T L>; bindings = <&kp LG(LS(LC(A)))>; };
-    shortcut_screenshot_selection { sequence = <S S S>; bindings = <&kp LG(LS(1))>; }
-    shortcut_screenshot_window { sequence = <S S W>; bindings = <&kp LG(LS(2))>;  }
+		rect_center3 { sequence = <R C>; bindings = <&kp LA(LC(C))>; };
+
+		// desktop (d)
+		mission_ctrl { sequence = <D M>; bindings = <&kp LC(UP)>; };
+		mission_ctrl2 { sequence = <D D>; bindings = <&kp LC(UP)>; };
+		mission_ctrl3 { sequence = <W K>; bindings = <&kp LC(UP)>; };
+		fullscreen { sequence = <D F>; bindings = <&kp LG(LC(F))>; };
+		expose { sequence = <D E>; bindings = <&kp LC(DOWN)>; };
+		next_desktop { sequence = <W N>; bindings = <&kp LC(RIGHT)>; };
+		next_desktop2 { sequence = <W G>; bindings = <&kp LC(RIGHT)>; };
+		next_desktop3 { sequence = <W L>; bindings = <&kp LC(RIGHT)>; };
+		prev_desktop { sequence = <W P>; bindings = <&kp LC(LEFT)>; };
+		prev_desktop2 { sequence = <W S>; bindings = <&kp LC(LEFT)>; };
+		prev_desktop3 { sequence = <W H>; bindings = <&kp LC(LEFT)>; };
+		
+		// shortcut (s)
+        shortcut_screenshot_selection { sequence = <S S S>; bindings = <&kp LG(LS(1))>; };
+        shortcut_screenshot_window { sequence = <S S W>; bindings = <&kp LG(LS(2))>;  };
 	};
 	alt_tab: alt_tab {
       compatible = "zmk,behavior-tri-state";
