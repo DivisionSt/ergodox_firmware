@@ -163,22 +163,22 @@
 	leader: leader {
 		compatible = "zmk,behavior-leader-key";
 		#binding-cells = <0>;
-        // leaves
-        reopen_tab { sequence = <T>; bindings = <&kp LG(LS(T))>; };
-        clipboard_history { sequence = <V>; bindings = <&kp LG(LS(V))>; };
-        tabs_list { sequence = <A>; bindings = <&kp LG(LS(A))>; };
+		// leaves
+		reopen_tab { sequence = <T>; bindings = <&kp LG(LS(T))>; };
+		/* clipboard_history { sequence = <V>; bindings = <&kp LG(LS(V))>; };
+		tabs_list { sequence = <A>; bindings = <&kp LG(LS(A))>; };
 
 		// system (/)
-    	usb { sequence = <FSLH U>; bindings = <&out OUT_USB>; };
-        ble { sequence = <FSLH B>; bindings = <&out OUT_BLE>; };
-        bt0 { sequence = <FSLH N0>; bindings = <&bt BT_SEL 0>; };
-        bt1 { sequence = <FSLH N1>; bindings = <&bt BT_SEL 1>; };
-        bt2 { sequence = <FSLH N2>; bindings = <&bt BT_SEL 2>; };
-        bt3 { sequence = <FSLH N3>; bindings = <&bt BT_SEL 3>; };
-        bt4 { sequence = <FSLH N4>; bindings = <&bt BT_SEL 4>; };
-        btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
+		usb { sequence = <FSLH U>; bindings = <&out OUT_USB>; };
+		ble { sequence = <FSLH B>; bindings = <&out OUT_BLE>; };
+		bt0 { sequence = <FSLH N0>; bindings = <&bt BT_SEL 0>; };
+		bt1 { sequence = <FSLH N1>; bindings = <&bt BT_SEL 1>; };
+		bt2 { sequence = <FSLH N2>; bindings = <&bt BT_SEL 2>; };
+		bt3 { sequence = <FSLH N3>; bindings = <&bt BT_SEL 3>; };
+		bt4 { sequence = <FSLH N4>; bindings = <&bt BT_SEL 4>; };
+		btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
 		//boot { sequence = <S B L>; bindings = <&bootloader>; };
-        //reset { sequence = <S R>; bindings = <&sys_reset>; };
+		//reset { sequence = <S R>; bindings = <&sys_reset>; };
 
 		// rectangle (r)
 		rect_layout_office_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
@@ -218,8 +218,9 @@
 		prev_desktop3 { sequence = <D H>; bindings = <&kp LC(LEFT)>; };
 		
 		// shortcut (s)
-        shortcut_screenshot_selection { sequence = <S S S>; bindings = <&kp LG(LS(1))>; };
-        shortcut_screenshot_window { sequence = <S S W>; bindings = <&kp LG(LS(2))>;  };
+		shortcut_screenshot_selection { sequence = <S S S>; bindings = <&kp LG(LS(N1))>; };
+		shortcut_screenshot_window { sequence = <S S W>; bindings = <&kp LG(LS(N2))>;  };
+    */
 	};
 	alt_tab: alt_tab {
       compatible = "zmk,behavior-tri-state";

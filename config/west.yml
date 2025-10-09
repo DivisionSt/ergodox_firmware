@@ -16,7 +16,8 @@ manifest:
       revision: main
     - name: zmk-leader-key
       remote: urob
-      revision: v0.3
+      path: modules/zmk/leader-key
+      revision: main
     - name: zmk-tri-state
       remote: urob
       path: modules/zmk/tri-state
