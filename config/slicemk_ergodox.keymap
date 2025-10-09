@@ -40,17 +40,17 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_func {
             timeout-ms = <50>;
             key-positions = <69 74>;
             bindings = <&tog L_EXT_FUNC>;
         };
-        combo_esc {
+        combo_nav {
             timeout-ms = <50>;
             key-positions = <69 70>;
             bindings = <&tog L_EXT_NAV>;
         };
-        combo_esc {
+        combo_num {
             timeout-ms = <50>;
             key-positions = <73 74>;
             bindings = <&tog L_EXT_NUM>;
