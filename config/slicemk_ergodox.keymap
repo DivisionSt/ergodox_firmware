@@ -210,12 +210,12 @@
 		mission_ctrl3 { sequence = <W K>; bindings = <&kp LC(UP)>; };
 		fullscreen { sequence = <D F>; bindings = <&kp LG(LC(F))>; };
 		expose { sequence = <D E>; bindings = <&kp LC(DOWN)>; };
-		next_desktop { sequence = <W N>; bindings = <&kp LC(RIGHT)>; };
-		next_desktop2 { sequence = <W G>; bindings = <&kp LC(RIGHT)>; };
-		next_desktop3 { sequence = <W L>; bindings = <&kp LC(RIGHT)>; };
-		prev_desktop { sequence = <W P>; bindings = <&kp LC(LEFT)>; };
-		prev_desktop2 { sequence = <W S>; bindings = <&kp LC(LEFT)>; };
-		prev_desktop3 { sequence = <W H>; bindings = <&kp LC(LEFT)>; };
+		next_desktop { sequence = <D N>; bindings = <&kp LC(RIGHT)>; };
+		next_desktop2 { sequence = <D G>; bindings = <&kp LC(RIGHT)>; };
+		next_desktop3 { sequence = <D L>; bindings = <&kp LC(RIGHT)>; };
+		prev_desktop { sequence = <D P>; bindings = <&kp LC(LEFT)>; };
+		prev_desktop2 { sequence = <D S>; bindings = <&kp LC(LEFT)>; };
+		prev_desktop3 { sequence = <D H>; bindings = <&kp LC(LEFT)>; };
 		
 		// shortcut (s)
         shortcut_screenshot_selection { sequence = <S S S>; bindings = <&kp LG(LS(1))>; };
