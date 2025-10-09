@@ -171,13 +171,13 @@
 
 		// system (/)
 		usb { sequence = <FSLH U>; bindings = <&out OUT_USB>; };
-		sys_ble { sequence = <SLASH B>; bindings = <&out OUT_BLE>; };
-		sys_bt0 { sequence = <SLASH N0>; bindings = <&bt BT_SEL 0>; };
-		sys_bt1 { sequence = <SLASH N1>; bindings = <&bt BT_SEL 1>; };
-		sys_bt2 { sequence = <SLASH N2>; bindings = <&bt BT_SEL 2>; };
-		sys_bt3 { sequence = <SLASH N3>; bindings = <&bt BT_SEL 3>; };
-		sys_bt4 { sequence = <SLASH N4>; bindings = <&bt BT_SEL 4>; };
-		sys_btc { sequence = <SLASH C>; bindings = <&bt BT_CLR>; };
+		sys_ble { sequence = <FSLH B>; bindings = <&out OUT_BLE>; };
+		sys_bt0 { sequence = <FSLH N0>; bindings = <&bt BT_SEL 0>; };
+		sys_bt1 { sequence = <FSLH N1>; bindings = <&bt BT_SEL 1>; };
+		sys_bt2 { sequence = <FSLH N2>; bindings = <&bt BT_SEL 2>; };
+		sys_bt3 { sequence = <FSLH N3>; bindings = <&bt BT_SEL 3>; };
+		sys_bt4 { sequence = <FSLH N4>; bindings = <&bt BT_SEL 4>; };
+		sys_btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
 
 		// rectangle (r)
 		rect_layout_office_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
@@ -194,7 +194,7 @@
 		rect_layout_home_code2 { sequence = <R H C>; bindings = <&kp LG(LA(LC(LS(N8))))>; };
 		rect_next_display { sequence = <R G>; bindings = <&kp LG(LA(LC(LS(RIGHT))))>; };
 		rect_next_display2 { sequence = <R L>; bindings = <&kp LG(LA(LC(LS(RIGHT))))>; };
-		rect_prev_display { sequence = <R S>; bindings = <&kp LG(LA(LC(LS(LEFT))))>; };
+		rect_prev_display { sequence = <R P>; bindings = <&kp LG(LA(LC(LS(LEFT))))>; };
 		rect_maximize { sequence = <R D>; bindings = <&kp LA(LC(RET))>; };
 		rect_maximize2 { sequence = <R K>; bindings = <&kp LA(LC(RET))>; };
 		rect_maximize3 { sequence = <R M>; bindings = <&kp LA(LC(RET))>; };
@@ -208,16 +208,16 @@
 		desk_mission_ctrl3 { sequence = <D K>; bindings = <&kp LC(UP)>; };
 		desk_fullscreen { sequence = <D F>; bindings = <&kp LG(LC(F))>; };
 		desk_expose { sequence = <D E>; bindings = <&kp LC(DOWN)>; };
-		desk_next_desktop { sequence = <D N>; bindings = <&kp LC(RIGHT)>; };
-		desk_next_desktop2 { sequence = <D G>; bindings = <&kp LC(RIGHT)>; };
-		desk_next_desktop3 { sequence = <D L>; bindings = <&kp LC(RIGHT)>; };
-		desk_prev_desktop { sequence = <D P>; bindings = <&kp LC(LEFT)>; };
-		desk_prev_desktop2 { sequence = <D S>; bindings = <&kp LC(LEFT)>; };
-		desk_prev_desktop3 { sequence = <D H>; bindings = <&kp LC(LEFT)>; };
+		desk_next { sequence = <D N>; bindings = <&kp LC(RIGHT)>; };
+		desk_next2 { sequence = <D G>; bindings = <&kp LC(RIGHT)>; };
+		desk_next3 { sequence = <D L>; bindings = <&kp LC(RIGHT)>; };
+		desk_prev { sequence = <D P>; bindings = <&kp LC(LEFT)>; };
+		desk_prev2 { sequence = <D S>; bindings = <&kp LC(LEFT)>; };
+		desk_prev3 { sequence = <D H>; bindings = <&kp LC(LEFT)>; };
 		
 		// shortcut (s)
-		shortcut_screenshot_selection { sequence = <S S S>; bindings = <&kp LG(LS(N1))>; };
-		shortcut_screenshot_window { sequence = <S S W>; bindings = <&kp LG(LS(N2))>;  };
+		shortcut_screenshot_sel { sequence = <S S S>; bindings = <&kp LG(LS(N1))>; };
+		shortcut_screenshot_win { sequence = <S S W>; bindings = <&kp LG(LS(N2))>; };
     
 	};
 	alt_tab: alt_tab {
