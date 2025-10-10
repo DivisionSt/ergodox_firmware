@@ -180,12 +180,12 @@
 		sys_btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
 
 		// rectangle (r)
-		rect_layout_office_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
-		rect_layout_office_obsidian2 { sequence = <R W O>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
-		rect_layout_office_meet { sequence = <R N2>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
-		rect_layout_office_meet2 { sequence = <R W M>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
-		rect_layout_office_code { sequence = <R N3>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
-		rect_layout_office_code2 { sequence = <R W C>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
+		rect_layout_work_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
+		rect_layout_work_obsidian2 { sequence = <R W O>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
+		rect_layout_work_meet { sequence = <R N2>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
+		rect_layout_work_meet2 { sequence = <R W M>; bindings = <&kp LG(LA(LC(LS(N2))))>; };
+		rect_layout_work_code { sequence = <R N3>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
+		rect_layout_work_code2 { sequence = <R W C>; bindings = <&kp LG(LA(LC(LS(N3))))>; };
 		rect_layout_home_obsidian { sequence = <R N6>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
 		rect_layout_home_obsidian2 { sequence = <R H O>; bindings = <&kp LG(LA(LC(LS(N6))))>; };
 		rect_layout_home_meet { sequence = <R N7>; bindings = <&kp LG(LA(LC(LS(N7))))>; };

@@ -240,13 +240,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     default:
       if (is_cmd_tab_active) {
-        if (keycode != KC_TAB && record->event.pressed) {
+        if (keycode != KC_TAB && keycode != KC_SPACE && record->event.pressed) {
           unregister_code(KC_LGUI);
           is_cmd_tab_active = false;
         }
       }
       if (is_alt_tab_active) {
-        if (keycode != KC_TAB && record->event.pressed) {
+        if (keycode != KC_TAB && keycode != KC_SPACE && record->event.pressed) {
           unregister_code(KC_LALT);
           is_alt_tab_active = false;
         }
@@ -367,11 +367,14 @@ void leader_end_user(void) {
     tap_code16(LGUI(LSFT(KC_T)));
   } else if (leader_sequence_one_key(KC_V)) {
     tap_code16(LGUI(LSFT(KC_V)));
-  }
+  } else if (leader_sequence_one_key(KC_A)) {
+    tap_code16(LGUI(LSFT(KC_A)));
+  } 
+
   // system (/)
   else if (leader_sequence_two_keys(KC_SLASH, KC_I)) {
     send_current_layer_name();
-  }
+  } 
 
   // rectangle (r)
   else if (leader_sequence_two_keys(KC_R, KC_1)) {
@@ -386,6 +389,68 @@ void leader_end_user(void) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
   } else if (leader_sequence_two_keys(KC_R, KC_8)) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_8)))));
+  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_O)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
+  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_M)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_2)))));
+  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_C)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_3)))));
+  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_O)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_6)))));
+  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_M)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
+  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_C)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_8)))));
+  } else if (leader_sequence_two_keys(KC_R, KC_G)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
+  } else if (leader_sequence_two_keys(KC_R, KC_L)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
+  } else if (leader_sequence_two_keys(KC_R, KC_P)) {
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
+  } else if (leader_sequence_two_keys(KC_R, KC_D)) {
+    tap_code16(LALT(LCTL(KC_RETURN)));
+  } else if (leader_sequence_two_keys(KC_R, KC_K)) {
+    tap_code16(LALT(LCTL(KC_RETURN)));
+  } else if (leader_sequence_two_keys(KC_R, KC_M)) {
+    tap_code16(LALT(LCTL(KC_RETURN)));
+  } else if (leader_sequence_two_keys(KC_R, KC_F)) {
+    tap_code16(LALT(LCTL(KC_C)));
+  } else if (leader_sequence_two_keys(KC_R, KC_J)) {
+    tap_code16(LALT(LCTL(KC_C)));
+  } else if (leader_sequence_two_keys(KC_R, KC_C)) {
+    tap_code16(LALT(LCTL(KC_C)));
+  }
+
+  // desktop (d)
+  else if (leader_sequence_two_keys(KC_D, KC_M)) {
+    tap_code16(LCTL(KC_UP));
+  } else if (leader_sequence_two_keys(KC_D, KC_D)) {
+    tap_code16(LCTL(KC_UP));
+  } else if (leader_sequence_two_keys(KC_D, KC_K)) {
+    tap_code16(LCTL(KC_UP));
+  } else if (leader_sequence_two_keys(KC_D, KC_F)) {
+    tap_code16(LGUI(LCTL(KC_F)));
+  } else if (leader_sequence_two_keys(KC_D, KC_E)) {
+    tap_code16(LCTL(KC_DOWN));
+  } else if (leader_sequence_two_keys(KC_D, KC_N)) {
+    tap_code16(LCTL(KC_RIGHT));
+  } else if (leader_sequence_two_keys(KC_D, KC_G)) {
+    tap_code16(LCTL(KC_RIGHT));
+  } else if (leader_sequence_two_keys(KC_D, KC_L)) {
+    tap_code16(LCTL(KC_RIGHT));
+  } else if (leader_sequence_two_keys(KC_D, KC_P)) {
+    tap_code16(LCTL(KC_LEFT));
+  } else if (leader_sequence_two_keys(KC_D, KC_S)) {
+    tap_code16(LCTL(KC_LEFT));
+  } else if (leader_sequence_two_keys(KC_D, KC_H)) {
+    tap_code16(LCTL(KC_LEFT));
+  }
+
+  // shortcut (s)
+  else if (leader_sequence_three_keys(KC_S, KC_S, KC_S)) {
+    tap_code16(LGUI(LSFT(KC_1)));
+  } else if (leader_sequence_three_keys(KC_S, KC_S, KC_W)) {
+    tap_code16(LGUI(LSFT(KC_2)));
   }
 }
 
