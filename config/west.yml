@@ -19,7 +19,7 @@ manifest:
     - name: zmk-leader-key
       remote: divisionst
       path: modules/zmk/leader-key
-      revision: main
+      revision: max_bounds_check
     - name: zmk-tri-state
       remote: urob
       path: modules/zmk/tri-state
