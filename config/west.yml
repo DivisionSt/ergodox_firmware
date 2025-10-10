@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/urob
     - name: ssbb
       url-base: https://github.com/ssbb
+    - name: divisionst
+      url-base: https://github.com/DivisionSt/
   projects:
     - name: zmk
       remote: slicemk
@@ -15,7 +17,7 @@ manifest:
       remote: urob
       revision: main
     - name: zmk-leader-key
-      remote: urob
+      remote: divisionst
       path: modules/zmk/leader-key
       revision: main
     - name: zmk-tri-state
