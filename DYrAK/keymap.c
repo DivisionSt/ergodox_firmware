@@ -244,13 +244,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     default:
       if (is_cmd_tab_active) {
-        if (keycode != KC_TAB && keycode != KC_LSFT && keycode != KC_RSFT && record->event.pressed) {
+        if (keycode != KC_TAB && !(get_mods() & MOD_MASK_SHIFT) && !(get_oneshot_mods() & MOD_MASK_SHIFT) && record->event.pressed) {
           unregister_code(KC_LGUI);
           is_cmd_tab_active = false;
         }
       }
       if (is_alt_tab_active) {
-        if (keycode != KC_TAB && keycode != KC_LSFT && keycode != KC_RSFT && record->event.pressed) {
+        if (keycode != KC_TAB && !(get_mods() & MOD_MASK_SHIFT) && !(get_oneshot_mods() & MOD_MASK_SHIFT) && record->event.pressed) {
           unregister_code(KC_LALT);
           is_alt_tab_active = false;
         }
