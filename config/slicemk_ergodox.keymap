@@ -55,6 +55,21 @@
             key-positions = <73 74>;
             bindings = <&tog L_EXT_NUM>;
         };
+        combo_move_win {
+          timeout-ms = <50>;
+          key-positions = <16 17>;
+          bindings = <&kp LC(LSHFT);
+        }
+        combo_resize_win {
+          timeout-ms = <50>;
+          key-positions = <42 43>;
+          bindings = <&kp LA(LSHFT);
+        }
+        combo_clipboard_history {
+          timeout-ms = <50>;
+          key-positions = <45 46>;
+          bindings = <&kp LG(LS(V));
+        }
     };
 };
 
