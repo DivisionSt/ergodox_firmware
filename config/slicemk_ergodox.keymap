@@ -63,12 +63,12 @@
         combo_resize_win {
           timeout-ms = <50>;
           key-positions = <42 43>;
-          bindings = <&kp LA(LSHFT);
+          bindings = <&kp LA(LSHFT)>;
         }
         combo_clipboard_history {
           timeout-ms = <50>;
           key-positions = <45 46>;
-          bindings = <&kp LG(LS(V));
+          bindings = <&kp LG(LS(V))>;
         }
     };
 };
