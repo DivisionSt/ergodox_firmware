@@ -185,20 +185,20 @@
 		leaf_tabs_list { sequence = <A>; bindings = <&kp LG(LS(A))>; };
 
 		// system (/)
-		usb { sequence = <FSLH U>; bindings = <&out OUT_USB>; };
-		sys_ble { sequence = <FSLH B>; bindings = <&out OUT_BLE>; };
-		sys_bt0 { sequence = <FSLH N0>; bindings = <&bt BT_SEL 0>; };
-		sys_bt1 { sequence = <FSLH N1>; bindings = <&bt BT_SEL 1>; };
-		sys_bt2 { sequence = <FSLH N2>; bindings = <&bt BT_SEL 2>; };
-		sys_bt3 { sequence = <FSLH N3>; bindings = <&bt BT_SEL 3>; };
-		sys_bt4 { sequence = <FSLH N4>; bindings = <&bt BT_SEL 4>; };
-		sys_btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
-		sys_ug_bri_inc { sequence = <FSLH U EQUAL>; bindings = <&rgb_ug RGB_BRI>; };
-		sys_ug_bri_dec { sequence = <FSLH U MINUS>; bindings = <&rgb_ug RGB_BRD>; };
-		sys_ug_off { sequence = <FSLH U X>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 0)>; };
-		sys_ug_red { sequence = <FSLH U R>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20)>; };
-		sys_ug_white { sequence = <FSLH U W>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20)>; };
-		sys_ug_blue { sequence = <FSLH U B>; bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20)>; };
+		usb { sequence = <SLASH U>; bindings = <&out OUT_USB>; };
+		sys_ble { sequence = <SLASH B>; bindings = <&out OUT_BLE>; };
+		sys_bt0 { sequence = <SLASH N0>; bindings = <&bt BT_SEL 0>; };
+		sys_bt1 { sequence = <SLASH N1>; bindings = <&bt BT_SEL 1>; };
+		sys_bt2 { sequence = <SLASH N2>; bindings = <&bt BT_SEL 2>; };
+		sys_bt3 { sequence = <SLASH N3>; bindings = <&bt BT_SEL 3>; };
+		sys_bt4 { sequence = <SLASH N4>; bindings = <&bt BT_SEL 4>; };
+		sys_btc { sequence = <SLASH C>; bindings = <&bt BT_CLR>; };
+		sys_ug_bri_inc { sequence = <SLASH U EQUAL>; bindings = <&rgb_ug RGB_BRI>; };
+		sys_ug_bri_dec { sequence = <SLASH U MINUS>; bindings = <&rgb_ug RGB_BRD>; };
+		sys_ug_off { sequence = <SLASH U X>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 0)>; };
+		sys_ug_red { sequence = <SLASH U R>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20)>; };
+		sys_ug_white { sequence = <SLASH U W>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20) ; };
+		sys_ug_blue { sequence = <SLASH U B>; bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20)>; };
 
 		// rectangle (r)
 		rect_layout_work_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
