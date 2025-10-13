@@ -193,6 +193,12 @@
 		sys_bt3 { sequence = <FSLH N3>; bindings = <&bt BT_SEL 3>; };
 		sys_bt4 { sequence = <FSLH N4>; bindings = <&bt BT_SEL 4>; };
 		sys_btc { sequence = <FSLH C>; bindings = <&bt BT_CLR>; };
+		sys_ug_bri_inc { sequence = <FSLH U EQUAL>; bindings = <&rgb_ug RGB_BRI>; };
+		sys_ug_bri_dec { sequence = <FSLH U MINUS>; bindings = <&rgb_ug RGB_BRD>; };
+		sys_ug_off { sequence = <FSLH U X>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 0)>; };
+		sys_ug_red { sequence = <FSLH U R>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20)>; };
+		sys_ug_white { sequence = <FSLH U W>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20)>; };
+		sys_ug_blue { sequence = <FSLH U B>; bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20)>; };
 
 		// rectangle (r)
 		rect_layout_work_obsidian { sequence = <R N1>; bindings = <&kp LG(LA(LC(LS(N1))))>; };
