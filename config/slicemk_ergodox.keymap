@@ -197,7 +197,7 @@
 		sys_ug_bri_dec { sequence = <SLASH U MINUS>; bindings = <&rgb_ug RGB_BRD>; };
 		sys_ug_off { sequence = <SLASH U X>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 0)>; };
 		sys_ug_red { sequence = <SLASH U R>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20)>; };
-		sys_ug_white { sequence = <SLASH U W>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20) ; };
+		sys_ug_white { sequence = <SLASH U W>; bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20)> ; };
 		sys_ug_blue { sequence = <SLASH U B>; bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20)>; };
 
 		// rectangle (r)
