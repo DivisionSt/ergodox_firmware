@@ -18,10 +18,10 @@ uint16_t cmd_tab_timer = 0;
 
 
 
-#define DUAL_FUNC_0 LT(12, KC_K)
-#define DUAL_FUNC_1 LT(13, KC_F11)
-#define DUAL_FUNC_2 LT(6, KC_I)
-#define DUAL_FUNC_3 LT(12, KC_F2)
+#define DUAL_FUNC_0 LT(11, KC_F8)
+#define DUAL_FUNC_1 LT(14, KC_7)
+#define DUAL_FUNC_2 LT(3, KC_W)
+#define DUAL_FUNC_3 LT(10, KC_O)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -56,8 +56,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_TAB),   LGUI(KC_GRAVE),                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_F12,
-    CW_TOGG,        OSM(MOD_LSFT),  OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  KC_TRANSPARENT,                                                                 KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_GRAVE),                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_F12,
+    CW_TOGG,        OSM(MOD_LSFT),  OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  LCTL(KC_TAB),                                                                   KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_LEFT),  KC_LPRN,                                        KC_RPRN,        KC_TRANSPARENT, KC_PGDN,        KC_PAGE_UP,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_TAB),   KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, LCTL(KC_ENTER), KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -129,6 +129,7 @@ const uint16_t PROGMEM combo1[] = { OSM(MOD_LGUI), LT(3, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combo2[] = { MT(MOD_RGUI, KC_ENTER), LT(4, KC_SPACE), COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_Z, KC_X, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_B, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TG(5)),
@@ -136,6 +137,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo2, TG(4)),
     COMBO(combo3, LSFT(KC_LEFT_CTRL)),
     COMBO(combo4, LSFT(KC_LEFT_ALT)),
+    COMBO(combo5, LGUI(LSFT(KC_V))),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
