@@ -546,8 +546,8 @@
                                             &trans     &trans                            &trans     &trans
 //                                          │ TRANS    │ TRANS    │          │          │ TRANS    │ TRANS    │
 //                                      ╭──────────────├──────────┼──────────┤          ├──────────┼──────────┤──────────────╮
-                                        &kp BSPC       &kp DEL    &kp C_BRI_INC         &trans     &kp RET    &trans
-//                                      │ BSPC         │ DEL      │ BRI+     │          │ TRANS    │ RET      │ TRANS        │
+                                        &kp LA(BSPC)       &kp DEL    &kp C_BRI_INC         &trans     &kp RET    &trans
+//                                      │ WORD BSPC    │ DEL      │ BRI+     │          │ TRANS    │ RET      │ TRANS        │
 //                                      ╰──────────────┴──────────┼──────────┤          ├──────────┼──────────┴──────────────╯
                                                                   &kp C_BRI_DEC         &trans
 //                                                                │ BRI-     │          │ TRANS    │
