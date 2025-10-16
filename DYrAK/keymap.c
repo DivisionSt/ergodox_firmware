@@ -369,93 +369,93 @@ void send_current_layer_name(void) {
 
 void leader_end_user(void) {
   // leaves
-  if (leader_sequence_one_key(KC_T)) {
+  if (leader_sequence_one_key(KC_T)) { // t
     tap_code16(LGUI(LSFT(KC_T)));
-  } else if (leader_sequence_one_key(KC_V)) {
+  } else if (leader_sequence_one_key(KC_V)) { // v
     tap_code16(LGUI(LSFT(KC_V)));
-  } else if (leader_sequence_one_key(KC_A)) {
+  } else if (leader_sequence_one_key(KC_A)) { // a
     tap_code16(LGUI(LSFT(KC_A)));
   } 
 
   // system (/)
-  else if (leader_sequence_two_keys(KC_SLASH, KC_I)) {
+  else if (leader_sequence_two_keys(KC_SLASH, KC_I)) { // /, i
     send_current_layer_name();
   } 
 
   // rectangle (r)
-  else if (leader_sequence_two_keys(KC_R, KC_1)) {
+  else if (leader_sequence_two_keys(KC_R, KC_1)) { // r, 1
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_2)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_2)) { // r, 2
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_2)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_3)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_3)) { // r, 3
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_3)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_6)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_6)) { // r, 6
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_6)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_7)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_7)) { // r, 7
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_8)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_8)) { // r, 8
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_8)))));
-  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_O)) {
+  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_O)) { // r, w, o
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_1)))));
-  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_M)) {
+  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_M)) { // r, w, m
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_2)))));
-  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_C)) {
+  } else if (leader_sequence_three_keys(KC_R, KC_W, KC_C)) { // r, w, c
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_3)))));
-  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_O)) {
+  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_O)) { // r, h, o
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_6)))));
-  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_M)) {
+  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_M)) { // r, h, m
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_7)))));
-  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_C)) {
+  } else if (leader_sequence_three_keys(KC_R, KC_H, KC_C)) { // r, h, c
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_8)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_G)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_G)) { // r, g
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_L)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_L)) { // r, l
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_P)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_P)) { // r, p
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_D)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_D)) { // r, d
     tap_code16(LALT(LCTL(KC_RETURN)));
-  } else if (leader_sequence_two_keys(KC_R, KC_K)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_K)) { // r, k
     tap_code16(LALT(LCTL(KC_RETURN)));
-  } else if (leader_sequence_two_keys(KC_R, KC_M)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_M)) { // r, m
     tap_code16(LALT(LCTL(KC_RETURN)));
-  } else if (leader_sequence_two_keys(KC_R, KC_F)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_F)) { // r, f
     tap_code16(LALT(LCTL(KC_C)));
-  } else if (leader_sequence_two_keys(KC_R, KC_J)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_J)) { // r, j
     tap_code16(LALT(LCTL(KC_C)));
-  } else if (leader_sequence_two_keys(KC_R, KC_C)) {
+  } else if (leader_sequence_two_keys(KC_R, KC_C)) { // r, c
     tap_code16(LALT(LCTL(KC_C)));
   }
 
   // desktop (d)
-  else if (leader_sequence_two_keys(KC_D, KC_M)) {
+  else if (leader_sequence_two_keys(KC_D, KC_M)) { // d, m
     tap_code16(LCTL(KC_UP));
-  } else if (leader_sequence_two_keys(KC_D, KC_D)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_D)) { // d, d
     tap_code16(LCTL(KC_UP));
-  } else if (leader_sequence_two_keys(KC_D, KC_K)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_K)) { // d, k
     tap_code16(LCTL(KC_UP));
-  } else if (leader_sequence_two_keys(KC_D, KC_F)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_F)) { // d, f
     tap_code16(LGUI(LCTL(KC_F)));
-  } else if (leader_sequence_two_keys(KC_D, KC_E)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_E)) { // d, e
     tap_code16(LCTL(KC_DOWN));
-  } else if (leader_sequence_two_keys(KC_D, KC_N)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_N)) { // d, n
     tap_code16(LCTL(KC_RIGHT));
-  } else if (leader_sequence_two_keys(KC_D, KC_G)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_G)) { // d, g
     tap_code16(LCTL(KC_RIGHT));
-  } else if (leader_sequence_two_keys(KC_D, KC_L)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_L)) { // d, l
     tap_code16(LCTL(KC_RIGHT));
-  } else if (leader_sequence_two_keys(KC_D, KC_P)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_P)) { // d, p
     tap_code16(LCTL(KC_LEFT));
-  } else if (leader_sequence_two_keys(KC_D, KC_S)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_S)) { // d, s
     tap_code16(LCTL(KC_LEFT));
-  } else if (leader_sequence_two_keys(KC_D, KC_H)) {
+  } else if (leader_sequence_two_keys(KC_D, KC_H)) { // d, h
     tap_code16(LCTL(KC_LEFT));
   }
 
   // shortcut (s)
-  else if (leader_sequence_three_keys(KC_S, KC_S, KC_S)) {
+  else if (leader_sequence_three_keys(KC_S, KC_S, KC_S)) { // s, s, s
     tap_code16(LGUI(LSFT(KC_1)));
-  } else if (leader_sequence_three_keys(KC_S, KC_S, KC_W)) {
+  } else if (leader_sequence_three_keys(KC_S, KC_S, KC_W)) { // s, s, w
     tap_code16(LGUI(LSFT(KC_2)));
   }
 }
