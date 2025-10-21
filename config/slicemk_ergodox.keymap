@@ -382,8 +382,8 @@
   &none      &none      &none      &none      &kp LALT                                            &kp RGUI   &trans     &trans     &trans     &trans
 //│ NONE     │ NONE     │ NONE     │ NONE     │ LALT     │          │          │      │          │ RGUI     │ TRANS    │ TRANS    │ TRANS    │ TRANS    │          │
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
-                                                       &none      &none                 &to L_LAYERS &none
-//                                                     │ NONE     │ NONE     │          │ TO LYR   │ NONE     │
+                                                       &kp M      &none                 &to L_LAYERS &none
+//                                                     │ MAP      │ NONE     │          │ TO LYR   │ NONE     │
 //                                      ╭──────────────├──────────┼──────────┤          ├──────────┼──────────┤──────────────╮
                                         &kp SPACE      &kp LALT   &none                 &none      &kp RET    &kp SPACE
 //                                      │ SPACE        │ LALT     │ NONE     │          │ NONE     │ ENTER    │ SPACE        │
