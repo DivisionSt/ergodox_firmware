@@ -18,10 +18,10 @@ uint16_t cmd_tab_timer = 0;
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_T)
-#define DUAL_FUNC_1 LT(1, KC_F)
-#define DUAL_FUNC_2 LT(11, KC_T)
-#define DUAL_FUNC_3 LT(4, KC_F19)
+#define DUAL_FUNC_0 LT(9, KC_2)
+#define DUAL_FUNC_1 LT(10, KC_F1)
+#define DUAL_FUNC_2 LT(8, KC_F14)
+#define DUAL_FUNC_3 LT(7, KC_F3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
