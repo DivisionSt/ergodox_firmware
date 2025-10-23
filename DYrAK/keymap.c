@@ -414,7 +414,7 @@ void leader_end_user(void) {
   } else if (leader_sequence_two_keys(KC_R, KC_S)) { // r, s
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
   } else if (leader_sequence_two_keys(KC_R, KC_P)) { // r, p
-    tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))))
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
   } else if (leader_sequence_two_keys(KC_R, KC_D)) { // r, d
     tap_code16(LALT(LCTL(KC_ENTER)));
   } else if (leader_sequence_two_keys(KC_R, KC_M)) { // r, m
