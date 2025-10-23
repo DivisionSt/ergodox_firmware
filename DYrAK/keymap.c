@@ -409,19 +409,17 @@ void leader_end_user(void) {
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_8)))));
   } else if (leader_sequence_two_keys(KC_R, KC_G)) { // r, g
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_L)) { // r, l
+  } else if (leader_sequence_two_keys(KC_R, KC_L)) { // r, n
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_RIGHT)))));
-  } else if (leader_sequence_two_keys(KC_R, KC_P)) { // r, p
+  } else if (leader_sequence_two_keys(KC_R, KC_S)) { // r, s
     tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))));
+  } else if (leader_sequence_two_keys(KC_R, KC_P)) { // r, p
+    tap_code16(LALT(LGUI(LCTL(LSFT(KC_LEFT)))))
   } else if (leader_sequence_two_keys(KC_R, KC_D)) { // r, d
-    tap_code16(LALT(LCTL(KC_RETURN)));
-  } else if (leader_sequence_two_keys(KC_R, KC_K)) { // r, k
-    tap_code16(LALT(LCTL(KC_RETURN)));
+    tap_code16(LALT(LCTL(KC_ENTER)));
   } else if (leader_sequence_two_keys(KC_R, KC_M)) { // r, m
-    tap_code16(LALT(LCTL(KC_RETURN)));
+    tap_code16(LALT(LCTL(KC_ENTER)));
   } else if (leader_sequence_two_keys(KC_R, KC_F)) { // r, f
-    tap_code16(LALT(LCTL(KC_C)));
-  } else if (leader_sequence_two_keys(KC_R, KC_J)) { // r, j
     tap_code16(LALT(LCTL(KC_C)));
   } else if (leader_sequence_two_keys(KC_R, KC_C)) { // r, c
     tap_code16(LALT(LCTL(KC_C)));
@@ -453,9 +451,9 @@ void leader_end_user(void) {
   }
 
   // shortcut (s)
-  else if (leader_sequence_three_keys(KC_S, KC_S, KC_S)) { // s, s, s
+  else if (leader_sequence_two_keys(KC_S, KC_S)) { // s, s
     tap_code16(LGUI(LSFT(KC_1)));
-  } else if (leader_sequence_three_keys(KC_S, KC_S, KC_W)) { // s, s, w
+  } else if (leader_sequence_two_keys(KC_S, KC_W)) { // s, w
     tap_code16(LGUI(LSFT(KC_2)));
   }
 }
@@ -463,10 +461,10 @@ void leader_end_user(void) {
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 
-        case LT(3, KC_BSPC):
-        case LT(4, KC_SPACE):
+        //case LT(3, KC_BSPC):
+        //case LT(4, KC_SPACE):
             // Do not select the hold action when another key is tapped.
-            return false;
+        //    return false;
         default:
             // Immediately select the hold action when another key is tapped.
             return true;

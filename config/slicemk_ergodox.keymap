@@ -239,8 +239,8 @@
 		desk_prev3 { sequence = <D H>; bindings = <&kp LC(LEFT)>; };
 		
 		// shortcut (s)
-		shortcut_screenshot_sel { sequence = <S S S>; bindings = <&kp LG(LS(N1))>; };
-		shortcut_screenshot_win { sequence = <S S W>; bindings = <&kp LG(LS(N2))>; };
+		shortcut_screenshot_sel { sequence = <S S>; bindings = <&kp LG(LS(N1))>; };
+		shortcut_screenshot_win { sequence = <S W>; bindings = <&kp LG(LS(N2))>; };
     
 	};
 	alt_tab: alt_tab {
