@@ -18,8 +18,8 @@ uint16_t cmd_tab_timer = 0;
 
 
 
-#define DUAL_FUNC_0 LT(12, KC_F2)
-#define DUAL_FUNC_1 LT(11, KC_F9)
+#define DUAL_FUNC_0 LT(15, KC_N)
+#define DUAL_FUNC_1 LT(4, KC_F19)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
@@ -148,8 +148,8 @@ const uint16_t PROGMEM combo2[] = { MT(MOD_RGUI, KC_ENTER), LT(4, KC_SPACE), COM
 const uint16_t PROGMEM combo3[] = { KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_B, KC_V, COMBO_END};
-const uint16_t PROGMEM combo6[] = { LT(3, KC_BSPC), OSM(MOD_LGUI), COMBO_END};
-const uint16_t PROGMEM combo7[] = { LT(4, KC_SPACE), MT(MOD_RGUI, KC_ENTER), COMBO_END};
+const uint16_t PROGMEM combo6[] = { LT(5, KC_BSPC), OSM(MOD_LCTL), COMBO_END};
+const uint16_t PROGMEM combo7[] = { LT(6, KC_SPACE), MT(MOD_RCTL, KC_ENTER), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TG(7)),
