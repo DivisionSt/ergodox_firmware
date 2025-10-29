@@ -65,13 +65,13 @@
             timeout-ms = <50>;
             key-positions = <69 70>;
             bindings = <&tog L_EXT_WIN_NAV>;
-            layers = <L_BASE_WIN>;
+            layers = <L_BASE_WIN L_BASE_SKETCHUP>;
         };
         combo_win_num {
             timeout-ms = <50>;
             key-positions = <73 74>;
             bindings = <&tog L_EXT_WIN_NUM>;
-            layers = <L_BASE_WIN>;
+            layers = <L_BASE_WIN L_BASE_SKETCHUP>;
         };
         combo_move_win {
           timeout-ms = <50>;
