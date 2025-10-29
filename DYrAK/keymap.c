@@ -18,8 +18,8 @@ uint16_t cmd_tab_timer = 0;
 
 
 
-#define DUAL_FUNC_0 LT(15, KC_N)
-#define DUAL_FUNC_1 LT(4, KC_F19)
+#define DUAL_FUNC_0 LT(1, KC_F2)
+#define DUAL_FUNC_1 LT(10, KC_Q)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty( // base-mac
