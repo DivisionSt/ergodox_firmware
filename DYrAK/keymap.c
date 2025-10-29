@@ -347,12 +347,18 @@ void send_current_layer_name(void) {
       SEND_STRING("ext-num");
       break;
     case 5:
-      SEND_STRING("ext-func");
+      SEND_STRING("ext-wnav");
       break;
     case 6:
-      SEND_STRING("mouse");
+      SEND_STRING("ext-wnum");
       break;
     case 7:
+      SEND_STRING("ext-func");
+      break;
+    case 8:
+      SEND_STRING("mouse");
+      break;
+    case 9:
       SEND_STRING("layers");
       break;
     default:
