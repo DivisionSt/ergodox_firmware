@@ -34,7 +34,7 @@
 
 
 /* Custom QMK Features */
-#define LEADER_TIMEOUT 500
+#define LEADER_TIMEOUT 750
 #define LEADER_PER_KEY_TIMING
 #define LEADER_NO_TIMEOUT
 #define PERMISSIVE_HOLD_PER_KEY
