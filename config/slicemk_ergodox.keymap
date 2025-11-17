@@ -20,6 +20,9 @@
 #define RIGHT_KEYS 8 9 10 11 12 13 14 22 23 24 25 26 27 28 35 36 37 38 39 40 48 49 50 51 52 53 54 60 61 62 63 64
 #define RIGHT_THUMB_KEYS 67 68 72 73 74 76
 
+#define RGB_COLOR_MAGENTA RGB_COLOR_HSB(299, 87, 20)
+#define RGB_COLOR_OFF RGB_COLOR_HSB(0, 100, 0)
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -46,32 +49,31 @@
             timeout-ms = <50>;
             key-positions = <69 74>;
             bindings = <&tog L_EXT_FUNC>;
-            layers = <L_BASE_MAC L_BASE_WIN>;
-            
+            layers = <L_BASE_MAC L_BASE_WIN L_EXT_FUNC L_EXT_NAV L_EXT_NUM L_EXT_WIN_NAV L_EXT_WIN_NUM>;
         };
         combo_nav {
             timeout-ms = <50>;
             key-positions = <69 70>;
             bindings = <&tog L_EXT_NAV>;
-            layers = <L_BASE_MAC>;
+            layers = <L_BASE_MAC L_EXT_NAV>;
         };
         combo_num {
             timeout-ms = <50>;
             key-positions = <73 74>;
             bindings = <&tog L_EXT_NUM>;
-            layers = <L_BASE_MAC>;
+            layers = <L_BASE_MAC L_EXT_NUM>;
         };
         combo_win_nav {
             timeout-ms = <50>;
             key-positions = <69 70>;
             bindings = <&tog L_EXT_WIN_NAV>;
-            layers = <L_BASE_WIN L_BASE_SKETCHUP>;
+            layers = <L_BASE_WIN L_BASE_SKETCHUP L_EXT_WIN_NAV>;
         };
         combo_win_num {
             timeout-ms = <50>;
             key-positions = <73 74>;
             bindings = <&tog L_EXT_WIN_NUM>;
-            layers = <L_BASE_WIN L_BASE_SKETCHUP>;
+            layers = <L_BASE_WIN L_BASE_SKETCHUP L_EXT_WIN_NUM>;
         };
         combo_move_win {
           timeout-ms = <50>;
@@ -91,6 +93,18 @@
           bindings = <&kp LG(LS(V))>;
           layers = <L_BASE_MAC>;
         };
+        combo_reopen_tab {
+          timeout-ms = <50>;
+          key-positions = <20 21>;
+          bindings = <&kp LG(LS(T))>;
+          layers = <L_BASE_MAC>;
+        };
+        combo_win_reopen_tab {
+          timeout-ms = <50>;
+          key-positions = <20 21>;
+          bindings = <&kp LC(LS(T))>;
+          layers = <L_BASE_WIN>;
+        };
     };
 };
 
@@ -100,7 +114,7 @@
 
     underglow_shortcut {
       layers = <L_EXT_NAV>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(299, 87, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_MAGENTA &rgb_ug RGB_COLOR_OFF>;
     };
     underglow_nav {
       layers = <L_EXT_NUM>;
