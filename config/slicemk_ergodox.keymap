@@ -30,7 +30,7 @@
 #define RGB_COLOR_RED RGB_COLOR_HSB(0, 100, 20)
 #define RGB_COLOR_AZURE RGB_COLOR_HSB(180, 100, 20)
 #define RGB_COLOR_ORANGE RGB_COLOR_HSB(30, 100, 20)
-#define RGB_COLOR_purple RGB_COLOR_HSB(270, 100, 20)
+#define RGB_COLOR_PURPLE RGB_COLOR_HSB(270, 100, 20)
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
