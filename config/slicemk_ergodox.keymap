@@ -22,6 +22,14 @@
 
 #define RGB_COLOR_MAGENTA RGB_COLOR_HSB(299, 87, 20)
 #define RGB_COLOR_OFF RGB_COLOR_HSB(0, 100, 0)
+#define RGB_COLOR_BLUE RGB_COLOR_HSB(240, 96, 20) 
+#define RGB_COLOR_GREEN RGB_COLOR_HSB(127, 94, 20) 
+#define RGB_COLOR_WHITE RGB_COLOR_HSB(0, 0, 20) 
+#define RGB_COLOR_AMETHYST RGB_COLOR_HSB(150, 90, 20)
+#define RGB_COLOR_YELLOW RGB_COLOR_HSB(55, 100, 20) 
+#define RGB_COLOR_RED RGB_COLOR_HSB(0, 100, 20)
+#define RGB_COLOR_AZURE RGB_COLOR_HSB(180, 100, 20)
+#define RGB_COLOR_ORANGE RGB_COLOR_HSB(30, 100, 20)
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -118,45 +126,49 @@
   layer_listeners {
     compatible = "zmk,layer-listeners";
 
-    underglow_shortcut {
+    underglow_nav {
       layers = <L_EXT_NAV>;
       bindings = <&rgb_ug RGB_COLOR_MAGENTA &rgb_ug RGB_COLOR_OFF>;
     };
-    underglow_nav {
-      layers = <L_EXT_NUM>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(240, 96, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-    };	
-    underglow_num {
-      layers = <L_EXT_FUNC>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(127, 94, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+    underglow_win_nav {
+      layers = <L_EXT_WIN_NAV>;
+      bindings = <&rgb_ug RGB_COLOR_MAGENTA &rgb_ug RGB_COLOR_OFF>;
     };
-    /* underglow_func {
-      layers = <LAYER_FUNC>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(187, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
-    }; */
+    underglow_num {
+      layers = <L_EXT_NUM>;
+      bindings = <&rgb_ug RGB_COLOR_BLUE &rgb_ug RGB_COLOR_OFF>;
+    };	
+    underglow_win_num {
+      layers = <L_EXT_WIN_NUM>;
+      bindings = <&rgb_ug RGB_COLOR_BLUE &rgb_ug RGB_COLOR_OFF>;
+    };	
+    underglow_func {
+      layers = <L_EXT_FUNC>;
+      bindings = <&rgb_ug RGB_COLOR_GREEN &rgb_ug RGB_COLOR_OFF>;
+    };
     underglow_fortnite {
       layers = <L_BASE_FORT>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(0, 0, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_WHITE &rgb_ug RGB_COLOR_OFF>;
     };
     underglow_minecraft {
       layers = <L_BASE_MINE>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(150, 90, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_PURPLE &rgb_ug RGB_COLOR_OFF>;
     };
     underglow_gaming {
       layers = <L_BASE_GAME>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(55, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_YELLOW &rgb_ug RGB_COLOR_OFF>;
     };
     underglow_layers {
       layers = <L_LAYERS>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(0, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_RED &rgb_ug RGB_COLOR_OFF>;
     };
     underglow_win {
       layers = <L_BASE_WIN>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(180, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_AZURE &rgb_ug RGB_COLOR_OFF>;
     };
     underglow_sketchup {
       layers = <L_BASE_SKETCHUP>;
-      bindings = <&rgb_ug RGB_COLOR_HSB(30, 100, 20) &rgb_ug RGB_COLOR_HSB(0, 100, 0)>;
+      bindings = <&rgb_ug RGB_COLOR_ORANGE &rgb_ug RGB_COLOR_OFF>;
     };
   };
 };
