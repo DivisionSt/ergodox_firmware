@@ -25,11 +25,12 @@
 #define RGB_COLOR_BLUE RGB_COLOR_HSB(240, 96, 20) 
 #define RGB_COLOR_GREEN RGB_COLOR_HSB(127, 94, 20) 
 #define RGB_COLOR_WHITE RGB_COLOR_HSB(0, 0, 20) 
-#define RGB_COLOR_AMETHYST RGB_COLOR_HSB(150, 90, 20)
+#define RGB_COLOR_AMETHYST RGB_COLOR_HSB(150, 90, 20) // lighter green, not currently in use
 #define RGB_COLOR_YELLOW RGB_COLOR_HSB(55, 100, 20) 
 #define RGB_COLOR_RED RGB_COLOR_HSB(0, 100, 20)
 #define RGB_COLOR_AZURE RGB_COLOR_HSB(180, 100, 20)
 #define RGB_COLOR_ORANGE RGB_COLOR_HSB(30, 100, 20)
+#define RGB_COLOR_purple RGB_COLOR_HSB(270, 100, 20)
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
