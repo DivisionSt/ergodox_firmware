@@ -117,8 +117,20 @@
         combo_fill_bitwarden {
           timeout-ms = <50>;
           key-positions = <38 39>;
-          bindings = <&kp LC(LS(L))>;
+          bindings = <&kp LG(LS(L))>;
           layers = <L_BASE_MAC>;
+        };
+        combo_tabs_list {
+          timeout-ms = <50>;
+          key-positions = <29 30>;
+          bindings = <&kp LG(LS(A))>;
+          layers = <L_BASE_MAC>;
+        };
+        combo_win_tabs_list {
+          timeout-ms = <50>;
+          key-positions = <29 30>;
+          bindings = <&kp LC(LS(A))>;
+          layers = <L_BASE_WIN L_BASE_SKETCHUP>;
         };
     };
 };
