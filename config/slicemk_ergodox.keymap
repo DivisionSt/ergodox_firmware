@@ -506,16 +506,16 @@
   &none      &kp A      &kp S      &kp D      &kp F      &kp G                                   &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
 //│ NONE     │ A        │ S        │ D        │ F        │ G        │          │      │ H        │ J        │ K        │ L        │ ;        │ '        │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &kp LBKT          &kp RBKT   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &kp RSHFT
-//│ LSHIFT   │ Z        │ X        │ C        │ V        │ B        │ [        │      │ ]        │ N        │ M        │ ,        │ .        │ /        │ RSHIFT   │
+  &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B      &kp LBKT          &kp RBKT   &kp N      &kp M      &kp COMMA  &kp DOT    &kp UP   &kp RSHFT
+//│ LSHIFT   │ Z        │ X        │ C        │ V        │ B        │ [        │      │ ]        │ N        │ M        │ ,        │ .        │ ↑        │ RSHIFT   │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &kp LG(DOT) &none     &none      &alt_tab   &sk LSHFT                                                     &sk RSHFT  &key_repeat &none     &none      &none
-//│ WIN+.    │ NONE     │ NONE     │ ALT+TAB  │ LSHIFT   │          │          │      │          │          │ RSHIFT   │ REPEAT   │          │          │          │
+  &kp LG(DOT) &none     &none      &alt_tab   &sk LSHFT                                                     &sk RSHFT  &key_repeat &kp LEFT  &kp DOWN   &kp RIGHT
+//│ WIN+.    │ NONE     │ NONE     │ ALT+TAB  │ LSHIFT   │          │          │      │          │          │ RSHIFT   │ REPEAT   │ ←        │ ↓        │ →        │
 //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
                                                        &leader    &mt LG(L) C_PP        &to L_LAYERS &key_repeat
 //                                                     │ LEADER   │ WIN+L/PP │          │ TO LYR   │ REPEAT   │
 //                                      ╭──────────────├──────────┼──────────┤          ├──────────┼──────────┤──────────────╮
-                                        &tlt L_EXT_NAV SPACE &sk LCTRL &kp C_VOL_UP     &none    &tmt RCTRL RET &tlt L_EXT_NUM SPACE
+                                        &tlt L_EXT_WIN_NAV SPACE &sk LCTRL &kp C_VOL_UP     &none    &tmt RCTRL RET &tlt L_EXT_NUM SPACE
 //                                      │ LT NAV/SPC   │ LCTRL    │ VOL+     │          │ NONE     │ RCTRL/RET │ LT NUM/SPC  │
 //                                      ╰──────────────┴──────────┼──────────┤          ├──────────┼──────────┴──────────────╯
                                                                   &kp C_VOL_DN          &none
