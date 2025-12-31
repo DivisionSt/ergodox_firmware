@@ -515,8 +515,8 @@
                                                        &leader    &mt LG(L) C_PP        &to L_LAYERS &key_repeat
 //                                                     │ LEADER   │ WIN+L/PP │          │ TO LYR   │ REPEAT   │
 //                                      ╭──────────────├──────────┼──────────┤          ├──────────┼──────────┤──────────────╮
-                                        &tlt L_EXT_WIN_NAV SPACE &sk LCTRL &kp C_VOL_UP     &none    &tmt RCTRL RET &tlt L_EXT_NUM SPACE
-//                                      │ LT NAV/SPC   │ LCTRL    │ VOL+     │          │ NONE     │ RCTRL/RET │ LT NUM/SPC  │
+                                        &tlt L_EXT_WIN_NAV SPACE &tmt LCTRL BSPC &kp C_VOL_UP     &none    &tmt RCTRL RET &tlt L_EXT_NUM SPACE
+//                                      │ LT NAV/SPC   │ LCTRL/BSP│ VOL+     │          │ NONE     │ RCTRL/RET │ LT NUM/SPC  │
 //                                      ╰──────────────┴──────────┼──────────┤          ├──────────┼──────────┴──────────────╯
                                                                   &kp C_VOL_DN          &none
 //                                                                │ VOL-     │          │ NONE     │
