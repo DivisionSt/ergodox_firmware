@@ -1,0 +1,14 @@
+# KLE legend encoding for kle/divisionst_ergodox.json.
+# Each physical key packs several firmware layers into KLE's 12 legend slots,
+# color-coded. Slots are \n-joined, index 0..11 in this grid:
+#   0 top-left     1 bottom-left   2 top-right    3 bottom-right
+#   4 front-left   5 front-right   6 center-left  7 center-right
+#   8 top-center   9 center        10 bottom-center  11 front-center
+# (KLE's documented slot order; the colors below are what this layout uses.)
+slot	color	layer	note
+0	#000000	base	black: base alphanumerics / primary legend
+3	#a416a9	shift	magenta: shifted or alternate symbol
+4	#ab0000	device	red: device / Bluetooth / reset / mode
+4	#348f03	func	green: function-key layer
+9	#1f19fa	nav	blue: nav / media (center slot variant)
+11	#1f19fa	nav	blue: nav / media / arrows

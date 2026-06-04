@@ -1,0 +1,52 @@
+# QMK <-> ZMK equivalence map. Two kinds of rows:
+#   atom   - a bare keycode (QMK form is KC_-stripped) that spells differently
+#            in ZMK. Identity atoms (A-Z, F1-F12, MINUS, SPACE, ...) and digits
+#            (KC_1 <-> N1) are handled by rule and need no row here.
+#   token  - a full-token semantic equivalence for custom/behavior keycodes
+#            that have no structural correspondence.
+# Edit this file as the layout grows; unmapped tokens surface as UNMAPPED.
+kind	qmk	zmk
+atom	ESCAPE	ESC
+atom	ENTER	RET
+atom	DELETE	DEL
+atom	BSLS	BSLH
+atom	QUOTE	SQT
+atom	SCLN	SEMI
+atom	SLASH	FSLH
+atom	LBRC	LBKT
+atom	RBRC	RBKT
+atom	PGDN	PG_DN
+atom	PAGE_UP	PG_UP
+atom	AUDIO_VOL_UP	C_VOL_UP
+atom	AUDIO_VOL_DOWN	C_VOL_DN
+atom	MEDIA_NEXT_TRACK	C_NEXT
+atom	MEDIA_PREV_TRACK	C_PREV
+atom	MEDIA_PLAY_PAUSE	C_PP
+atom	BRIGHTNESS_UP	C_BRI_INC
+atom	BRIGHTNESS_DOWN	C_BRI_DEC
+atom	KP_SLASH	KP_DIVIDE
+atom	KP_ASTERISK	KP_MULTIPLY
+atom	LPRN	LPAR
+atom	RPRN	RPAR
+atom	LEFT_ALT	LALT
+atom	LEFT_CTRL	LCTRL
+atom	LEFT_GUI	LGUI
+atom	LEFT_SHIFT	LSHFT
+atom	RIGHT_GUI	RGUI
+atom	RIGHT_SHIFT	RSHFT
+token	ALT_TAB	&alt_tab
+token	CMD_TAB	&cmd_tab
+token	CW_TOGG	&caps_word
+token	DUAL_FUNC_0	&mt LC(LG(Q)) C_PP
+token	DUAL_FUNC_1	&mt LG(L) C_PP
+token	KC_MS_LEFT	&mmv MOVE_LEFT
+token	KC_MS_RIGHT	&mmv MOVE_RIGHT
+token	KC_MS_UP	&mmv MOVE_UP
+token	KC_MS_DOWN	&mmv MOVE_DOWN
+token	KC_MS_WH_LEFT	&msc SCRL_LEFT
+token	KC_MS_WH_RIGHT	&msc SCRL_RIGHT
+token	KC_MS_WH_UP	&msc SCRL_UP
+token	KC_MS_WH_DOWN	&msc SCRL_DOWN
+token	KC_MS_BTN1	&mkp LCLK
+token	KC_MS_BTN2	&mkp RCLK
+token	KC_MS_BTN3	&mkp MCLK
