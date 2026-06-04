@@ -15,9 +15,10 @@ preferences here whenever he explains or rejects something.
 ## Base layers
 
 - `base-mac` (0) is the default. `base-win` (1/ZMK 4) mirrors it with Ctrl-based
-  shortcuts where mac uses Cmd. `base-old` (2/ZMK 6) was a learning-era safety
-  net (kept while learning one-shot mods and the extend layers) and is now
-  slated for removal — its reason to exist is gone.
+  shortcuts where mac uses Cmd. `base-old` (2/ZMK 6) started as a learning-era
+  safety net and is **being kept** — Forrest may repurpose it as a deliberate
+  traditional-modifier fallback layer to fall back on if ever needed. Do not
+  propose removing it.
 - Alpha home row is plain letters. Mods come via one-shot keys and the extend
   layers instead.
 - **HARD PREFERENCE — no home-row mods. Do not propose them, ever.** Forrest
@@ -87,6 +88,9 @@ A large tree, mac-oriented:
 
 ## Confirmed (do not re-ask)
 
-- No home-row mods, ever (see Base layers above).
-- `base-old` is removable; it was only a learning-era safety net.
+- No home-row mods, ever, on the alpha home row (see Base layers above). Note:
+  this is about hold-for-mod during normal typing, not the `base-old` fallback —
+  plain modifier keys on a dedicated fallback layer are fine and wanted.
+- `base-old` stays. Decided 2026-06-04 to keep it as a possible traditional-mod
+  fallback rather than remove it.
 - `KC_F24` stays — it triggers `combo9` (see divergences above).
