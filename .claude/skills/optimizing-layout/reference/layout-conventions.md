@@ -15,10 +15,16 @@ preferences here whenever he explains or rejects something.
 ## Base layers
 
 - `base-mac` (0) is the default. `base-win` (1/ZMK 4) mirrors it with Ctrl-based
-  shortcuts where mac uses Cmd. `base-old` (2/ZMK 6) is a legacy fallback.
-- Alpha home row is plain letters (no home-row mods on base). Mods come via
-  one-shot keys and the extend layers instead. _(confirm with Forrest: deliberate
-  choice to avoid HRM timing on the base?)_
+  shortcuts where mac uses Cmd. `base-old` (2/ZMK 6) was a learning-era safety
+  net (kept while learning one-shot mods and the extend layers) and is now
+  slated for removal — its reason to exist is gone.
+- Alpha home row is plain letters. Mods come via one-shot keys and the extend
+  layers instead.
+- **HARD PREFERENCE — no home-row mods. Do not propose them, ever.** Forrest
+  tried HRM, the timing was brutal and never worked, and it became a
+  fine-tuning black hole he made a hard exit from. One-shot mods (`OSM`/`&sk`)
+  on the extend layers are the deliberate replacement. Any proposal that
+  reintroduces hold-for-mod on the alpha home row is dead on arrival.
 - `chordal_hold_layout` is defined (chordal/achordion-style hold handling).
 
 ## Thumbs (the workhorses)
@@ -66,13 +72,21 @@ A large tree, mac-oriented:
 ## Known intentional divergences (not drift)
 
 - ZMK-only base layers: fortnite, minecraft, gaming, sketchup (home gaming/CAD).
-- `base-mac` `KC_F24` (left home pinky) has no ZMK counterpart _(confirm: leftover
-  or intentional?)_.
+- `base-mac` `KC_F24` (left home pinky) is a **live combo trigger**, not
+  vestigial: `combo9` is `{KC_F24, KC_A}` → `Cmd+Shift+A`. Do not remove it. ZMK
+  shows `&none` at that position because ZMK combos match key *positions* rather
+  than keycodes, so it needs no placeholder keycode. This is correct divergence,
+  not drift.
 - `LAYER_ID` (QMK speak-layer-name) is QMK-only.
 - `mouse`/`layers` utility keys differ by firmware capability.
 
 ## Open questions for Forrest
 
-- Is `KC_F24` on base-mac still used, or vestigial?
 - Should any home-only ZMK layer ever come to QMK, or is the split permanent?
 - Preferred tapping-term feel (currently `g_tapping_term`, +40ms on space)?
+
+## Confirmed (do not re-ask)
+
+- No home-row mods, ever (see Base layers above).
+- `base-old` is removable; it was only a learning-era safety net.
+- `KC_F24` stays — it triggers `combo9` (see divergences above).
