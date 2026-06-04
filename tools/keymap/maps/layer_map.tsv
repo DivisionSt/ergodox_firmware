@@ -1,0 +1,20 @@
+# QMK layer index/name  <->  ZMK layer index/name, with a canonical slug.
+# overlap=yes  -> compared for parity.
+# overlap=zmk-only -> intentional home-keyboard extras; never reported as drift.
+qmk_index	qmk_name	zmk_index	zmk_name	canonical	overlap
+0	base-mac	0	base-mac	mac	yes
+1	base-win	4	base-win	win	yes
+2	base-old	6	base-old	old	yes
+3	ext-nav	7	extend-nav	nav	yes
+4	ext-num	8	extend-num	num	yes
+5	ext-wnav	9	extend-win-nav	wnav	yes
+6	ext-wnum	10	extend-win-num	wnum	yes
+7	ext-func	11	extend-func	func	yes
+8	mouse	12	mouse	mouse	yes
+9	layers	13	layers	layers	yes
+-	-	1	base-fortnite	fortnite	zmk-only
+-	-	2	base-minecraft	minecraft	zmk-only
+-	-	3	base-gaming	gaming	zmk-only
+-	-	5	base-sketchup	sketchup	zmk-only
+-	-	14	underglow	underglow	zmk-only
+-	-	15	blank-transparent	blank	zmk-only
