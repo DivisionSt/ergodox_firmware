@@ -9,7 +9,7 @@ This skill helps evolve the layout as the user's usage drifts. It is **advisory*
 propose options with tradeoffs and let the user decide. Layout is muscle memory —
 never "improve" it unprompted, and never apply changes without explicit sign-off.
 
-Read `reference/layout-conventions.md` first — it captures how this layout
+Read `LAYOUT_CONVENTIONS.md` (repo root) first — it captures how this layout
 actually works (the mechanisms and the user's intent) so proposals fit the
 system instead of fighting it.
 
@@ -49,6 +49,6 @@ system instead of fighting it.
 - Confidence-flag every ergonomic claim; much of this is preference, not fact.
 - One change at a time when it affects muscle memory; don't bundle a refactor
   with a feature.
-- Keep `reference/layout-conventions.md` current: when the user explains a
+- Keep `LAYOUT_CONVENTIONS.md` (repo root) current: when the user explains a
   preference or rejects an idea and says why, add it there so future proposals
   respect it.

@@ -77,9 +77,9 @@ is generated; never hand-edit it.
   `kle/divisionst_ergodox.json` may be stale. Recommend the `updating-kle` skill.
   **Never edit the KLE here**, and never regenerate it.
 - **Layout decisions.** Confirm any layout decision or stated preference from
-  this session is recorded in
-  `.claude/skills/optimizing-layout/reference/layout-conventions.md` (the
-  `optimizing-layout` skill's durable design memory). If the global notes step
+  this session is recorded in `LAYOUT_CONVENTIONS.md` (repo root, the
+  layout's durable design memory, maintained by the `optimizing-layout`
+  skill). If the global notes step
   missed one, add it now. This is a repo-specific backstop, not a redo of the
   generic notes step.
 
