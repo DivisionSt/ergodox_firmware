@@ -81,6 +81,25 @@ A large tree, mac-oriented:
 - `LAYER_ID` (QMK speak-layer-name) is QMK-only.
 - `mouse`/`layers` utility keys differ by firmware capability.
 
+## QMK ⇄ ZMK parity edits
+
+Reconciled 2026-06-15. Default direction is ZMK (the home superset) canonical
+with QMK brought up to match, but it's decided **per-key** — pos 47/48 below
+went the other way (QMK won). Confirm each; don't blanket-resolve.
+
+- **Done:** `ext-func` thumbs (pos 71/72/75/76 → BSPC/DEL/ENTER/SPACE) and
+  `ext-num`/`ext-wnum` pos 75 (ENTER) brought up to ZMK. `ext-num`/`ext-wnum`
+  pos 47/48 reconciled to parens — ZMK updated to QMK's `(`/`)` so the number
+  layer types parens, not the base brackets (`[`/`]`).
+- **base-old port** — complete QMK `[2]` base-old to mirror ZMK's full
+  traditional-mod QWERTY. QMK currently has only the skeleton (mods + partial
+  home row); the alpha/number/symbol field and arrows are still missing.
+- **win-nav** — add three keys QMK `ext-wnav` `[5]` dropped vs ZMK (and vs QMK's
+  own mac-nav): pos 29 `CW_TOGG`, pos 69 `KC_MEDIA_NEXT_TRACK`, pos 73
+  `KC_MEDIA_PREV_TRACK`.
+- **mouse pos 67** — add `TO(9)` to QMK `mouse` `[8]`; there is currently no way
+  back to the layers layer from mouse (a real gap, not a firmware divergence).
+
 ## Open questions for Forrest
 
 - Should any home-only ZMK layer ever come to QMK, or is the split permanent?

@@ -242,18 +242,12 @@ _QMK ✓ (`DYrAK` layer 4: ext-num)_
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        ▽     KP_DIVID KP_MULTI  MINUS      ▽    
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        7        8        9     KP_PLUS     ▽    
      ▽       sk⇧      sk⌃      sk⌥      sk⌘       ▽           ▽        4        5        6     KP_PLUS     ▽    
-     ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        1        2        3     KP_ENTER    ▽    
+     ▽        ▽        ▽        ▽        ▽        ▽       LPAR        RPAR      ▽        1        2        3     KP_ENTER    ▽    
      ▽        ▽        ▽        ▽        ▽           0        0      KP_DOT  KP_ENTER    ▽    
 
   thumbs   L:    ▽         ▽      |    BSPC      DEL       bri+    |    bri-  
            R:    ▽         ▽      |     ▽        RET        ▽      |     ▽    
 ```
-
-**QMK differs here (3):**
-
-- pos 47: QMK `KC_LPRN` vs ZMK `&trans`
-- pos 48: QMK `KC_RPRN` vs ZMK `&trans`
-- pos 75: QMK `KC_TRANSPARENT` vs ZMK `&kp RET`
 
 ### 9. extend-win-nav
 
@@ -289,18 +283,12 @@ _QMK ✓ (`DYrAK` layer 6: ext-wnum)_
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        ▽     KP_DIVID KP_MULTI  MINUS      ▽    
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        7        8        9     KP_PLUS     ▽    
      ▽       sk⇧      sk⌘      sk⌥      sk⌃       ▽           ▽        4        5        6     KP_PLUS     ▽    
-     ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        1        2        3     KP_ENTER    ▽    
+     ▽        ▽        ▽        ▽        ▽        ▽       LPAR        RPAR      ▽        1        2        3     KP_ENTER    ▽    
      ▽        ▽        ▽        ▽        ▽           0        0      KP_DOT  KP_ENTER    ▽    
 
   thumbs   L:    ▽         ▽      |    BSPC      DEL       bri+    |    bri-  
            R:    ▽         ▽      |     ▽        RET        ▽      |     ▽    
 ```
-
-**QMK differs here (3):**
-
-- pos 47: QMK `KC_LPRN` vs ZMK `&trans`
-- pos 48: QMK `KC_RPRN` vs ZMK `&trans`
-- pos 75: QMK `KC_TRANSPARENT` vs ZMK `&kp RET`
 
 ### 11. extend-func
 
@@ -317,13 +305,6 @@ _QMK ✓ (`DYrAK` layer 7: ext-func)_
   thumbs   L:    ▽         ▽      |    BSPC      DEL       bri+    |    bri-  
            R:    ▽         ▽      |     ▽        RET      SPACE    |     ▽    
 ```
-
-**QMK differs here (4):**
-
-- pos 71: QMK `KC_TRANSPARENT` vs ZMK `&kp BSPC`
-- pos 72: QMK `KC_TRANSPARENT` vs ZMK `&kp DEL`
-- pos 75: QMK `KC_TRANSPARENT` vs ZMK `&kp RET`
-- pos 76: QMK `KC_TRANSPARENT` vs ZMK `&kp SPACE`
 
 ### 12. mouse
 

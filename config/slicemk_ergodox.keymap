@@ -603,8 +603,8 @@
   &trans     &sk LSHFT  &sk LCTRL  &sk LALT   &sk LGUI   &trans                                  &trans     &kp N4     &kp N5     &kp N6     &kp KP_PLUS &trans
 //│ TRANS    │ SHIFT    │ CTRL     │ ALT      │ GUI      │ TRANS    │          │      │          │ TRANS    │ 4        │ 5        │ 6        │ KP +     │ TRANS    │ 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &trans     &kp N1     &kp N2     &kp N3     &kp KP_ENTER &trans
-//│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │      │ TRANS    │ TRANS    │ 1        │ 2        │ 3        │ KP ENTER │ TRANS    │ 
+  &trans     &trans     &trans     &trans     &trans     &trans     &kp LPAR          &kp RPAR   &trans     &kp N1     &kp N2     &kp N3     &kp KP_ENTER &trans
+//│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ (        │      │ )        │ TRANS    │ 1        │ 2        │ 3        │ KP ENTER │ TRANS    │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans                                                        &kp N0     &kp N0     &kp KP_DOT &kp KP_ENTER &trans
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │          │          │      │                     │ 0        │ 0        │ KP .     │ KP ENTER │ TRANS    │
@@ -667,8 +667,8 @@
   &trans     &sk LSHFT  &sk LGUI   &sk LALT   &sk LCTRL  &trans                                  &trans     &kp N4     &kp N5     &kp N6     &kp KP_PLUS &trans
 //│ TRANS    │ SHIFT    │ WIN      │ ALT      │ CTRL     │ TRANS    │          │      │          │ TRANS    │ 4        │ 5        │ 6        │ KP +     │ TRANS    │ 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &trans     &kp N1     &kp N2     &kp N3     &kp KP_ENTER &trans
-//│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │      │ TRANS    │ TRANS    │ 1        │ 2        │ 3        │ KP ENTER │ TRANS    │ 
+  &trans     &trans     &trans     &trans     &trans     &trans     &kp LPAR          &kp RPAR   &trans     &kp N1     &kp N2     &kp N3     &kp KP_ENTER &trans
+//│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ (        │      │ )        │ TRANS    │ 1        │ 2        │ 3        │ KP ENTER │ TRANS    │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans                                                        &kp N0     &kp N0     &kp KP_DOT &kp KP_ENTER &trans
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │          │          │      │                     │ 0        │ 0        │ KP .     │ KP ENTER │ TRANS    │
