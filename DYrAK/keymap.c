@@ -27,20 +27,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_GRAVE,                                       KC_EQUAL,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_F24,         KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           KC_LBRC,                                        KC_RBRC,        KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
-    LGUI(LCTL(KC_SPACE)),KC_TRANSPARENT, KC_TRANSPARENT, CMD_TAB,   OSM(MOD_LSFT),                                                                                                  OSM(MOD_RSFT), QK_REPEAT_KEY, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    LGUI(LCTL(KC_SPACE)),KC_TRANSPARENT, KC_TRANSPARENT, CMD_TAB,   KC_LEFT_SHIFT,                                                                                                 KC_RIGHT_SHIFT, QK_REPEAT_KEY, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     QK_LEAD,          DUAL_FUNC_0,    TO(9),          QK_REPEAT_KEY,
                                                                                                                     KC_AUDIO_VOL_UP,LAYER_ID,
-                                                                                    LT(3, KC_BSPC), OSM(MOD_LGUI),  KC_AUDIO_VOL_DOWN,KC_TRANSPARENT, MT(MOD_RGUI, KC_ENTER),LT(4, KC_SPACE)
+                                                                                    LT(3, KC_BSPC), KC_LEFT_GUI,    KC_AUDIO_VOL_DOWN,KC_TRANSPARENT, MT(MOD_RGUI, KC_ENTER),LT(4, KC_SPACE)
   ),
   [1] = LAYOUT_ergodox_pretty( // base-win
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_GRAVE,                                       KC_EQUAL,       KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_TRANSPARENT, KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           KC_LBRC,                                        KC_RBRC,        KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
-    LGUI(KC_DOT),   KC_TRANSPARENT, KC_TRANSPARENT, ALT_TAB,        OSM(MOD_LSFT),                                                                                                  OSM(MOD_RSFT),  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    LGUI(KC_DOT),   KC_TRANSPARENT, KC_TRANSPARENT, ALT_TAB,        KC_LEFT_SHIFT,                                                                                                 KC_RIGHT_SHIFT,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                     KC_TRANSPARENT, DUAL_FUNC_1,    TO(9),          KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, LAYER_ID,
-                                                                                    LT(5, KC_BSPC), OSM(MOD_LCTL),  KC_TRANSPARENT, KC_TRANSPARENT, MT(MOD_RCTL, KC_ENTER),LT(6, KC_SPACE)
+                                                                                    LT(5, KC_BSPC), KC_LEFT_CTRL,   KC_TRANSPARENT, KC_TRANSPARENT, MT(MOD_RCTL, KC_ENTER),LT(6, KC_SPACE)
   ),
   [2] = LAYOUT_ergodox_pretty( // base-old
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_TAB),   KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, LGUI(KC_X),     KC_LEFT,        KC_DOWN,        KC_RIGHT,
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                    KC_TRANSPARENT, OSM(MOD_LCTL),  KC_TRANSPARENT, KC_TRANSPARENT, MT(MOD_RCTL, KC_ENTER),KC_DELETE
+                                                                                    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_TRANSPARENT, KC_TRANSPARENT, MT(MOD_RCTL, KC_ENTER),KC_DELETE
   ),
   [6] = LAYOUT_ergodox_pretty( // ext-wnum
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_KP_SLASH,    KC_KP_ASTERISK, KC_MINUS,       KC_TRANSPARENT,
@@ -143,12 +143,12 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_ergodo
 );
 
 const uint16_t PROGMEM combo0[] = { LT(3, KC_BSPC), LT(4, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo1[] = { OSM(MOD_LGUI), LT(3, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM combo1[] = { KC_LEFT_GUI, LT(3, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combo2[] = { MT(MOD_RGUI, KC_ENTER), LT(4, KC_SPACE), COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_B, KC_V, COMBO_END};
-const uint16_t PROGMEM combo6[] = { LT(5, KC_BSPC), OSM(MOD_LCTL), COMBO_END};
+const uint16_t PROGMEM combo6[] = { LT(5, KC_BSPC), KC_LEFT_CTRL, COMBO_END};
 const uint16_t PROGMEM combo7[] = { LT(6, KC_SPACE), MT(MOD_RCTL, KC_ENTER), COMBO_END};
 const uint16_t PROGMEM combo8[] = { KC_T, KC_GRAVE, COMBO_END};
 const uint16_t PROGMEM combo9[] = { KC_F24, KC_A, COMBO_END};

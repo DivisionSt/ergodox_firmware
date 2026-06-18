@@ -32,7 +32,7 @@ preferences here whenever he explains or rejects something.
 
 Per `base-mac`:
 - Left: leader · dual-function (tap ⏯ / hold mission-control) · vol+ ·
-  **LT(nav)/Backspace** · one-shot Cmd · vol-.
+  **LT(nav)/Backspace** · Cmd (regular held mod) · vol-.
 - Right: **TO(layers)** · repeat · (layer-id / none) · trans · **Cmd/Enter
   mod-tap** · **LT(num)/Space**.
 - Layer access lives on the big thumb keys: hold Backspace → nav, hold Space →
@@ -41,8 +41,16 @@ Per `base-mac`:
 
 ## One-shot mods
 
-Extend-layer left home row is `OSM(SHIFT/CTRL/ALT/GUI)` (ZMK `&sk`). Sticky mods
-rather than held mods for layered chording.
+One-shot (sticky) mods are kept **only** on the extend-layer left home row:
+`OSM(SHIFT/CTRL/ALT/GUI)` (ZMK `&sk`) — sticky rather than held for layered
+chording, and the deliberate HRM replacement.
+
+Base-layer modifiers are **regular held mods**, not sticky. The bottom-row
+Shifts (pos 59/60) and the left-thumb Cmd/Ctrl (pos 70) were converted from
+one-shot to plain `&kp`/`KC_` across base-mac, base-win, and base-sketchup on
+2026-06-16 (Forrest's call); the QMK win-nav extend layer's restated thumb mod
+was de-stickied too. The QMK layer-toggle combos (`combo1`, `combo6`) trigger
+off that thumb, so they were updated to the plain keycodes to keep firing.
 
 ## Combos (11)
 
@@ -113,3 +121,6 @@ went the other way (QMK won). Confirm each; don't blanket-resolve.
 - `base-old` stays. Decided 2026-06-04 to keep it as a possible traditional-mod
   fallback rather than remove it.
 - `KC_F24` stays — it triggers `combo9` (see divergences above).
+- Base-layer Shifts (pos 59/60) and the thumb Cmd/Ctrl (pos 70) are **regular
+  held mods**, de-stickied 2026-06-16. One-shots remain only on the extend-layer
+  home row. Do not propose re-stickying the base mods.

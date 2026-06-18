@@ -35,9 +35,9 @@ _QMK ✓ (`DYrAK` layer 0: base-mac)_
     TAB       Q        W        E        R        T      GRAVE       EQUAL      Y        U        I        O        P       BSLH  
      ·        A        S        D        F        G           H        J        K        L       SEMI     SQT   
      ·        Z        X        C        V        B       LBKT        RBKT      N        M      COMMA     DOT      FSLH      ·    
-  ⌃⌘SPACE     ·        ·      cmdtab    sk⇧         sk⇧      RPT       ·        ·        ·    
+  ⌃⌘SPACE     ·        ·      cmdtab     ⇧           ⇧       RPT       ·        ·        ·    
 
-  thumbs   L:   LEAD     ⌃⌘Q/⏯    |  →nav/BSP    sk⌘       vol+    |    vol-  
+  thumbs   L:   LEAD     ⌃⌘Q/⏯    |  →nav/BSP     ⌘        vol+    |    vol-  
            R: TO:layer    RPT     |     ·       ⌘/RET    →num/SPA  |     ·    
 ```
 
@@ -104,9 +104,9 @@ _QMK ✓ (`DYrAK` layer 1: base-win)_
     TAB       Q        W        E        R        T      GRAVE       EQUAL      Y        U        I        O        P       BSLH  
      ·        A        S        D        F        G           H        J        K        L       SEMI     SQT   
      ⇧        Z        X        C        V        B       LBKT        RBKT      N        M      COMMA     DOT      FSLH      ⇧    
-    ⌘DOT      ·        ·      alttab    sk⇧         sk⇧      RPT       ·        ·        ·    
+    ⌘DOT      ·        ·      alttab     ⇧           ⇧       RPT       ·        ·        ·    
 
-  thumbs   L:   LEAD      ⌘L/⏯    |  →win_nav    sk⌃       vol+    |    vol-  
+  thumbs   L:   LEAD      ⌘L/⏯    |  →win_nav     ⌃        vol+    |    vol-  
            R: TO:layer    RPT     |     ·       ⌃/RET    →num/SPA  |     ·    
 ```
 
@@ -134,7 +134,7 @@ _ZMK-only (home keyboard)_
     TAB       Q        W        E        R        T      GRAVE       EQUAL      Y        U        I        O        P       BSLH  
      ·        A        S        D        F        G           H        J        K        L       SEMI     SQT   
      ⇧        Z        X        C        V        B       LBKT        RBKT      N        M      COMMA     DOT       UP       ⇧    
-    ⌘DOT      ·        ·      alttab    sk⇧         sk⇧      RPT      LEFT     DOWN    RIGHT  
+    ⌘DOT      ·        ·      alttab     ⇧           ⇧       RPT      LEFT     DOWN    RIGHT  
 
   thumbs   L:   LEAD      ⌘L/⏯    |  →win_nav   ⌃/BSPC     vol+    |    vol-  
            R: TO:layer    RPT     |     ·       ⌃/RET    →num/SPA  |     ·    
@@ -270,7 +270,7 @@ _QMK ✓ (`DYrAK` layer 5: ext-wnav)_
 - pos 29: QMK `KC_TRANSPARENT` vs ZMK `&caps_word`
 - pos 69: QMK `KC_TRANSPARENT` vs ZMK `&kp C_NEXT`
 - pos 71: QMK `KC_TRANSPARENT` vs ZMK `&kp BSPC`
-- pos 72: QMK `OSM(MOD_LCTL)` vs ZMK `&trans`
+- pos 72: QMK `KC_LEFT_CTRL` vs ZMK `&trans`
 - pos 73: QMK `KC_TRANSPARENT` vs ZMK `&kp C_PREV`
 - pos 75: QMK `MT(MOD_RCTL, KC_ENTER)` vs ZMK `&trans`
 
