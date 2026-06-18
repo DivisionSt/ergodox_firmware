@@ -4,7 +4,10 @@ on: [workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # slicemk/zmk's reusable workflow, NOT zmkfirmware upstream: upstream@main added a
+    # board-compat (`west boards` / CONFIG_ZMK_BOARD_COMPAT) step that the slicemk fork
+    # doesn't implement, which breaks the build. Matches xudongzheng's working underglow config.
+    uses: slicemk/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: build.yaml
       config_path: config

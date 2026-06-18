@@ -11,7 +11,9 @@ manifest:
   projects:
     - name: zmk
       remote: slicemk
-      revision: v20250729-rgb
+      # xudongzheng/zmk v20251223-rgb tip, SHA-pinned: he prunes old date-stamped
+      # branches (v20250729-rgb vanished and broke the build); a SHA survives that.
+      revision: 997e147744047475bcc9a00e28fc40c9d9a1e91e
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
