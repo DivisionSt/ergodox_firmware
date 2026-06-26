@@ -162,6 +162,9 @@ def canon_zmk(token: str) -> tuple[str, bool]:
     m = re.fullmatch(r"&sk (\w+)", token)
     if m:
         return f"OSM({_ZMK_MOD.get(m.group(1), m.group(1))})", True
+    m = re.fullmatch(r"&skht (\w+) (\w+)", token)   # hold=&kp, tap=&sk; canonical is the tap (OSM)
+    if m:
+        return f"OSM({_ZMK_MOD.get(m.group(2), m.group(2))})", True
     m = re.fullmatch(r"&t?mt (\w+) (\w+)", token)   # &mt / &tmt with simple mod
     if m and m.group(1) in _ZMK_MOD:
         return f"MT({_ZMK_MOD[m.group(1)]},{_atom_zmk(m.group(2))})", True

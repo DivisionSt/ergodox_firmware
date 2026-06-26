@@ -89,6 +89,9 @@ def display(token: str) -> str:
     m = re.fullmatch(r"&sk (\w+)", t)
     if m:
         return "sk" + (_MOD_SYM.get(m.group(1)) or ":" + m.group(1).lower())
+    m = re.fullmatch(r"&skht (\w+) (\w+)", t)   # tap param is second
+    if m:
+        return "skht" + (_MOD_SYM.get(m.group(2)) or ":" + m.group(2).lower())
     m = re.fullmatch(r"&t?lt (L_[A-Z0-9_]+) (\w+)", t)
     if m:
         return f"→{m.group(1).replace('L_EXT_', '').replace('L_', '').lower()}/{_atom_label(m.group(2))}"
