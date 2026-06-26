@@ -38,13 +38,12 @@ _QMK ✓ (`DYrAK` layer 0: base-mac)_
   ⌃⌘SPACE     ·        ·      cmdtab     ⇧           ⇧       RPT       ·        ·        ·    
 
   thumbs   L:   LEAD     ⌃⌘Q/⏯    |  →nav/BSP     ⌘        vol+    |    vol-  
-           R: TO:layer    RPT     |     ·       ⌘/RET    →num/SPA  |     ·    
+           R: TO:layer    RPT     |   ⌃LEFT     ⌘/RET    →num/SPA  |   ⌃RIGHT 
 ```
 
-**QMK differs here (2):**
+**QMK differs here (1):**
 
 - pos 29: QMK `KC_F24` vs ZMK `&none`
-- pos 70: QMK `LAYER_ID` vs ZMK `&none`
 
 ### 1. base-fortnite
 

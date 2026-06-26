@@ -368,11 +368,11 @@
                                               &leader        &mt LC(LG(Q)) C_PP       &to L_LAYERS &key_repeat
 //                                            │ TOG NAV      │ LOCK/PP         │      │ TO LYR     │ REPEAT       │
 //                        ╭───────────────────├──────────────┼─────────────────┤      ├────────────┼──────────────┤──────────────────╮
-                          &tlt L_EXT_NAV BSPC &kp LCMD       &kp C_VOL_UP             &none        &tmt RCMD RET &tlt L_EXT_NUM SPACE
-//                        │ LT SC/BSPC        │ CMD          │ VOL+            │      │ NONE       │ CMD/RET      │ L: NUM/SPC       │
+                          &tlt L_EXT_NAV BSPC &kp LCMD       &kp C_VOL_UP             &kp LC(LEFT)  &tmt RCMD RET &tlt L_EXT_NUM SPACE
+//                        │ LT SC/BSPC        │ CMD          │ VOL+            │      │ PREV DSK   │ CMD/RET      │ L: NUM/SPC       │
 //                        ╰───────────────────┴──────────────┼─────────────────┤      ├────────────┼──────────────┴──────────────────╯
-                                                             &kp C_VOL_DN             &none
-//                                                           │ VOL-            │      │ NONE       │
+                                                             &kp C_VOL_DN             &kp LC(RIGHT)
+//                                                           │ VOL-            │      │ NEXT DSK   │
 //                                                           ╰─────────────────╯      ╰────────────╯
 			>;
 		};
