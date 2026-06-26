@@ -221,7 +221,7 @@ _QMK ✓ (`DYrAK` layer 3: ext-nav)_
 ```
      ▽        F1       F2       F3       F4       F5       ▽           ▽        F6       F7       F8       F9      F10      F11   
      ▽        ▽        ▽        ▽        ▽        ▽      ⌘GRAVE        ▽        ▽        ▽        ▽        ▽        ▽       F12   
-    CAPS     sk⇧      sk⌃      sk⌥      sk⌘      ⌃TAB        LEFT     DOWN      UP     RIGHT      ▽        ▽    
+    CAPS    skht⇧    skht⌃    skht⌥    skht⌘     ⌃TAB        LEFT     DOWN      UP     RIGHT      ▽        ▽    
      ▽        ▽        ▽        ▽        ▽      ⌘LEFT     LPAR        RPAR      ▽      PG_DN    PG_UP      ▽        UP       ▽    
      ▽        ▽        ▽       ⌘TAB      ▽           ▽       ⌃RET     LEFT     DOWN    RIGHT  
 
@@ -241,7 +241,7 @@ _QMK ✓ (`DYrAK` layer 4: ext-num)_
 ```
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        ▽     KP_DIVID KP_MULTI  MINUS      ▽    
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        7        8        9     KP_PLUS     ▽    
-     ▽       sk⇧      sk⌃      sk⌥      sk⌘       ▽           ▽        4        5        6     KP_PLUS     ▽    
+     ▽      skht⇧    skht⌃    skht⌥    skht⌘      ▽           ▽        4        5        6     KP_PLUS     ▽    
      ▽        ▽        ▽        ▽        ▽        ▽       LPAR        RPAR      ▽        1        2        3     KP_ENTER    ▽    
      ▽        ▽        ▽        ▽        ▽           0        0      KP_DOT  KP_ENTER    ▽    
 
@@ -257,7 +257,7 @@ _QMK ✓ (`DYrAK` layer 5: ext-wnav)_
 ```
      ▽        F1       F2       F3       F4       F5       ▽           ▽        F6       F7       F8       F9      F10      F11   
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        ▽        ▽        ▽        ▽       F12   
-    CAPS     sk⇧      sk⌘      sk⌥      sk⌃      ⌃TAB        LEFT     DOWN      UP     RIGHT      ▽        ▽    
+    CAPS    skht⇧    skht⌘    skht⌥    skht⌃     ⌃TAB        LEFT     DOWN      UP     RIGHT      ▽        ▽    
      ▽        ▽        ▽        ▽        ▽      ⌃LEFT     LPAR        RPAR      ▽      PG_DN    PG_UP      ▽        UP       ▽    
      ▽        ▽        ▽       ⌥TAB      ▽           ▽        ⌘X      LEFT     DOWN    RIGHT  
 
@@ -282,7 +282,7 @@ _QMK ✓ (`DYrAK` layer 6: ext-wnum)_
 ```
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        ▽     KP_DIVID KP_MULTI  MINUS      ▽    
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽        7        8        9     KP_PLUS     ▽    
-     ▽       sk⇧      sk⌘      sk⌥      sk⌃       ▽           ▽        4        5        6     KP_PLUS     ▽    
+     ▽      skht⇧    skht⌘    skht⌥    skht⌃      ▽           ▽        4        5        6     KP_PLUS     ▽    
      ▽        ▽        ▽        ▽        ▽        ▽       LPAR        RPAR      ▽        1        2        3     KP_ENTER    ▽    
      ▽        ▽        ▽        ▽        ▽           0        0      KP_DOT  KP_ENTER    ▽    
 
@@ -298,7 +298,7 @@ _QMK ✓ (`DYrAK` layer 7: ext-func)_
 ```
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽        ▽       F10      F11      F12       ▽        ▽    
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽       F12       F7       F8       F9       ▽        ▽    
-     ▽       sk⇧      sk⌃      sk⌥      sk⌘       ▽          F11       F4       F5       F6       ▽        ▽    
+     ▽      skht⇧    skht⌃    skht⌥    skht⌘      ▽          F11       F4       F5       F6       ▽        ▽    
      ▽        ▽        ▽        ▽        ▽        ▽        ▽           ▽       F10       F1       F2       F3       ▽        ▽    
      ▽        ▽        ▽        ▽        ▽           ▽        ▽        ▽        ▽        ▽    
 
