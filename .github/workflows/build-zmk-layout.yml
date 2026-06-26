@@ -3,8 +3,10 @@ name: Build ZMK Layout
 on: [workflow_dispatch]
 
 # Inlined from slicemk/zmk/.github/workflows/build-user-config.yml@main
-# with action versions bumped from v4 to current (checkout@v7, cache@v6,
+# Source commit: a17266847dcd5e3e202ed7eb559665f22a10b86e (2024-09-26)
+# Action versions bumped from v4 to current (checkout@v7, cache@v6,
 # upload-artifact@v7) to silence Node.js 20 deprecation warnings.
+# To check for upstream changes: diff this file against slicemk/zmk at HEAD.
 #
 # We do NOT use the upstream zmkfirmware reusable workflow because upstream@main
 # added a board-compat step (west boards / CONFIG_ZMK_BOARD_COMPAT) that the
@@ -16,7 +18,6 @@ env:
   CONFIG_PATH: config
   ARCHIVE_NAME: zmk_firmware_${{ github.run_id }}
   FALLBACK_BINARY: bin
-
 jobs:
   matrix:
     runs-on: ubuntu-22.04
