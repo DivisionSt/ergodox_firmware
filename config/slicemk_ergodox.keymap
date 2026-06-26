@@ -246,6 +246,14 @@
       bindings = <&kp>, <&key_repeat>;
 	    display-name = "Mod-Tap-Repeat";
 	  };
+    skht: sticky_key_hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <TAP_TERM_MS>;
+      bindings = <&kp>, <&sk>;
+      display-name = "Sticky-Key-Hold-Tap";
+    };
     leader: leader {
       compatible = "zmk,behavior-leader-key";
       #binding-cells = <0>;
@@ -573,7 +581,7 @@
   &trans     &trans     &trans     &trans     &trans     &trans     &kp LG(GRAVE)    &trans     &trans     &trans     &trans     &trans     &trans     &kp F12
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ CMD+`    │      │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ F12      │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &caps_word &sk LSHFT  &sk LCTRL  &sk LALT   &sk LGUI   &kp LC(TAB)                             &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
+  &caps_word &skht LSHFT LSHFT  &skht LCTRL LCTRL  &skht LALT LALT   &skht LGUI LGUI   &kp LC(TAB)                             &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
 //│ CAPS WRD │ SHIFT    │ CTRL     │ ALT      │ GUI      │ CTL+TAB  │          │      │          │ ←        │ ↓        │ ↑        │ →        │ TRANS    │ TRANS    │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans     &kp LG(LEFT) &kp LPAR        &kp RPAR     &trans     &kp PG_DN  &kp PG_UP  &trans     &kp UP     &trans
@@ -605,7 +613,7 @@
   &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &trans     &kp N7     &kp N8     &kp N9     &kp KP_PLUS &trans
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │      │ TRANS    │ TRANS    │ 7        │ 8        │ 9        │ KP +     │ TRANS    │ 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &sk LSHFT  &sk LCTRL  &sk LALT   &sk LGUI   &trans                                  &trans     &kp N4     &kp N5     &kp N6     &kp KP_PLUS &trans
+  &trans     &skht LSHFT LSHFT  &skht LCTRL LCTRL  &skht LALT LALT   &skht LGUI LGUI   &trans                                  &trans     &kp N4     &kp N5     &kp N6     &kp KP_PLUS &trans
 //│ TRANS    │ SHIFT    │ CTRL     │ ALT      │ GUI      │ TRANS    │          │      │          │ TRANS    │ 4        │ 5        │ 6        │ KP +     │ TRANS    │ 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans     &trans     &kp LPAR          &kp RPAR   &trans     &kp N1     &kp N2     &kp N3     &kp KP_ENTER &trans
@@ -637,7 +645,7 @@
   &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &trans     &trans     &trans     &trans     &trans     &kp F12
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │      │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ F12      │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &caps_word &sk LSHFT  &sk LGUI   &sk LALT   &sk LCTRL  &kp LC(TAB)                             &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
+  &caps_word &skht LSHFT LSHFT  &skht LGUI LGUI   &skht LALT LALT   &skht LCTRL LCTRL  &kp LC(TAB)                             &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans     &trans
 //│ CAPS WRD │ SHIFT    │ WIN      │ ALT      │ CTRL     │ CTL+TAB  │          │      │          │ ←        │ ↓        │ ↑        │ →        │ TRANS    │ TRANS    │
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans     &kp LC(LEFT) &kp LPAR        &kp RPAR     &trans     &kp PG_DN  &kp PG_UP  &trans     &kp UP     &trans
@@ -669,7 +677,7 @@
   &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &trans     &kp N7     &kp N8     &kp N9     &kp KP_PLUS &trans
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │      │ TRANS    │ TRANS    │ 7        │ 8        │ 9        │ KP +     │ TRANS    │ 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &sk LSHFT  &sk LGUI   &sk LALT   &sk LCTRL  &trans                                  &trans     &kp N4     &kp N5     &kp N6     &kp KP_PLUS &trans
+  &trans     &skht LSHFT LSHFT  &skht LGUI LGUI   &skht LALT LALT   &skht LCTRL LCTRL  &trans                                  &trans     &kp N4     &kp N5     &kp N6     &kp KP_PLUS &trans
 //│ TRANS    │ SHIFT    │ WIN      │ ALT      │ CTRL     │ TRANS    │          │      │          │ TRANS    │ 4        │ 5        │ 6        │ KP +     │ TRANS    │ 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans     &trans     &kp LPAR          &kp RPAR   &trans     &kp N1     &kp N2     &kp N3     &kp KP_ENTER &trans
@@ -701,7 +709,7 @@
   &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &kp F12    &kp F7     &kp F8     &kp F9     &trans     &trans
 //│ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │ TRANS    │      │ TRANS    │ F12      │ F7       │ F8       │ F9       │ TRANS    │ TRANS
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-  &trans     &sk LSHFT  &sk LCTRL  &sk LALT   &sk LGUI   &trans                                  &kp F11    &kp F4     &kp F5     &kp F6     &trans     &trans
+  &trans     &skht LSHFT LSHFT  &skht LCTRL LCTRL  &skht LALT LALT   &skht LGUI LGUI   &trans                                  &kp F11    &kp F4     &kp F5     &kp F6     &trans     &trans
 //│ TRANS    │ SHIFT    │ CTRL     │ ALT      │ GUI      │ TRANS    │          │      │          │ F11      │ F4       │ F5       │ F6       │ TRANS    │ TRANS
 //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
   &trans     &trans     &trans     &trans     &trans     &trans     &trans            &trans     &kp F10    &kp F1     &kp F2     &kp F3     &trans     &trans
