@@ -99,42 +99,62 @@ ROW_SLOTS = [
 ]
 
 GAP = "      "  # 6-space gap between left and right halves
+GAP_W = len(GAP)
 
 
-def _slot_col(slot: int, w: int) -> int:
-    """Character column (0-based, after the leading '  ') for a slot's token start."""
-    return slot * (w + 3)  # w+2 cell interior + 1 separator
+# ── Absolute column grid ──────────────────────────────────────────────────────
+#
+# Every line — borders, labels, AND binding code — shares one fixed grid so the
+# two halves always align on a common vertical seam.  Columns are 0-based char
+# indices into the rendered line (the "//│" prefix occupies cols 0-2).
+#
+#   left  border of slot k : 2 + k*(w+3)         interior (token/label) : +1
+#   right border of slot k : <left border 7> + GAP_W + 1 + k*(w+3)
+#
+# w+2 is the cell interior width (matches _h(w)); +1 is the cell separator.
+
+def _lbc(slot: int, w: int) -> int:
+    """Column of the left-half border glyph (│ ├ ┼ …) at border index `slot`."""
+    return 2 + slot * (w + 3)
+
+
+def _rbc(slot: int, w: int) -> int:
+    """Column of the right-half border glyph at border index `slot`."""
+    return _lbc(7, w) + GAP_W + 1 + slot * (w + 3)
+
+
+def _lic(slot: int, w: int) -> int:
+    """Column where a left-half token/label cell interior starts."""
+    return _lbc(slot, w) + 1
+
+
+def _ric(slot: int, w: int) -> int:
+    """Column where a right-half token/label cell interior starts."""
+    return _rbc(slot, w) + 1
+
+
+def _binding_line(placements: list[tuple[int, str]], w: int) -> str:
+    """Render one binding-code line: place each (column, token) onto a blank
+    buffer at its absolute column, then rstrip trailing space."""
+    width = _ric(7, w) + 40
+    buf = [" "] * width
+    for col, tok in placements:
+        for i, ch in enumerate(tok):
+            if 0 <= col + i < width:
+                buf[col + i] = ch
+    return "".join(buf).rstrip()
 
 
 def _binding_row(left_slots: list, right_slots: list, tokens: list[str], w: int) -> str:
-    """Emit one binding code line with tokens padded to their slot columns."""
-    # Build a char buffer for left and right halves.
-    # Left half: 7 slots, each takes (w+3) chars, total = 7*(w+3) chars.
-    half_w = 7 * (w + 3)
-    left_buf = [" "] * half_w
-    right_buf = [" "] * half_w
-
+    """Emit one binding code line with tokens at their fixed grid columns."""
+    placements = []
     for slot, pos in enumerate(left_slots):
-        if pos is None:
-            continue
-        tok = tokens[pos - 1]
-        col = _slot_col(slot, w)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                left_buf[col + i] = ch
-
+        if pos is not None:
+            placements.append((_lic(slot, w), tokens[pos - 1]))
     for slot, pos in enumerate(right_slots):
-        if pos is None:
-            continue
-        tok = tokens[pos - 1]
-        col = _slot_col(slot, w)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                right_buf[col + i] = ch
-
-    left_str = "".join(left_buf).rstrip()
-    right_str = "".join(right_buf).rstrip()
-    return "  " + left_str + GAP + right_str
+        if pos is not None:
+            placements.append((_ric(slot, w), tokens[pos - 1]))
+    return _binding_line(placements, w)
 
 
 def _label_row(left_slots: list, right_slots: list, tokens: list[str], w: int,
@@ -189,53 +209,44 @@ def _render_body(tokens: list[str], w: int) -> list[str]:
         # Bottom row: the None slots at 5-6 left and 0-1 right are outer-edge → notch.
 
         if row_idx == 4:
-            # Bottom row: 5 real keys per side, notch on inner side.
-            # Left: slots 0-4 real, 5-6 None (outer/inner edge — notch closes there).
-            # Right: slots 0-1 None (notch), 2-6 real.
+            # Bottom row: 5 keys per side (left slots 0-4, right slots 2-6) on the
+            # 7-grid; the inner two slots per half stay open below row 3.
             left_real = left_slots[:5]   # [55,56,57,58,59]
             right_real = right_slots[2:] # [60,61,62,63,64]
 
-            if row_idx == 0:
-                l_open, r_open = "╭", "╭"
-                l_join, r_join = "┬", "┬"
-                l_close, r_close = "┐", "┐"
-            else:
-                l_open, r_open = "├", "├"
-                l_join, r_join = "┼", "┼"
-                l_close, r_close = "┤", "┤"
-
-            # Border
-            out.append(
-                f"//{l_open}" + l_join.join(h for _ in left_real) + f"{l_close}"
-                + GAP
-                + f"{r_open}" + r_join.join(h for _ in right_real) + f"{r_close}"
+            # Border (between row 3 and the bottom row).  All 7 columns carry the
+            # bottom edge of row 3's keys; junctions step where the 5-key bottom
+            # row ends (┤ after slot 4 left / before slot 2 right).
+            left_border = (
+                "├" + h + "┼" + h + "┼" + h + "┼" + h + "┼"
+                + h + "┤" + h + "┼" + h + "┤"
             )
+            right_border = (
+                "├" + h + "┼" + h + "┼" + h + "┼" + h + "┼"
+                + h + "┤" + h + "┤" + h + "┤"
+            )
+            out.append(f"//{left_border}{GAP}{right_border}")
             # Bindings
             out.append(_binding_row(left_real + [None, None], [None, None] + right_real, tokens, w))
-            # Labels
+            # Labels: 5 cells per half on the grid, open middle spanning the four
+            # empty inner slots + gap.
             left_cells = "│".join(f" {_pad(_cell_label(p, tokens[p-1]), w)} " for p in left_real)
             right_cells = "│".join(f" {_pad(_cell_label(p, tokens[p-1]), w)} " for p in right_real)
-            out.append(f"//│" + left_cells + f"│{GAP}│" + right_cells + "│")
+            mid = " " * (_rbc(2, w) - (3 + len(left_cells) + 1))
+            out.append(f"//│{left_cells}│{mid}│{right_cells}│")
 
         elif row_idx == 2:
             # Home row: left slots 0-5 real + slot 6 is hole; right slot 0 is hole + slots 1-6 real.
             left_real = left_slots[:6]   # [29..34]
             right_real = right_slots[1:] # [35..40]
 
-            if row_idx == 0:
-                l_open, l_join, l_close = "╭", "┬", "┐"
-                r_open, r_join, r_close = "╭", "┬", "┐"
-            else:
-                l_open, l_join, l_close = "├", "┼", "┤"
-                r_open, r_join, r_close = "├", "┼", "┤"
-
-            # Border: left has 6 real + 1 empty box slot; right has 1 empty box + 6 real.
-            left_border = l_join.join(h for _ in range(7))  # 7 segments including hole
-            right_border = r_join.join(h for _ in range(7))
+            # Border (between row 1 and home): 6 bordered cells per half, then the
+            # interior hole is left OPEN at top (notch ┤ … ├, blank hole interior).
+            hole = " " * (w + 2)
+            left_border = "┼".join(h for _ in range(6))
+            right_border = "┼".join(h for _ in range(6))
             out.append(
-                f"//{l_open}" + left_border + f"{l_close}"
-                + GAP
-                + f"{r_open}" + right_border + f"{r_close}"
+                f"//├{left_border}┤{hole}│{GAP}│{hole}├{right_border}┤"
             )
             # Bindings: pad 6 real tokens; hole slot gets spaces
             out.append(_binding_row(left_slots, right_slots, tokens, w))
@@ -269,15 +280,12 @@ def _render_body(tokens: list[str], w: int) -> list[str]:
             right_cells = "│".join(f" {_pad(_cell_label(p, tokens[p-1]), w)} " for p in right_slots)
             out.append(f"//│" + left_cells + f"│{GAP}│" + right_cells + "│")
 
-    # Bottom border after row 4 (5|5), notched.
-    # Connects into the thumb cluster: left closes with ╯, right with ╰.
-    left_real5 = ROW_SLOTS[4][0][:5]
-    right_real5 = ROW_SLOTS[4][1][2:]
-    out.append(
-        "//╰" + "┴".join(h for _ in left_real5) + "╯"
-        + GAP
-        + "╰" + "┴".join(h for _ in right_real5) + "╯"
-    )
+    # Bottom border after row 4 (5|5): closes the 5 keys per half, with the four
+    # inner slots + gap left open between the ╯ and the ╰.
+    left5 = "╰" + "┴".join(h for _ in range(5)) + "╯"
+    right5 = "╰" + "┴".join(h for _ in range(5)) + "╯"
+    mid = " " * (_rbc(2, w) - (2 + len(left5)))
+    out.append(f"//{left5}{mid}{right5}")
 
     return out
 
@@ -311,145 +319,35 @@ def _render_thumbs(tokens: list[str], w: int) -> list[str]:
         return _pad(_cell_label(pos, tokens[pos - 1]), w)
 
     blank = _pad("", w)
+    ind_a = " " * (5 * (w + 3))   # line-A box opens at left border slot 5
+    ind_b = " " * (4 * (w + 3))   # 2u block opens at left border slot 4
 
-    # ── Line A: top 1u pairs ─────────────────────────────────────────────────
-    # These sit above the 2u block on the right of the body.
-    # Left pair (65, 66) aligns to body left slots 5-6 (inner).
-    # Right pair (67, 68) aligns to body right slots 0-1 (inner).
-    # Compute offset: left pair starts at col of body left-half slot 5.
-    # slot 5 of left half → after boot banner, indented 2.
-    # We use absolute spacing to match the body grid.
-    # Left pair slot cols: 5*(w+3) and 6*(w+3); right pair: 0*(w+3) and 1*(w+3) in right half.
-    # Half-width of 7 slots = 7*(w+3)-1 chars + "│" bookends for the cells.
-    # Left half total with leading │ = 1 + 7*(w+3) chars.
-    # The GAP is 6 chars.  Right half starts at: 2 + 7*(w+3) + 6 = 8 + 7*(w+3).
-    # Token indent ("  " prefix) uses the same _binding_row slot math.
+    # ── Line A: top 1u pairs (65,66 | 67,68), inner two slots per half ────────
+    out.append(f"//{ind_a}╭{h}┬{h}╮{GAP}╭{h}┬{h}╮")
+    out.append(_binding_line([
+        (_lic(5, w), tokens[64]), (_lic(6, w), tokens[65]),
+        (_ric(0, w), tokens[66]), (_ric(1, w), tokens[67]),
+    ], w))
+    out.append(f"//{ind_a}│ {lbl(65)} │ {lbl(66)} │{GAP}│ {lbl(67)} │ {lbl(68)} │")
 
-    # For the top 1u pair, we position them using body slot 5/6 (left) and 0/1 (right).
-    # "  " + 5*(w+3) spaces + token65 + spaces + token66 + GAP + token67 + spaces + token68
-    slot5_col = 5 * (w + 3)
-    slot6_col = 6 * (w + 3)
-    # Right half slot 0/1 (these correspond to slots 0 and 1 in the right half)
-    # Right half starts at character 2 + 7*(w+3) + len(GAP) = 2 + 7*(w+3) + 6
-    rbase = 7 * (w + 3) + len(GAP)
-
-    # Border for line A
-    out.append(
-        "//" + " " * (slot5_col + 1)
-        + "╭" + h + "┬" + h + "╮"
-        + GAP
-        + "╭" + h + "┬" + h + "╮"
-    )
-
-    # Bindings for line A (pos 65, 66 | 67, 68)
-    half_w = 7 * (w + 3)
-    lbuf = [" "] * half_w
-    rbuf = [" "] * half_w
-    for slot, pos in [(5, 65), (6, 66)]:
-        tok = tokens[pos - 1]
-        col = slot * (w + 3)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                lbuf[col + i] = ch
-    for slot, pos in [(0, 67), (1, 68)]:
-        tok = tokens[pos - 1]
-        col = slot * (w + 3)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                rbuf[col + i] = ch
-    out.append("  " + "".join(lbuf).rstrip() + GAP + "".join(rbuf).rstrip())
-
-    # Labels for line A
-    out.append(
-        "//" + " " * (slot5_col + 1)
-        + f"│ {lbl(65)} │ {lbl(66)} │"
-        + GAP
-        + f"│ {lbl(67)} │ {lbl(68)} │"
-    )
-
-    # ── Top border of 2u block ────────────────────────────────────────────────
-    # Left side: opens at slot 3 (pos 69), extends through slot 4 (70), then slot 5 closes
-    # into the inner 1u column (slot 5 stays part of line A's right edge).
-    # The 3-cell left cluster: ╭─69─┼─70─┼─71─╮ at slots 3,4,5.
-    # But slot 5 and 6 of the left body already belong to the line A pair.
-    # The 2u block is an independent cluster BELOW the body.
-    # Its left edge is at slot 3 of the left body half.
-    slot3_col = 3 * (w + 3)
-
-    out.append(
-        "//" + " " * (slot3_col + 1)
-        + "╭" + h + "┼" + h + "┼" + h + "┤"
-        + GAP
-        + "├" + h + "┼" + h + "┼" + h + "╮"
-    )
-
-    # Bindings for line B (pos 69, 70, 71 | 72, 73, 74)
-    lbuf2 = [" "] * half_w
-    rbuf2 = [" "] * half_w
-    for slot, pos in [(3, 69), (4, 70), (5, 71)]:
-        tok = tokens[pos - 1]
-        col = slot * (w + 3)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                lbuf2[col + i] = ch
-    for slot, pos in [(0, 72), (1, 73), (2, 74)]:
-        tok = tokens[pos - 1]
-        col = slot * (w + 3)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                rbuf2[col + i] = ch
-    out.append("  " + "".join(lbuf2).rstrip() + GAP + "".join(rbuf2).rstrip())
-
-    # First interior row of 2u block:
-    # Left:  │ [69] label │ [70] label │ [71] label │   ← 71 label on top row
-    # Right: │ [72] label │ [73] label │ [74] label │
-    out.append(
-        "//" + " " * (slot3_col + 1)
-        + f"│ {lbl(69)} │ {lbl(70)} │ {lbl(71)} │"
-        + GAP
-        + f"│ {lbl(72)} │ {lbl(73)} │ {lbl(74)} │"
-    )
-
-    # Middle separator: 69/70/73/74 continue (blank), 71/72 split (inner 1u divider)
-    out.append(
-        "//" + " " * (slot3_col + 1)
-        + f"│ {blank} │ {blank} ├" + h + "┤"
-        + GAP
-        + "├" + h + f"┤ {blank} │ {blank} │"
-    )
-
-    # Bindings for line C (pos 75 | 76) — slot 5 left, slot 0 right
-    lbuf3 = [" "] * half_w
-    rbuf3 = [" "] * half_w
-    for slot, pos in [(5, 75)]:
-        tok = tokens[pos - 1]
-        col = slot * (w + 3)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                lbuf3[col + i] = ch
-    for slot, pos in [(0, 76)]:
-        tok = tokens[pos - 1]
-        col = slot * (w + 3)
-        for i, ch in enumerate(tok):
-            if col + i < half_w:
-                rbuf3[col + i] = ch
-    out.append("  " + "".join(lbuf3).rstrip() + GAP + "".join(rbuf3).rstrip())
-
-    # Bottom interior row of 2u block: 69/70/73/74 blank, 71→75 / 72→76 labels
-    out.append(
-        "//" + " " * (slot3_col + 1)
-        + f"│ {blank} │ {blank} │ {lbl(75)} │"
-        + GAP
-        + f"│ {lbl(76)} │ {blank} │ {blank} │"
-    )
-
+    # ── 2u block: left slots 4,5,6 (69,70,71) | right slots 0,1,2 (72,73,74) ──
+    # Top border
+    out.append(f"//{ind_b}╭{h}┼{h}┼{h}┤{GAP}├{h}┼{h}┼{h}╮")
+    # Line B bindings (69,70,71 | 72,73,74)
+    out.append(_binding_line([
+        (_lic(4, w), tokens[68]), (_lic(5, w), tokens[69]), (_lic(6, w), tokens[70]),
+        (_ric(0, w), tokens[71]), (_ric(1, w), tokens[72]), (_ric(2, w), tokens[73]),
+    ], w))
+    # Top interior row: 71/74 labels sit here; 69/70/72/73 span 2u below.
+    out.append(f"//{ind_b}│ {lbl(69)} │ {lbl(70)} │ {lbl(71)} │{GAP}│ {lbl(72)} │ {lbl(73)} │ {lbl(74)} │")
+    # Middle separator: 69/70 & 73/74 stay open (2u); the inner 71/75 & 72/76 split.
+    out.append(f"//{ind_b}│ {blank} │ {blank} ├{h}┤{GAP}├{h}┤ {blank} │ {blank} │")
+    # Line C bindings (75 | 76) — left slot 6, right slot 0.
+    out.append(_binding_line([(_lic(6, w), tokens[74]), (_ric(0, w), tokens[75])], w))
+    # Bottom interior row: 75/76 labels.
+    out.append(f"//{ind_b}│ {blank} │ {blank} │ {lbl(75)} │{GAP}│ {lbl(76)} │ {blank} │ {blank} │")
     # Bottom border
-    out.append(
-        "//" + " " * (slot3_col + 1)
-        + "╰" + h + "┴" + h + "┴" + h + "╯"
-        + GAP
-        + "╰" + h + "┴" + h + "┴" + h + "╯"
-    )
+    out.append(f"//{ind_b}╰{h}┴{h}┴{h}╯{GAP}╰{h}┴{h}┴{h}╯")
 
     return out
 
