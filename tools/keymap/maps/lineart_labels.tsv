@@ -1,0 +1,93 @@
+# Human-readable label overrides for lineart.py.
+# token → label used in the lineart cells.
+# Tokens are matched verbatim after normalization (whitespace collapsed).
+# Lines starting with '#' are comments. Fallback: layers.py display().
+token	label
+&bootloader	BOOTLOADER
+&key_repeat	REPEAT
+&leader	LEADER
+&cmd_tab	CMD+TAB
+&alt_tab	ALT+TAB
+&caps_word	CAPS WRD
+&kp LC(LG(SPACE))	emoji
+&mt LC(LG(Q)) C_PP	LOCK/PP
+&mt LG(L) C_PP	WIN+L/PP
+&tlt L_EXT_NAV BSPC	NAV/BSPC
+&tlt L_EXT_WIN_NAV BSPC	WNNAV/BSP
+&tlt L_EXT_WIN_NAV SPACE	WNNAV/SPC
+&tlt L_EXT_NUM SPACE	NUM/SPC
+&tmt RCMD RET	CMD/RET
+&tmt RCTRL RET	CTRL/RET
+&tmt LCTRL BSPC	CTRL/BSP
+&kp LC(LEFT)	PREV DSK
+&kp LC(RIGHT)	NEXT DSK
+&kp LG(DOT)	WIN+.
+&kp LG(LS(T))	⌘⇧T
+&kp LG(LS(V))	⌘⇧V
+&kp LG(LS(A))	⌘⇧A
+&kp LA(LSHFT)	⌥⇧
+&kp LC(LSHFT)	⌃⇧
+&skht LSHFT LSHFT	sk⇧
+&skht LCTRL LCTRL	sk⌃
+&skht LALT LALT	sk⌥
+&skht LGUI LGUI	sk⌘
+&kp LEFT	←
+&kp RIGHT	→
+&kp UP	↑
+&kp DOWN	↓
+&kp PG_DN	PG↓
+&kp PG_UP	PG↑
+&kp LG(GRAVE)	⌘`
+&kp LC(TAB)	⌃TAB
+&kp LG(TAB)	⌘TAB
+&kp LG(LEFT)	⌘←
+&kp LA(TAB)	⌥TAB
+&kp LG(X)	WIN+X
+&kp LG(LS(L))	⌘⇧L
+&kp LG(LS(N1))	⌘⇧1
+&kp LG(LS(N2))	⌘⇧2
+&kp LC(LS(T))	⌃⇧T
+&kp LC(LS(A))	⌃⇧A
+&kp LC(RET)	⌃RET
+&kp LG(LC(F))	⌘⌃F
+&kp LC(UP)	⌃↑
+&kp LC(DOWN)	⌃↓
+&kp LG(RIGHT)	⌘→
+&kp LC(LS(V))	⌃⇧V
+&mt LPAR LBKT	(/[
+&mt RPAR RBKT	)/]
+&rgb_ug RGB_EFF	RGB EFF
+&rgb_ug RGB_EFR	RGB EFR
+&rgb_ug RGB_BRI	RGB BRI+
+&rgb_ug RGB_BRD	RGB BRI-
+&rgb_ug RGB_HUI	RGB HUE+
+&rgb_ug RGB_HUD	RGB HUE-
+&rgb_ug RGB_SAI	RGB SAT+
+&rgb_ug RGB_SAD	RGB SAT-
+&rgb_ug RGB_COLOR_HSB(0, 100, 0)	RGB OFF
+&rgb_ug RGB_COLOR_HSB(0, 0, 20)	RGB WHITE
+&to L_LAYERS	TO LYR
+&to L_BASE_MAC	TO MAC
+&to L_BASE_WIN	TO WIN
+&to L_BASE_OLD	TO OLD
+&to L_UNDERGLOW	TO UGLOW
+&to L_MOUSE	TO MOUSE
+&to L_BASE_FORT	TO FORT
+&to L_BASE_GAME	TO GAME
+&to L_BASE_MINE	TO MINE
+&to L_BASE_SKETCHUP	TO SKETCH
+&tog L_EXT_NAV	TOG NAV
+&tog L_EXT_NUM	TOG NUM
+&lt L_EXT_NAV BSPC	NAV/BSPC
+&lt L_EXT_NUM SPACE	NUM/SPC
+&out OUT_BLE	OUT BLE
+&out OUT_USB	OUT USB
+&bt BT_SEL 0	BT 0
+&bt BT_SEL 1	BT 1
+&bt BT_SEL 2	BT 2
+&bt BT_SEL 3	BT 3
+&bt BT_SEL 4	BT 4
+&bt BT_CLR	BT CLR
+&mkp LCLK	L CLK
+&mkp RCLK	R CLK
+&mkp MCLK	M CLK
