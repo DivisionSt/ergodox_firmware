@@ -38,3 +38,15 @@
 #define LEADER_PER_KEY_TIMING
 #define LEADER_NO_TIMEOUT
 #define PERMISSIVE_HOLD_PER_KEY
+
+/* Workaround for an upstream ZSA bug in zsa/qmk_modules (oryx/oryx.c).
+   The module guards <automouse.h> with `#if COMMUNITY_MODULE_AUTOMOUSE_ENABLE == TRUE`.
+   AVR/LUFA never defines TRUE, so on the m32u4 that collapses to 0 == 0 and pulls in a
+   header that is not on the include path. ARM builds escape it because ChibiOS defines
+   TRUE. Remove once ZSA switches the guard to `#if defined(...)`. */
+#ifndef TRUE
+#    define TRUE 1
+#endif
+#ifndef FALSE
+#    define FALSE 0
+#endif
