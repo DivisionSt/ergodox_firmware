@@ -153,6 +153,8 @@ const uint16_t PROGMEM combo7[] = { LT(6, KC_SPACE), MT(MOD_RCTL, KC_ENTER), COM
 const uint16_t PROGMEM combo8[] = { KC_T, KC_GRAVE, COMBO_END};
 const uint16_t PROGMEM combo9[] = { KC_F24, KC_A, COMBO_END};
 const uint16_t PROGMEM combo10[] = { KC_L, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM combo11[] = { KC_T, KC_GRAVE, COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_F24, KC_A, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TG(7)),
@@ -166,7 +168,33 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo8, LGUI(LSFT(KC_T))),
     COMBO(combo9, LGUI(LSFT(KC_A))),
     COMBO(combo10, LGUI(LSFT(KC_L))),
+    COMBO(combo11, LCTL(LSFT(KC_T))),
+    COMBO(combo12, LCTL(LSFT(KC_A))),
 };
+
+/* Reopen-tab and tabs-list need the Cmd flavour on base-mac and the Ctrl
+   flavour on base-win, but a QMK combo matches on the resolved keycode rather
+   than the physical key, so both flavours share a chord (T+` and F24+A) and
+   would otherwise fire together. Gate them on the active base layer instead.
+
+   Switching on combo->keycode rather than the combo index deliberately: Oryx
+   regenerates and renumbers the table above on every layout edit, and an index
+   switch would silently mis-gate after a renumber.
+
+   base-win is layer 1, entered via TO(1). Testing !IS_LAYER_ON(1) rather than
+   IS_LAYER_ON(0) for the Mac side because layer 0 is the default layer, so its
+   layer_state bit is clear at boot until TO(0) is pressed. */
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+  switch (combo->keycode) {
+    case LGUI(LSFT(KC_T)):
+    case LGUI(LSFT(KC_A)):
+      return !IS_LAYER_ON(1);
+    case LCTL(LSFT(KC_T)):
+    case LCTL(LSFT(KC_A)):
+      return IS_LAYER_ON(1);
+  }
+  return true;
+}
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {

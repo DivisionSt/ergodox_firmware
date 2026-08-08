@@ -16,7 +16,7 @@
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define SERIAL_NUMBER "DYrAK/6aRpJL"
 #define LAYER_STATE_16BIT
-#define COMBO_COUNT 11
+#define COMBO_COUNT 13
 
 #define TAPPING_TERM_PER_KEY
 
@@ -38,6 +38,11 @@
 #define LEADER_PER_KEY_TIMING
 #define LEADER_NO_TIMEOUT
 #define PERMISSIVE_HOLD_PER_KEY
+
+/* Required for combo_should_trigger() to be consulted at all: process_combo.c
+   only calls it inside #ifdef COMBO_SHOULD_TRIGGER. Without this the Mac and
+   Windows variants of the reopen-tab and tabs-list chords both fire. */
+#define COMBO_SHOULD_TRIGGER
 
 /* Workaround for an upstream ZSA bug in zsa/qmk_modules (oryx/oryx.c).
    The module guards <automouse.h> with `#if COMMUNITY_MODULE_AUTOMOUSE_ENABLE == TRUE`.
