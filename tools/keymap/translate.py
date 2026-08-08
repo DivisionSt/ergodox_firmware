@@ -28,7 +28,23 @@ _QMK_MODFN = {"LGUI": "LGUI", "LCTL": "LCTRL", "LALT": "LALT", "LSFT": "LSHFT",
 _ZMK_MODFN = {"LG": "LGUI", "LC": "LCTRL", "LA": "LALT", "LS": "LSHFT",
               "RG": "RGUI", "RC": "RCTRL", "RA": "RALT", "RS": "RSHFT"}
 
+# Modifier keycodes recognised as the *base* of a mod-wrapped token, in either
+# firmware's spelling, mapped to the canonical short mod name. When the base is
+# itself a modifier the token holds nothing but modifiers, so the nesting order
+# carries no meaning: QMK's LSFT(KC_LEFT_CTRL) and ZMK's LC(LSHFT) both mean
+# "hold Ctrl+Shift". Those collapse to a MODSET so they compare equal.
+_MOD_ATOM = {
+    "LEFT_CTRL": "LCTRL", "LEFT_SHIFT": "LSHFT", "LEFT_ALT": "LALT", "LEFT_GUI": "LGUI",
+    "RIGHT_CTRL": "RCTRL", "RIGHT_SHIFT": "RSHFT", "RIGHT_ALT": "RALT", "RIGHT_GUI": "RGUI",
+    "LCTRL": "LCTRL", "LSHFT": "LSHFT", "LALT": "LALT", "LGUI": "LGUI", "LCMD": "LGUI",
+    "RCTRL": "RCTRL", "RSHFT": "RSHFT", "RALT": "RALT", "RGUI": "RGUI", "RCMD": "RGUI",
+}
+
 _BLANK = {"TRANS", "NONE"}
+
+
+def _modset(mods: list[str], base: str) -> str:
+    return f"MODSET({'+'.join(sorted(set(mods) | {_MOD_ATOM[base]}))})"
 
 
 class Category(str, Enum):
@@ -88,7 +104,10 @@ def _modstack_qmk(token: str) -> tuple[str, bool] | None:
     inner = re.fullmatch(r"KC_(.+)", cur)
     if not inner:
         return f"??{token}", False
-    return f"MODS({'+'.join(sorted(mods))},{_atom_qmk(inner.group(1))})", True
+    atom = _atom_qmk(inner.group(1))
+    if atom in _MOD_ATOM:
+        return _modset(mods, atom), True
+    return f"MODS({'+'.join(sorted(mods))},{atom})", True
 
 
 def _modstack_zmk(expr: str) -> tuple[str, bool] | None:
@@ -102,7 +121,10 @@ def _modstack_zmk(expr: str) -> tuple[str, bool] | None:
         cur = m.group(2)
     if not mods:
         return None
-    return f"MODS({'+'.join(sorted(mods))},{_atom_zmk(cur)})", True
+    atom = _atom_zmk(cur)
+    if atom in _MOD_ATOM:
+        return _modset(mods, atom), True
+    return f"MODS({'+'.join(sorted(mods))},{atom})", True
 
 
 def canon_qmk(token: str) -> tuple[str, bool]:
