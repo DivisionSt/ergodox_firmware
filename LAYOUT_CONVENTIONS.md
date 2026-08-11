@@ -52,13 +52,46 @@ one-shot to plain `&kp`/`KC_` across base-mac, base-win, and base-sketchup on
 was de-stickied too. The QMK layer-toggle combos (`combo1`, `combo6`) trigger
 off that thumb, so they were updated to the plain keycodes to keep firing.
 
-## Combos (11)
+## Combos (13, in full QMK/ZMK parity as of 2026-08-08)
 
 - Thumb-pair toggles: nav/num/func/win-nav/win-num layer `TG`/`tog` via
   combining the two thumb layer keys or a thumb + mod.
 - App/window shortcuts: adjacent-key combos fire Cmd+Shift+{T,V,A,L} and
   Ctrl/Alt chords. Watch fast-roll false triggers on the alpha combos (Q+W, Z+X,
   B+V).
+- Two chords are **base-layer-dependent**: ``T+` `` (reopen tab) and `F24+A`
+  (tabs list) send the Cmd flavour on base-mac and the Ctrl flavour on base-win.
+
+### Layer-scoped combos in QMK
+
+ZMK scopes a combo declaratively with `layers = <L_BASE_WIN>`. QMK has no such
+property, and it matches combos on the **post-layer-resolution keycode** rather
+than the physical key — base-win pos 29 is `KC_TRANSPARENT` and falls through to
+layer 0's `KC_F24` — so a Mac/Windows pair inevitably shares a chord and both
+halves would fire at once. `combo_should_trigger()` in `DYrAK/keymap.c` gates
+them. Three things about it are load-bearing:
+
+- **`#define COMBO_SHOULD_TRIGGER` is mandatory** (`DYrAK/config.h`).
+  `process_combo.c` only consults the hook inside that `#ifdef`; without it the
+  function is dead code and both flavours fire.
+- **Switch on `combo->keycode`, never the combo index.** Oryx regenerates and
+  renumbers `key_combos[]` on every layout edit; an index switch would silently
+  mis-gate after a renumber instead of failing loudly.
+- **The Mac side tests `!IS_LAYER_ON(1)`, not `IS_LAYER_ON(0)`.** Layer 0 is the
+  default layer, so its `layer_state` bit is clear at boot until `TO(0)` is
+  pressed — a positive test on layer 0 would leave the Mac combos dead until the
+  first explicit base switch.
+
+Check combo parity with `python3 tools/keymap/parity.py --combos`. Matching is by
+physical chord, not keycode, because pos 29 legitimately differs by keycode
+between the firmwares (see "Known intentional divergences").
+
+**Oryx merge cost, known and accepted:** `COMBO_COUNT`, the `key_combos[]`
+initializer, and the `combo11`/`combo12` arrays all live in Oryx-generated files
+and will conflict on the next `git merge -Xignore-all-space oryx` after an Oryx
+layout edit. Gating on `combo->keycode` keeps `combo_should_trigger()` itself out
+of the blast radius. This has **not** yet been exercised against a real Oryx
+change — the 2026-08-08 sync was a no-op.
 
 ## Leader key (QMK `leader_end_user`)
 
@@ -95,6 +128,9 @@ Reconciled 2026-06-15. Default direction is ZMK (the home superset) canonical
 with QMK brought up to match, but it's decided **per-key** — pos 47/48 below
 went the other way (QMK won). Confirm each; don't blanket-resolve.
 
+- **Done:** all combos (2026-08-08, PR #16) — QMK gained the Windows variants of
+  reopen-tab and tabs-list, bringing it to ZMK's 13. `parity.py --combos` reports
+  13 match / 0 drift. The layer edits below are unaffected and still open.
 - **Done:** `ext-func` thumbs (pos 71/72/75/76 → BSPC/DEL/ENTER/SPACE) and
   `ext-num`/`ext-wnum` pos 75 (ENTER) brought up to ZMK. `ext-num`/`ext-wnum`
   pos 47/48 reconciled to parens — ZMK updated to QMK's `(`/`)` so the number
