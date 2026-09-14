@@ -1,5 +1,14 @@
 # DivisionSt layout
-![png image of layout](kle/divisionst_ergodox.png)
+
+macOS base layer (with nav, num, func and device layers packed onto each key):
+
+![macOS layout](kle/divisionst_ergodox.png)
+
+Windows base layer, same packing:
+
+![Windows layout](kle/divisionst_ergodox_win.png)
+
+Source for both lives in `kle/` as [keyboard-layout-editor.com](http://www.keyboard-layout-editor.com) JSON; the PNGs are exported from there.
 
 ## Oryx with custom QMK
 
