@@ -102,19 +102,17 @@ _QMK ✓ (`DYrAK` layer 1: base-win)_
     ESC       1        2        3        4        5       LEAD        RPT       6        7        8        9        0      MINUS  
     TAB       Q        W        E        R        T      GRAVE       EQUAL      Y        U        I        O        P       BSLH  
      ·        A        S        D        F        G           H        J        K        L       SEMI     SQT   
-     ⇧        Z        X        C        V        B       LBKT        RBKT      N        M      COMMA     DOT      FSLH      ⇧    
+     ·        Z        X        C        V        B       LBKT        RBKT      N        M      COMMA     DOT      FSLH      ·    
     ⌘DOT      ·        ·      alttab     ⇧           ⇧       RPT       ·        ·        ·    
 
   thumbs   L:   LEAD      ⌘L/⏯    |  →win_nav     ⌃        vol+    |    vol-  
            R: TO:layer    RPT     |     ·       ⌃/RET    →num/SPA  |     ·    
 ```
 
-**QMK differs here (11):**
+**QMK differs here (9):**
 
 - pos 7: QMK `KC_TRANSPARENT` vs ZMK `&leader`
 - pos 8: QMK `KC_TRANSPARENT` vs ZMK `&key_repeat`
-- pos 41: QMK `KC_TRANSPARENT` vs ZMK `&kp LSHFT`
-- pos 54: QMK `KC_TRANSPARENT` vs ZMK `&kp RSHFT`
 - pos 61: QMK `KC_TRANSPARENT` vs ZMK `&key_repeat`
 - pos 65: QMK `KC_TRANSPARENT` vs ZMK `&leader`
 - pos 68: QMK `KC_TRANSPARENT` vs ZMK `&key_repeat`
